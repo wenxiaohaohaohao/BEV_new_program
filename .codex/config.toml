@@ -1,0 +1,4 @@
+# Project-local Codex defaults. Provider, authentication, and model choices remain
+# machine/user settings and are intentionally not fixed in this repository.
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"

@@ -1,0 +1,67 @@
+# Local data. Keep documentation, not data payloads.
+data/**
+!data/README.md
+
+# Generated results. Keep the directory contract only.
+outputs/**
+!outputs/README.md
+
+# Logs and temporary files
+*.log
+*.smcl
+*.tmp
+*.temp
+*.bak
+
+# Julia local state and generated coverage
+.julia/
+*.cov
+*.mem
+
+# Stata
+*.dta
+*.gph
+*.ster
+*.stpr
+
+# MATLAB
+*.mat
+*.asv
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Office, OS, and editor files
+~$*
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Local archives
+*.zip
+*.rar
+*.7z
+*.tar
+*.gz

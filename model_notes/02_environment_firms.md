@@ -2,9 +2,10 @@
 
 ## 1. Purpose
 
-This module defines the baseline economic environment after the third-round
-critique: household saving, fixed regional labor markets, CES-derived product
-demand, NEV installed capacity as sector-specific capital, and learning-by-doing.
+This module defines the baseline economic environment after the Claude second
+review response: fixed regional labor, outside-sector capital, NEV installed
+capacity as sector-specific capital, CES-derived demand, resource feasibility,
+and frontier-gap learning with cross-region spillovers.
 
 ---
 
@@ -18,205 +19,188 @@ demand, NEV installed capacity as sector-specific capital, and learning-by-doing
 - **Agents:** representative household, firms, local governments, and a
   centralized constrained planner.
 
-The baseline is intentionally minimal. SOE heterogeneity, exports, production
-networks, soft budget constraints, migration, and differentiated product demand
-are extensions.
+SOE heterogeneity, exports, production networks, soft budget constraints,
+migration, differentiated demand, and full firm productivity distributions are
+extensions.
 
 ---
 
 ## 3. Household and regional labor [Accepted baseline]
 
-The representative household owns firms and financial claims, consumes the final
-good, and supplies savings. The household problem delivers the usual Euler
+The representative household consumes the final good, owns firms and financial
+claims, and supplies savings. The household problem delivers the usual Euler
 condition for intertemporal saving.
 
-The baseline does not use an aggregate mobile labor market. Each region has a
-fixed labor endowment:
+Labor is regionally segmented:
 
-$$L_{r,t}^N + L_{r,t}^O = \bar L_r.$$
+$$L_{r,t}^N+L_{r,t}^O=\bar L_r.$$
 
-The regional wage $w_{r,t}$ clears region $r$'s labor market. This assumption
-keeps local employment meaningful in the government objective and avoids mixing
-an aggregate wage with regional firm wages.
+The regional wage $w_{r,t}$ clears region $r$'s labor market. The baseline does
+not include migration or partial labor mobility.
 
 ---
 
-## 4. Final good and CES-derived demand [Accepted baseline]
+## 4. Capital and capacity [Accepted baseline]
 
-Final output is produced from NEV and outside-sector goods:
+NEV installed capacity is the NEV sector-specific capital stock:
+
+$$H_{r,t}^N.$$
+
+There is no separate $K_{r,t}^N$ in the baseline.
+
+Aggregate capital market clearing is:
+
+$$K_t=K_t^O+\sum_r H_{r,t}^N.$$
+
+Outside-sector capital evolves as:
+
+$$K_{t+1}^O=(1-\delta_K)K_t^O+I_t^{K,O}.$$
+
+NEV capacity evolves as:
+
+$$H_{r,t+1}^N=(1-\delta_H)H_{r,t}^N+I_{r,t}^H.$$
+
+---
+
+## 5. Final good and CES-derived demand [Accepted baseline]
+
+Aggregate sectoral outputs are:
+
+$$Y_t^N=\sum_rY_{r,t}^N,\qquad Y_t^O=\sum_rY_{r,t}^O.$$
+
+Final output is:
 
 $$
-Y_t =
+Y_t=
 \left[
-\eta_N\left(Y_t^N\right)^{\frac{\varepsilon-1}{\varepsilon}}
-+ \eta_O\left(Y_t^O\right)^{\frac{\varepsilon-1}{\varepsilon}}
-\right]^{\frac{\varepsilon}{\varepsilon-1}},
-\qquad \eta_N+\eta_O=1.
+\eta_N(Y_t^N)^{\frac{\epsilon-1}{\epsilon}}
++(1-\eta_N)(Y_t^O)^{\frac{\epsilon-1}{\epsilon}}
+\right]^{\frac{\epsilon}{\epsilon-1}}.
 $$
 
-With the final-good price normalized to one, the NEV relative price is derived
-from the final-good producer's FOC:
+With the final-good price normalized to one, the NEV relative price is:
 
-$$
-P_t^N =
-\eta_N\left(\frac{Y_t}{Y_t^N}\right)^{1/\varepsilon}.
-$$
+$$P_t^N=\eta_N\left(\frac{Y_t}{Y_t^N}\right)^{1/\epsilon}.$$
 
-Thus NEV price falls when NEV quantity expands relative to final demand:
-
-$$\frac{\partial P_t^N}{\partial Y_t^N}<0.$$
-
-The baseline therefore does not impose an additional standalone inverse demand
-curve.
+Thus NEV price falls when NEV quantity expands relative to final demand. The
+baseline does not impose an additional standalone inverse demand curve.
 
 ---
 
-## 5. Resource constraint [Accepted baseline]
+## 6. Resource constraint [Accepted baseline]
 
-NEV investment is investment in installed capacity $H^N$. It should not be
-counted again as generic NEV capital investment. A compact aggregate resource
-constraint is:
+The aggregate resource constraint is:
 
 $$
-Y_t =
+Y_t
+=
 C_t
-+ I_t^O
-+ \sum_r I_{r,t}^H
-+ \sum_r \phi s_{r,t}H_{r,t}^N
-+ \sum_r \frac{\kappa}{2}s_{r,t}^2
-+ \sum_r \frac{\chi_s}{2}(s_{r,t}-s_{r,t-1})^2
-+ IdleCost_t.
++I_t^{K,O}
++\sum_r I_{r,t}^H
++\sum_r G_{r,t}
++AdjCost_t
++DebtCost_t.
 $$
 
-Interpretation:
+The notation $I_t^K$ should not be used together with $\sum_rI_{r,t}^H$ unless
+$I_t^K$ is explicitly defined as outside-sector capital investment:
 
-- $I_t^O$ is investment in outside-sector capital.
-- $I_{r,t}^H$ is the only NEV capital/capacity investment flow.
-- $\phi s_{r,t}H_{r,t}^N$ is the fiscal outlay associated with the capital-cost
-  wedge.
-- $\kappa s_{r,t}^2/2$ is administrative, political, or distortionary cost; it
-  is not the subsidy outlay.
+$$I_t^K\equiv I_t^{K,O}.$$
+
+The fiscal subsidy $\phi s_{r,t}H_{r,t}^N$ is a local budget item. It is not an
+additional aggregate resource absorption beyond investment, government spending,
+adjustment costs, and debt costs.
 
 ---
 
-## 6. Firms [Accepted baseline]
+## 7. Firms [Accepted baseline]
 
-### 6.1 Outside sector
+### 7.1 Outside sector
 
 The outside sector uses ordinary capital and local labor:
 
 $$
-Y_{r,t}^O =
-A_{r,t}^O (K_{r,t}^O)^{\alpha_O}(L_{r,t}^O)^{1-\alpha_O}.
+Y_{r,t}^O=A_r^O(K_{r,t}^O)^{\alpha_O}(L_{r,t}^O)^{1-\alpha_O}.
 $$
 
-The outside-sector rental cost is:
+Baseline outside-sector technology is exogenous:
 
-$$R_{r,t}^O=r_t.$$
+$$A_{r,t}^O=A_r^O.$$
 
-### 6.2 NEV installed capacity as sector-specific capital
+Endogenous outside-sector learning is an extension.
 
-In the NEV sector, installed capacity $H_{r,t}^N$ is the sector-specific capital
-stock. There is no separate baseline object $k^N$ with its own accumulation law.
+### 7.2 NEV sector
 
-Potential NEV output is:
-
-$$
-\tilde Y_{r,t}^N =
-A_{r,t}^N (H_{r,t}^N)^{\alpha_N}(L_{r,t}^N)^{1-\alpha_N}.
-$$
-
-Realized NEV output satisfies the utilization/capacity relation:
+Potential NEV output may be written as:
 
 $$
-Y_{r,t}^N = u_{r,t}^N H_{r,t}^N,\qquad 0\leq u_{r,t}^N\leq 1.
+\tilde Y_{r,t}^N=A_{r,t}^NF(H_{r,t}^N,L_{r,t}^N).
 $$
 
-The capacity law of motion is:
+For the first closed model, realized output can be represented by utilization:
 
-$$
-H_{r,t+1}^N=(1-\delta_H)H_{r,t}^N+I_{r,t}^H.
-$$
+$$Y_{r,t}^N=u_{r,t}^NH_{r,t}^N,\qquad 0\leq u_{r,t}^N\leq1.$$
 
-The NEV effective rental cost is lowered by local policy:
+Local policy lowers the effective cost of NEV installed capacity:
 
-$$
-R_{r,t}^N=r_t-\phi s_{r,t}.
-$$
+$$R_{r,t}^{N,eff}=r_t-\phi s_{r,t}.$$
 
-The associated fiscal outlay is:
+The gross fiscal subsidy cost is:
 
-$$
-SubsidyOutlay_{r,t}=\phi s_{r,t}H_{r,t}^N.
-$$
+$$SubsidyCost_{r,t}=\phi s_{r,t}H_{r,t}^N.$$
 
-### 6.3 Entry and exit
+### 7.3 Entry and exit
 
-Firm entry and exit remain part of the broader model, but the first closed
-two-region proof can use a representative regional NEV producer. Heterogeneous
-firm entry, productivity draws, and exit thresholds should be restored only after
-the static wedge comparison is closed.
-
-An entry-cost channel,
-
-$$F_{r,t}^N=F_0^N-\phi_F s_{r,t},$$
-
-is an appendix candidate rather than a required baseline channel.
+Firm entry, exit, and productivity distributions are not part of the first
+closed baseline. They can be reintroduced later through a reduced-form threshold
+or a heterogeneous-firm extension.
 
 ---
 
-## 7. Capacity regimes [Accepted baseline]
+## 8. Capacity regimes [Accepted baseline]
 
-Two regimes organize the intuition:
-
-- **Capacity-building / early phase:** learning and market-formation benefits are
-  high; the constrained planner may choose $s^{CP}>0$.
-- **Excess-capacity phase:** aggregate NEV capacity is high relative to demand;
-  utilization falls and the marginal social return to additional capacity
-  declines.
+- **Capacity-building phase:** learning and market-formation benefits are high;
+  the constrained planner may choose $s^{CP}>0$.
+- **Excess-capacity phase:** utilization is low, price compression is stronger,
+  and the marginal social return to additional NEV capacity declines.
 
 The model should not assume that investment stops automatically when capacity is
-slack. The point of the paper is that decentralized local incentives can keep
-the expansionary wedge high even after social marginal benefits have declined.
+slack. Whether decentralized policy exits too slowly must be derived dynamically
+or shown numerically after the static wedge comparison is closed.
 
 ---
 
-## 8. Learning externalities [Accepted baseline]
+## 9. Learning externalities [Accepted baseline]
 
-Baseline learning has no mechanical knowledge depreciation. Productivity evolves
-as:
+The baseline uses a combined frontier-gap spillover law:
 
 $$
-A_{r,t+1}^N =
+A_{r,t+1}^N
+=
 A_{r,t}^N
-+ \left(\bar A^N-A_{r,t}^N\right)
-\left[
-\psi_L (Y_{r,t}^N)^\nu
-+ \psi_G \left(\sum_{r'\neq r}Y_{r',t}^N\right)^\nu
-\right],
++\psi_L
+\frac{\bar A_t-A_{r,t}^N}{\bar A_t}
+(Y_{r,t}^N)^\nu
++\psi_G
+\frac{\bar A_t-A_{r,t}^N}{\bar A_t}
+\left(\sum_{r'\neq r}Y_{r',t}^N\right)^\nu.
 $$
 
-where $\bar A^N$ is the NEV productivity frontier. The frontier-gap term makes
-learning diminish as the region approaches the frontier.
+The frontier evolves exogenously:
 
-Interpretation:
+$$\bar A_{t+1}=(1+g_A)\bar A_t.$$
 
-- $\psi_L$ captures own-region learning-by-doing.
-- $\psi_G$ captures spillovers from other regions and excludes own-region output.
-- $A_{r,t}^N$ can include technological productivity and supply-chain
-  coordination efficiency.
-
-The baseline does not introduce a separate supply-chain state variable $S_t^N$.
-Supply-chain coordination is absorbed into $A_{r,t}^N$ or the spillover parameter.
+This law preserves local learning, cross-regional spillovers, diminishing
+learning as a region approaches the frontier, no knowledge depreciation, and no
+double-counting of own-region output in the spillover term.
 
 ---
 
-## 9. Open questions
+## 10. Open questions
 
-1. Should realized output be written as the minimum of potential production,
-   installed capacity, and CES demand in the analytic proof, or should the proof
-   use a reduced-form utilization equation?
-2. How should $IdleCost_t$ be measured in the data: physical idle capacity,
-   forgone return, or accounting losses?
-3. What is the minimal static firm problem needed to prove that
+1. Should the first two-region proof use $Y_{r,t}^N=u_{r,t}^NH_{r,t}^N$ directly
+   or a richer production-plus-utilization formulation?
+2. How should $DebtCost_t$ and $AdjCost_t$ be specified for the first static
+   proof?
+3. What is the minimal firm optimality condition needed to prove
    $\partial H_r^N/\partial s_r>0$?

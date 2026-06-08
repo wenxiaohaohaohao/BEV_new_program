@@ -1,0 +1,309 @@
+# Post-Revision Model Skeleton
+
+**Status:** Closure contract after the Claude second-review response.
+
+**Last updated:** 2026-06-08
+
+This file is the first source to check when revising the baseline model. It
+summarizes the model objects that must be mutually consistent before the MASTER
+memo, module notes, paper text, or numerical code are updated.
+
+---
+
+## 1. Regions, sectors, and labor
+
+There are $R$ regions indexed by $r$ and two sectors:
+
+$$j\in\{N,O\},$$
+
+where $N$ is the NEV sector and $O$ is the outside sector.
+
+Regional labor is fixed in the baseline:
+
+$$L_{r,t}^N+L_{r,t}^O=\bar L_r.$$
+
+Wages are region-specific:
+
+$$w_{r,t}.$$
+
+Partial labor mobility, migration, and hukou frictions are extensions.
+
+---
+
+## 2. Capital and NEV installed capacity
+
+NEV installed capacity is the NEV sector-specific capital stock:
+
+$$H_{r,t}^N.$$
+
+There is no separate $K_{r,t}^N$ in the baseline.
+
+Aggregate capital market clearing is:
+
+$$K_t=K_t^O+\sum_r H_{r,t}^N.$$
+
+Outside-sector capital evolves as:
+
+$$K_{t+1}^O=(1-\delta_K)K_t^O+I_t^{K,O}.$$
+
+NEV capacity evolves as:
+
+$$H_{r,t+1}^N=(1-\delta_H)H_{r,t}^N+I_{r,t}^H.$$
+
+The notation $I_t^K$ is avoided in the baseline unless it is explicitly defined
+as $I_t^{K,O}$.
+
+---
+
+## 3. Production
+
+NEV realized output is:
+
+$$Y_{r,t}^N=u_{r,t}^N H_{r,t}^N,\qquad u_{r,t}^N\in[0,1].$$
+
+A richer version may use:
+
+$$
+Y_{r,t}^N
+=
+\min\left\{
+A_{r,t}^N F(H_{r,t}^N,L_{r,t}^N),\;
+H_{r,t}^N
+\right\}.
+$$
+
+Outside-sector output is:
+
+$$
+Y_{r,t}^O
+=
+A_r^O(K_{r,t}^O)^{\alpha_O}(L_{r,t}^O)^{1-\alpha_O}.
+$$
+
+Baseline outside-sector technology is exogenous:
+
+$$A_{r,t}^O=A_r^O.$$
+
+---
+
+## 4. Final good and CES demand
+
+Aggregate sectoral outputs are:
+
+$$Y_t^N=\sum_r Y_{r,t}^N,\qquad Y_t^O=\sum_r Y_{r,t}^O.$$
+
+Final output is:
+
+$$
+Y_t=
+\left[
+\eta_N(Y_t^N)^{\frac{\epsilon-1}{\epsilon}}
++(1-\eta_N)(Y_t^O)^{\frac{\epsilon-1}{\epsilon}}
+\right]^{\frac{\epsilon}{\epsilon-1}}.
+$$
+
+With the final-good price normalized to one, NEV relative price is:
+
+$$
+P_t^N
+=
+\eta_N
+\left(
+\frac{Y_t}{Y_t^N}
+\right)^{1/\epsilon}.
+$$
+
+The baseline does not impose a standalone inverse demand curve.
+
+---
+
+## 5. Resource constraint
+
+The aggregate resource constraint is:
+
+$$
+Y_t
+=
+C_t
++I_t^{K,O}
++\sum_r I_{r,t}^H
++\sum_r G_{r,t}
++AdjCost_t
++DebtCost_t.
+$$
+
+The fiscal subsidy $\phi s_{r,t}H_{r,t}^N$ is a budget item, not an additional
+aggregate resource absorption beyond the investment and public-spending objects
+already listed above.
+
+---
+
+## 6. NEV policy wedge
+
+Local government $r$ chooses one expansionary NEV policy wedge:
+
+$$s_{r,t}\geq0.$$
+
+It lowers the effective cost of NEV installed capacity:
+
+$$R_{r,t}^{N,eff}=r_t-\phi s_{r,t}.$$
+
+The gross fiscal subsidy cost is:
+
+$$SubsidyCost_{r,t}=\phi s_{r,t}H_{r,t}^N.$$
+
+---
+
+## 7. Learning law
+
+The baseline uses a combined frontier-gap spillover law:
+
+$$
+A_{r,t+1}^N
+=
+A_{r,t}^N
++\psi_L
+\frac{\bar A_t-A_{r,t}^N}{\bar A_t}
+(Y_{r,t}^N)^\nu
++\psi_G
+\frac{\bar A_t-A_{r,t}^N}{\bar A_t}
+\left(
+\sum_{r'\neq r}Y_{r',t}^N
+\right)^\nu.
+$$
+
+The frontier evolves exogenously:
+
+$$\bar A_{t+1}=(1+g_A)\bar A_t.$$
+
+This specification preserves local learning, cross-regional spillovers,
+diminishing learning near the frontier, no knowledge depreciation, and no
+double-counting of local output in the spillover term.
+
+---
+
+## 8. Local government budget
+
+The local government budget is:
+
+$$
+\tau_r(Y_{r,t}^N+Y_{r,t}^O)
++B_{r,t+1}
+=
+(1+r_t^g)B_{r,t}
++\phi s_{r,t}H_{r,t}^N
++G_{r,t}
++\mathcal C(B_{r,t+1}).
+$$
+
+Debt cost is:
+
+$$\mathcal C(B_{r,t+1})=\frac{\kappa_B}{2}B_{r,t+1}^2.$$
+
+Gross NEV subsidy cost is $\phi s_{r,t}H_{r,t}^N$.
+
+Net NEV fiscal cost can be recorded as:
+
+$$NetCost_{r,t}^N=\phi s_{r,t}H_{r,t}^N-\tau_rY_{r,t}^N.$$
+
+The outside sector's fiscal contribution to financing local spending is
+$\tau_rY_{r,t}^O$.
+
+---
+
+## 9. Local government objective
+
+Local government $r$ solves:
+
+$$
+\max_{\{s_{r,t},B_{r,t+1}\}}
+\sum_{t=0}^{\infty}
+\beta^t
+\left[
+\theta_yY_{r,t}^N
++\theta_eL_{r,t}^N
++\theta_fFiscalSurplus_{r,t}
+-\frac{\chi_s}{2}(s_{r,t}-s_{r,t-1})^2
+\right].
+$$
+
+The baseline does not include an additional $\kappa s_{r,t}^2/2$ cost. That term
+is reserved for robustness or extensions if it receives a separate economic
+interpretation.
+
+---
+
+## 10. Constrained planner
+
+The constrained planner chooses policy instruments:
+
+$$\{s_{r,t}^{CP}\}_{r=1}^R$$
+
+to maximize household welfare:
+
+$$
+\max_{\{s_{r,t}^{CP}\}}
+\sum_{t=0}^{\infty}\beta^tU(C_t,L_t),
+$$
+
+subject to household behavior, firm behavior, regional labor clearing,
+capital/capacity laws, government budgets, the learning law, and the resource
+constraint.
+
+The main welfare comparison is:
+
+$$W^D\quad \text{vs.}\quad W^{CP}.$$
+
+The first-best allocation $W^{FB}$ is only an upper bound.
+
+---
+
+## 11. Decentralized equilibrium
+
+A decentralized equilibrium consists of paths for:
+
+$$
+\{C_t,K_t^O,H_{r,t}^N,A_{r,t}^N,B_{r,t},s_{r,t},
+Y_{r,t}^N,Y_{r,t}^O,w_{r,t},P_t^N\}
+$$
+
+such that:
+
+1. households optimize;
+2. firms optimize;
+3. local governments solve their dynamic policy problem;
+4. local policies form a simultaneous Markov-Nash equilibrium;
+5. labor markets clear region by region;
+6. capital and capacity laws hold;
+7. government budgets hold;
+8. the final-good resource constraint holds;
+9. the learning law holds.
+
+---
+
+## 12. Baseline state vector
+
+The baseline dynamic state vector is:
+
+$$
+X_t=
+\{H_{r,t}^N,A_{r,t}^N,B_{r,t},s_{r,t-1}\}_{r=1}^R.
+$$
+
+The full firm productivity distribution $\mu_{r,t}(z)$ is not in the baseline
+state vector.
+
+---
+
+## 13. Results to prove before code
+
+1. State-contingent policy is beneficial when learning gains exceed fiscal and
+   misallocation costs.
+2. Local governments over-subsidize relative to the constrained planner:
+   $s^D>s^{CP}$.
+3. Decentralized policy generates excessive NEV capacity:
+   $H^{N,D}>H^{N,CP}$.
+4. Decentralized policy lowers utilization and NEV capital returns:
+   $u^{N,D}<u^{N,CP}$ and $MPK^{N,D}<MPK^{O,D}$.
+5. Welfare under decentralized local policy is below constrained centralized
+   policy: $W^D<W^{CP}$.

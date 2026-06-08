@@ -4,9 +4,8 @@
 State-Contingent Industrial Policy, Local Competition, and Aggregate Misallocation:
 Evidence from China's NEV Industry
 
-**Status:** Accepted baseline model memo after third-round critique integration.
-Detailed discussion, alternatives, and unresolved issues remain in module-specific
-notes.
+**Status:** Accepted baseline model memo after the Claude second-review response.
+The closure contract is `00_POST_REVISION_MODEL_SKELETON.md`.
 
 **Last updated:** 2026-06-08
 
@@ -55,110 +54,155 @@ to expand NEV capacity beyond the constrained-planner policy level.
 
 ---
 
-## 4. Policy wedge
+## 4. Capital, capacity, and resource feasibility
 
-The baseline policy object is one local expansionary policy wedge:
+NEV installed capacity is the NEV sector-specific capital stock:
 
-$$s_{r,t}\geq0.$$
+$$H_{r,t}^N.$$
 
-It summarizes local NEV support such as subsidies, land support, credit support,
-industrial funds, tax preferences, infrastructure, and investment facilitation.
-The wedge lowers the effective cost of NEV installed capacity:
+There is no separate baseline $K_{r,t}^N$.
 
-$$R_{r,t}^N=r_t-\phi s_{r,t}.$$
+Aggregate capital clearing is:
 
-The associated local fiscal outlay is:
+$$K_t=K_t^O+\sum_rH_{r,t}^N.$$
 
-$$SubsidyOutlay_{r,t}=\phi s_{r,t}H_{r,t}^N.$$
+Outside-sector capital and NEV capacity evolve as:
+
+$$K_{t+1}^O=(1-\delta_K)K_t^O+I_t^{K,O},$$
+
+$$H_{r,t+1}^N=(1-\delta_H)H_{r,t}^N+I_{r,t}^H.$$
+
+The aggregate resource constraint is:
+
+$$
+Y_t
+=
+C_t
++I_t^{K,O}
++\sum_rI_{r,t}^H
++\sum_rG_{r,t}
++AdjCost_t
++DebtCost_t.
+$$
+
+If $I_t^K$ is used, it means $I_t^{K,O}$.
 
 ---
 
-## 5. Household, final good, and labor
+## 5. Household, labor, and final good
 
 The representative household consumes the final good, owns firms and financial
 claims, and supplies savings. The household problem pins down the intertemporal
 Euler condition.
 
-Regional labor is fixed in the baseline:
+Regional labor is fixed:
 
 $$L_{r,t}^N+L_{r,t}^O=\bar L_r.$$
 
 The regional wage $w_{r,t}$ clears the local labor market.
 
+Aggregate sectoral outputs are:
+
+$$Y_t^N=\sum_rY_{r,t}^N,\qquad Y_t^O=\sum_rY_{r,t}^O.$$
+
 Final output is CES:
 
 $$
-Y_t =
+Y_t=
 \left[
-\eta_N(Y_t^N)^{\frac{\varepsilon-1}{\varepsilon}}
-+ \eta_O(Y_t^O)^{\frac{\varepsilon-1}{\varepsilon}}
-\right]^{\frac{\varepsilon}{\varepsilon-1}},
-\qquad \eta_N+\eta_O=1.
+\eta_N(Y_t^N)^{\frac{\epsilon-1}{\epsilon}}
++(1-\eta_N)(Y_t^O)^{\frac{\epsilon-1}{\epsilon}}
+\right]^{\frac{\epsilon}{\epsilon-1}}.
 $$
 
-With the final-good price normalized to one, NEV relative price is derived from
-the CES FOC:
+With the final-good price normalized to one:
 
-$$
-P_t^N=\eta_N\left(\frac{Y_t}{Y_t^N}\right)^{1/\varepsilon}.
-$$
+$$P_t^N=\eta_N\left(\frac{Y_t}{Y_t^N}\right)^{1/\epsilon}.$$
 
 ---
 
-## 6. Firms and NEV installed capacity
+## 6. Firms
 
 Outside-sector output is:
 
 $$
-Y_{r,t}^O =
-A_{r,t}^O(K_{r,t}^O)^{\alpha_O}(L_{r,t}^O)^{1-\alpha_O}.
+Y_{r,t}^O=A_r^O(K_{r,t}^O)^{\alpha_O}(L_{r,t}^O)^{1-\alpha_O}.
 $$
 
-In the NEV sector, installed capacity $H_{r,t}^N$ is the sector-specific capital
-stock. There is no separate baseline NEV capital stock with a separate
-accumulation equation.
+Baseline outside-sector technology is exogenous:
 
-Potential NEV output is:
+$$A_{r,t}^O=A_r^O.$$
 
-$$
-\tilde Y_{r,t}^N =
-A_{r,t}^N(H_{r,t}^N)^{\alpha_N}(L_{r,t}^N)^{1-\alpha_N}.
-$$
+NEV output is represented by installed capacity and utilization:
 
-Realized output and utilization satisfy:
+$$Y_{r,t}^N=u_{r,t}^NH_{r,t}^N,\qquad 0\leq u_{r,t}^N\leq1.$$
 
-$$Y_{r,t}^N=u_{r,t}^N H_{r,t}^N,\qquad 0\leq u_{r,t}^N\leq1.$$
+Local policy lowers the effective cost of NEV installed capacity:
 
-Installed capacity evolves as:
+$$R_{r,t}^{N,eff}=r_t-\phi s_{r,t}.$$
 
-$$H_{r,t+1}^N=(1-\delta_H)H_{r,t}^N+I_{r,t}^H.$$
+Gross fiscal subsidy cost is:
 
-NEV investment appears only through $I_{r,t}^H$ in the resource constraint.
+$$SubsidyCost_{r,t}=\phi s_{r,t}H_{r,t}^N.$$
 
 ---
 
 ## 7. Learning externalities
 
-NEV productivity evolves without mechanical knowledge depreciation:
+NEV productivity evolves according to:
 
 $$
-A_{r,t+1}^N =
+A_{r,t+1}^N
+=
 A_{r,t}^N
-+(\bar A^N-A_{r,t}^N)
-\left[
-\psi_L(Y_{r,t}^N)^\nu
-+\psi_G\left(\sum_{r'\neq r}Y_{r',t}^N\right)^\nu
-\right].
++\psi_L
+\frac{\bar A_t-A_{r,t}^N}{\bar A_t}
+(Y_{r,t}^N)^\nu
++\psi_G
+\frac{\bar A_t-A_{r,t}^N}{\bar A_t}
+\left(\sum_{r'\neq r}Y_{r',t}^N\right)^\nu.
 $$
 
-Own-region output drives local learning. Other-region output drives spillovers.
-The frontier-gap term makes learning diminish as a region approaches $\bar A^N$.
+The frontier evolves exogenously:
+
+$$\bar A_{t+1}=(1+g_A)\bar A_t.$$
+
+This preserves local learning, cross-region spillovers, diminishing learning,
+no knowledge depreciation, and no own-output double-counting in spillovers.
 
 ---
 
 ## 8. Local government problem
 
-Each local government chooses $s_{r,t}$ to maximize a reduced-form payoff:
+Local government $r$ chooses one expansionary NEV policy wedge:
+
+$$s_{r,t}\geq0.$$
+
+The local budget is:
+
+$$
+\tau_r(Y_{r,t}^N+Y_{r,t}^O)
++B_{r,t+1}
+=
+(1+r_t^g)B_{r,t}
++\phi s_{r,t}H_{r,t}^N
++G_{r,t}
++\mathcal C(B_{r,t+1}).
+$$
+
+Fiscal surplus is:
+
+$$
+FiscalSurplus_{r,t}
+=
+\tau_r(Y_{r,t}^N+Y_{r,t}^O)
+-\phi s_{r,t}H_{r,t}^N
+-r_t^gB_{r,t}
+-G_{r,t}
+-\mathcal C(B_{r,t+1}).
+$$
+
+The local objective is:
 
 $$
 \mathcal L_r
@@ -168,26 +212,11 @@ $$
 \theta_yY_{r,t}^N
 +\theta_eL_{r,t}^N
 +\theta_fFiscalSurplus_{r,t}
--\frac{\kappa}{2}s_{r,t}^2
 -\frac{\chi_s}{2}(s_{r,t}-s_{r,t-1})^2
 \right].
 $$
 
-The baseline sets $\beta_g=\beta$. The quadratic $\kappa$ term is an
-administrative, political, or distortionary cost, not the subsidy outlay.
-
-Local fiscal surplus is disciplined by:
-
-$$
-\phi s_{r,t}H_{r,t}^N
-+G_{r,t}
-+\mathcal C_B(B_{r,t+1})
-=
-\tau_rY_{r,t}
-+B_{r,t+1}
--(1+r_t^g)B_{r,t}
-+T_{r,t}^C.
-$$
+The baseline does not include an additional $\kappa s_{r,t}^2/2$ cost.
 
 ---
 
@@ -200,7 +229,7 @@ $$\{s_{r,t}^{CP}\}_{r=1}^R,$$
 
 while households and firms continue to optimize privately. The constrained
 planner internalizes cross-region learning spillovers, CES price compression,
-excess capacity, fiscal costs, and aggregate MPK losses.
+excess capacity, fiscal costs, debt costs, and aggregate MPK losses.
 
 A first-best planner that directly chooses allocations is only an appendix upper
 bound:
@@ -214,20 +243,18 @@ $$W^{FB}\geq W^{CP}\geq W^D.$$
 The decentralized equilibrium is a simultaneous Markov-Nash policy game among
 local governments:
 
+$$s_{r,t}^D=BR_r(s_{-r,t}^D;Z_{r,t},Z_t).$$
+
+The baseline dynamic state vector is:
+
 $$
-s_{r,t}^D=BR_r(s_{-r,t}^D;Z_{r,t},Z_t).
+X_t=\{H_{r,t}^N,A_{r,t}^N,B_{r,t},s_{r,t-1}\}_{r=1}^R.
 $$
 
-The full equilibrium requires:
-
-1. household saving optimality;
-2. regional labor-market clearing;
-3. firm optimality and NEV capacity investment;
-4. CES-derived NEV demand;
-5. local government budget constraints;
-6. local government policy optimality;
-7. Markov-Nash best responses;
-8. capacity, productivity, and resource feasibility.
+The full equilibrium requires household saving optimality, regional labor
+clearing, firm optimality, capital/capacity laws, CES-derived demand, local
+budget constraints, local government optimality, Markov-Nash best responses,
+learning, and resource feasibility.
 
 ---
 
@@ -276,9 +303,8 @@ Moments are separated into:
 - calibration/external moments: fiscal outlays, CES elasticity, learning
   parameters, and local-government weights.
 
-Policy endogeneity must be addressed before policy variation is used causally.
-Learning parameters should start from external evidence or sensitivity analysis
-rather than a naive cumulative-output regression.
+Demonstration-city or pilot designation is potential policy variation requiring
+validation, not an automatically exogenous instrument.
 
 ---
 
@@ -294,9 +320,10 @@ rather than a naive cumulative-output regression.
 
 ## 15. Work sequence before code
 
-1. Write the closed symmetric two-region static model.
-2. Derive the local government FOC.
-3. Derive the constrained-planner FOC.
-4. Prove sufficient conditions for $s^D>s^{CP}$.
-5. Derive capacity, utilization, MPK, and welfare implications.
-6. Only then plan numerical implementation.
+1. Check the post-revision skeleton closure.
+2. Write the closed symmetric two-region static model.
+3. Derive the local government FOC.
+4. Derive the constrained-planner FOC.
+5. Prove sufficient conditions for $s^D>s^{CP}$.
+6. Derive capacity, utilization, MPK, and welfare implications.
+7. Only then plan numerical implementation.

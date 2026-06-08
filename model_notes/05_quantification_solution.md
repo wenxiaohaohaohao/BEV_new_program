@@ -3,9 +3,8 @@
 ## 1. Purpose
 
 This module records quantification discipline and the proof-before-code sequence.
-It does not authorize numerical implementation yet. The model must first close
-the static two-region comparison and prove sufficient conditions for
-$s^D>s^{CP}$.
+It also records empirical-design cautions from the Claude second-review response.
+It does not authorize numerical implementation yet.
 
 ---
 
@@ -14,22 +13,38 @@ $s^D>s^{CP}$.
 Before creating Julia code, numerical solvers, or data pipelines, the project
 must complete:
 
-1. a closed symmetric two-region static model;
-2. the local government FOC;
-3. the constrained planner FOC;
-4. sufficient conditions for $s^D>s^{CP}$;
-5. the implications for $H^{N,D}>H^{N,CP}$, utilization, and MPK gaps.
+1. the post-revision model skeleton closure check;
+2. a closed symmetric two-region static model;
+3. the local government FOC;
+4. the constrained planner FOC;
+5. sufficient conditions for $s^D>s^{CP}$;
+6. implications for $H^{N,D}>H^{N,CP}$, utilization, MPK gaps, and welfare.
 
 The current phase is model derivation, not numerical implementation.
 
 ---
 
-## 3. Moment taxonomy [Accepted baseline]
+## 3. Baseline state-space reduction [Accepted baseline]
+
+The baseline dynamic state vector uses region-level sufficient statistics:
+
+$$
+X_t=
+\{H_{r,t}^N,A_{r,t}^N,B_{r,t},s_{r,t-1}\}_{r=1}^R.
+$$
+
+The first quantitative or toy model should not carry the full firm productivity
+distribution $\mu_{r,t}(z)$. Firm heterogeneity can later be added as an
+extension or represented by a reduced-form average productivity/threshold term.
+
+---
+
+## 4. Moment taxonomy [Accepted baseline]
 
 Moments should be separated by their role. Not every moment carries causal
 identification.
 
-### 3.1 Descriptive moments
+### 4.1 Descriptive moments
 
 | Object | Use |
 |---|---|
@@ -39,69 +54,75 @@ identification.
 | MPK / MRPK gap | measure capital misallocation |
 | regional employment | discipline local labor-market effects |
 
-### 3.2 Causal moments
+### 4.2 Causal moments
 
 | Object | Use |
 |---|---|
-| policy to NEV investment/capacity | discipline $\phi$ and the capacity response |
-| policy to firm entry | discipline optional entry-cost channel $\phi_F$ |
+| policy to NEV investment/capacity | discipline $\phi$ and capacity response |
+| policy to firm entry | discipline optional entry channel |
 | policy persistence after overcapacity | discipline $\chi_s$ |
 
-### 3.3 Calibration and external moments
+### 4.3 Calibration and external moments
 
 | Object | Use |
 |---|---|
-| fiscal outlay $\phi sH$ | discipline fiscal cost and budget closure |
-| CES elasticity $\varepsilon$ | discipline demand curvature |
-| learning parameters $\psi_L,\psi_G,\nu$ | start from literature or external evidence, then test sensitivity |
+| gross fiscal outlay $\phi sH$ | discipline subsidy cost and budget closure |
+| net NEV fiscal cost | compare gross support to NEV tax revenue |
+| CES elasticity $\epsilon$ | discipline demand curvature |
+| learning parameters $\psi_L,\psi_G,\nu,g_A$ | start from literature or external evidence, then test sensitivity |
 | local objective weights | discipline with policy responses or simplify further |
 
 ---
 
-## 4. Policy wedge construction [Accepted baseline]
+## 5. Policy wedge construction [Accepted baseline]
 
 The empirical policy wedge $s_{r,t}$ should be constructed as a composite index
 of local NEV expansionary support, including subsidies, land support, credit
 support, industrial funds, tax preferences, infrastructure, and investment
 facilitation.
 
-The construction must separately record fiscal outlays where possible, because
-the model's fiscal cost is proportional to:
+The empirical work must separately record fiscal outlays where possible, because
+the model's gross fiscal subsidy is:
 
 $$\phi s_{r,t}H_{r,t}^N.$$
 
 ---
 
-## 5. Identification discipline [Accepted baseline]
+## 6. Identification discipline [Accepted baseline]
 
 Policy endogeneity must be addressed before using policy variation as causal
-evidence. Candidate strategies to evaluate:
+evidence. Candidate designs requiring validation:
 
 1. initial auto-industry exposure interacted with national NEV policy timing;
-2. demonstration-city or pilot designation, if assignment and timing can be
-   defended;
+2. demonstration-city or pilot designation, only after checking assignment,
+   timing, pre-trends, and exclusion restrictions;
 3. central policy shocks interacted with pre-period local industrial base;
 4. fiscal-pressure shifters, only with careful controls and pretrend checks;
 5. historical auto supply-chain base, only after verifying it is not simply
    predicting local demand trends.
 
+Demonstration-city designation should be described as potential policy variation
+requiring validation, not as an automatically exogenous instrument.
+
 Learning parameters should not be identified only from cumulative output
 regressions because cumulative output is endogenous to policy and productivity.
 Use literature calibration, external estimates, or sensitivity analysis first.
 
-Local government weights should not remain unrestricted. Either discipline them
-with observed policy responses to lagged output, employment, fiscal pressure, and
-utilization, or keep the payoff function parsimonious.
-
 ---
 
-## 6. Analytic sequence [Accepted baseline]
+## 7. Analytic sequence [Accepted baseline]
+
+**Phase 0: Skeleton closure**
+
+- Check that capital/capacity, resource feasibility, budget, demand, learning,
+  planner, labor, and equilibrium objects are mutually consistent.
 
 **Phase 1: Static two-region proof**
 
 - Use two symmetric regions.
 - Use CES-derived demand.
 - Use $H^N$ as NEV installed capital/capacity.
+- Use total-regional-output tax base.
 - Derive firm response $\partial H_r^N/\partial s_r>0$.
 - Derive local FOC and constrained-planner FOC.
 - State sufficient conditions for $s^D>s^{CP}$.
@@ -114,14 +135,13 @@ utilization, or keep the payoff function parsimonious.
 
 **Phase 3: Numerical planning, after proof**
 
-- Only after Phases 1 and 2 are written should the project plan numerical
-  routines.
+- Only after Phases 0-2 are written should the project plan numerical routines.
 - The intended later discipline is grid search, root refinement, unilateral
   deviation checks, and an equilibrium selection rule.
 
 ---
 
-## 7. Capacity-regime handling [Accepted baseline]
+## 8. Capacity-regime handling [Accepted baseline]
 
 The model should distinguish:
 
@@ -135,10 +155,9 @@ constrained planner's marginal-benefit and marginal-cost comparison.
 
 ---
 
-## 8. Open questions
+## 9. Open questions
 
-1. What minimum data can discipline $\phi sH$ separately from administrative
-   policy costs?
+1. What minimum data can discipline $\phi sH$ and net fiscal cost?
 2. Which demand elasticity source is credible enough for the first calibration?
 3. Should local objective weights be estimated or normalized in the first
    quantitative version?

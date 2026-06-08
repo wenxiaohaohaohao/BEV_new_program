@@ -30,22 +30,25 @@ Read the project in this order:
    and the next milestone.
 2. [`REORGANIZATION_LOG.md`](REORGANIZATION_LOG.md): what changed in the 2026-06
    cleanup and where old materials went.
-3. [`model_notes/00_MASTER_model_memo.md`](model_notes/00_MASTER_model_memo.md):
+3. [`model_notes/00_POST_REVISION_MODEL_SKELETON.md`](model_notes/00_POST_REVISION_MODEL_SKELETON.md):
+   the unified closure contract after the review revisions.
+4. [`model_notes/00_MASTER_model_memo.md`](model_notes/00_MASTER_model_memo.md):
    the current accepted baseline.
-4. The relevant module under `model_notes/` for assumptions, alternatives, and
+5. The relevant module under `model_notes/` for assumptions, alternatives, and
    open questions.
-5. [`model_notes/99_decision_log.md`](model_notes/99_decision_log.md): accepted
+6. [`model_notes/99_decision_log.md`](model_notes/99_decision_log.md): accepted
    and rejected modeling decisions.
-6. [`AGENTS.md`](AGENTS.md): operating rules for Codex and other contributors.
+7. [`AGENTS.md`](AGENTS.md): operating rules for Codex and other contributors.
 
 ## Source-of-truth hierarchy
 
 | Priority | Location | Meaning |
 |---|---|---|
-| 1 | `model_notes/00_MASTER_model_memo.md` | Accepted baseline only |
-| 2 | `model_notes/01_...08_*.md` | Module detail, alternatives, and open questions |
-| 3 | `model_notes/99_decision_log.md` | Reasons for accepted and rejected choices |
-| 4 | `legacy/` | Historical context only; never authoritative by itself |
+| 1 | `model_notes/00_POST_REVISION_MODEL_SKELETON.md` | Closure contract for the accepted baseline |
+| 2 | `model_notes/00_MASTER_model_memo.md` | Accepted baseline summary |
+| 3 | `model_notes/01_...08_*.md` | Module detail, alternatives, and open questions |
+| 4 | `model_notes/99_decision_log.md` | Reasons for accepted and rejected choices |
+| 5 | `legacy/` | Historical context only; never authoritative by itself |
 
 If two files conflict, use the higher-priority source and record any substantive
 resolution in the decision log.
@@ -54,6 +57,7 @@ resolution in the decision log.
 
 ```text
 discussion
+-> check 00_POST_REVISION_MODEL_SKELETON
 -> identify module (01-08)
 -> update only that module
 -> label the content status
@@ -66,6 +70,7 @@ discussion
 
 | File | Scope |
 |---|---|
+| [`00_POST_REVISION_MODEL_SKELETON.md`](model_notes/00_POST_REVISION_MODEL_SKELETON.md) | Closure contract for the post-review baseline |
 | [`00_MASTER_model_memo.md`](model_notes/00_MASTER_model_memo.md) | Current accepted baseline |
 | [`01_research_mechanism.md`](model_notes/01_research_mechanism.md) | Research question, mechanism, and involution |
 | [`02_environment_firms.md`](model_notes/02_environment_firms.md) | Environment, household, firms, and learning-by-doing |

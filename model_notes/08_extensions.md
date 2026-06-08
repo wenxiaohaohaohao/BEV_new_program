@@ -2,19 +2,45 @@
 
 ## Warning: Important rule
 
-None of the content in this module enters the baseline until the core
-decentralized-policy-misallocation mechanism is closed, the static two-region
-proof is written, and the constrained-planner comparison is internally
-consistent.
+None of the content in this module enters the baseline until the post-revision
+skeleton is closed, the static two-region proof is written, and the constrained
+planner comparison is internally consistent.
 
 ---
 
-## 1. Differentiated demand
+## 1. Administrative convex policy cost
+
+Add an additional cost term:
+
+$$\frac{\kappa}{2}s_{r,t}^2.$$
+
+**Purpose:** Capture administrative capacity, implementation cost, or political
+distortion separate from fiscal outlays.
+
+**Reason outside baseline:** The baseline already has gross fiscal subsidy cost
+$\phi sH$ and adjustment cost $\chi_s(s_t-s_{t-1})^2/2$. Adding $\kappa s^2/2$
+now would double-count policy costs.
+
+---
+
+## 2. War-of-attrition or stopping-time exit game
+
+Model late-stage policy exit as a war-of-attrition, stopping-time, mixed-strategy,
+or asymmetric exit-timing game.
+
+**Purpose:** Microfound why local governments are reluctant to exit first.
+
+**Reason outside baseline:** The baseline treats slow exit through adjustment
+costs and local fiscal/employment incentives.
+
+---
+
+## 3. Differentiated demand
 
 Replace CES-derived aggregate demand with Dixit-Stiglitz, Melitz-style varieties,
 or BLP-type vehicle demand.
 
-**Purpose:** Capture model-level product differentiation, markups, and brand-level
+**Purpose:** Capture product-level differentiation, markups, and brand-level
 competition.
 
 **Reason outside baseline:** It adds varieties, markups, firm-level demand, and
@@ -22,7 +48,7 @@ market-share data requirements before the policy-wedge mechanism is closed.
 
 ---
 
-## 2. Production network and supplier innovation
+## 4. Production network and supplier innovation
 
 Add upstream battery/material suppliers, component firms, OEMs, and supplier
 payment/innovation channels.
@@ -34,19 +60,19 @@ misallocation to network propagation.
 
 ---
 
-## 3. Soft budget constraints
+## 5. Soft budget constraints
 
 Allow local governments, state banks, or local financing vehicles to keep
 loss-making firms alive.
 
 **Purpose:** Explain zombie capacity and even slower exit.
 
-**Reason outside baseline:** It is important but should be added only after the
-baseline fiscal budget constraint is closed.
+**Reason outside baseline:** It should be added only after the baseline fiscal
+budget constraint is closed.
 
 ---
 
-## 4. SOE heterogeneity
+## 6. SOE heterogeneity
 
 Distinguish state-owned and private NEV firms or suppliers.
 
@@ -54,11 +80,11 @@ Distinguish state-owned and private NEV firms or suppliers.
 local-government objectives.
 
 **Reason outside baseline:** It adds firm-type heterogeneity before the
-representative or symmetric two-region model is proven.
+representative or region-level model is proven.
 
 ---
 
-## 5. Export relief valve
+## 7. Export relief valve
 
 Add rest-of-world demand for NEV exports.
 
@@ -70,7 +96,7 @@ and should be added only after the domestic benchmark is clear.
 
 ---
 
-## 6. Financial frictions
+## 8. Financial frictions
 
 Add borrowing constraints or external-finance premia for firms.
 
@@ -81,7 +107,29 @@ credit support in the first model.
 
 ---
 
-## 7. Full promotion tournament
+## 9. Firm productivity distribution
+
+Carry the full firm productivity distribution $\mu_{r,t}(z)$ in the state vector.
+
+**Purpose:** Model entry, exit, and productivity selection directly.
+
+**Reason outside baseline:** The first model uses region-level sufficient states
+to keep the dynamic problem feasible.
+
+---
+
+## 10. Outside-sector endogenous learning
+
+Allow $A_{r,t}^O$ to evolve endogenously.
+
+**Purpose:** Study dynamic opportunity costs outside the NEV sector.
+
+**Reason outside baseline:** The outside sector's baseline role is to measure
+capital opportunity cost and MPK gaps.
+
+---
+
+## 11. Full promotion tournament
 
 Model officials' career concerns or promotion tournaments explicitly.
 
@@ -92,7 +140,7 @@ to keep the policy game analytically tractable.
 
 ---
 
-## 8. Labor mobility and hukou frictions
+## 12. Labor mobility and hukou frictions
 
 Replace fixed regional labor with partial migration, hukou frictions, or mobility
 costs.
@@ -104,7 +152,7 @@ employment block for the first version.
 
 ---
 
-## 9. Sequential central-local game
+## 13. Sequential central-local game
 
 Replace simultaneous Markov-Nash local policy choice with a sequential or
 Stackelberg central-local policy game.
@@ -116,11 +164,12 @@ with a clear $D$ versus $CP$ comparison.
 
 ---
 
-## 10. Promotion rule for extensions
+## 14. Promotion rule for extensions
 
 An extension can enter the baseline only if:
 
-1. the two-region proof and constrained-planner comparison are complete;
+1. the skeleton, two-region proof, and constrained-planner comparison are
+   complete;
 2. the extension explains an empirical pattern the baseline cannot match;
 3. it does not obscure the core mechanism;
 4. the decision is recorded in `99_decision_log.md`.

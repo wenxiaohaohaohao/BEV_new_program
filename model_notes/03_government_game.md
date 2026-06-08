@@ -2,73 +2,86 @@
 
 ## 1. Purpose
 
-This module records the local government's reduced-form objective, fiscal budget,
-and simultaneous Markov-Nash policy game. The constrained-planner benchmark and
-full equilibrium conditions are in Module 4.
+This module records the local government's budget, reduced-form objective, and
+simultaneous Markov-Nash policy game. It separates early-stage strategic
+complementarity from late-stage policy inertia.
 
 ---
 
 ## 2. Local government budget [Accepted baseline]
 
 The policy wedge lowers the private effective cost of NEV installed capacity.
-The corresponding fiscal outlay is:
+The gross fiscal subsidy cost is:
 
-$$SubsidyOutlay_{r,t}=\phi s_{r,t}H_{r,t}^N.$$
+$$SubsidyCost_{r,t}=\phi s_{r,t}H_{r,t}^N.$$
 
-A compact local budget constraint is:
+The baseline budget uses the total regional output tax base:
 
 $$
-\phi s_{r,t}H_{r,t}^N
-+ G_{r,t}
-+ \mathcal C_B(B_{r,t+1})
+\tau_r(Y_{r,t}^N+Y_{r,t}^O)
++B_{r,t+1}
 =
-\tau_r Y_{r,t}
-+ B_{r,t+1}
-- (1+r_t^g)B_{r,t}
-+ T_{r,t}^C.
+(1+r_t^g)B_{r,t}
++\phi s_{r,t}H_{r,t}^N
++G_{r,t}
++\mathcal C(B_{r,t+1}).
 $$
 
-Here $B_{r,t}$ is local government debt, $G_{r,t}$ is non-NEV local public
-spending, $\mathcal C_B(\cdot)$ is a convex borrowing cost or reduced-form debt
-friction, and $T_{r,t}^C$ is an optional central transfer. A simpler proof version
-may set $G_{r,t}$ and $T_{r,t}^C$ exogenous.
+Debt cost is:
 
-Define local fiscal surplus as:
+$$\mathcal C(B_{r,t+1})=\frac{\kappa_B}{2}B_{r,t+1}^2.$$
+
+Gross and net NEV fiscal cost:
+
+$$GrossCost_{r,t}^N=\phi s_{r,t}H_{r,t}^N,$$
+
+$$NetCost_{r,t}^N=\phi s_{r,t}H_{r,t}^N-\tau_rY_{r,t}^N.$$
+
+The outside sector's fiscal contribution is $\tau_rY_{r,t}^O$.
+
+The tax term is a reduced-form revenue extraction term for budget closure. The
+baseline does not place $\tau_r$ directly into firms' FOCs.
+
+---
+
+## 3. Fiscal surplus [Accepted baseline]
+
+A compact fiscal-surplus object is:
 
 $$
 FiscalSurplus_{r,t}
 =
-\tau_r Y_{r,t}
-+ B_{r,t+1}
-- (1+r_t^g)B_{r,t}
-+ T_{r,t}^C
-- G_{r,t}
-- \phi s_{r,t}H_{r,t}^N
-- \mathcal C_B(B_{r,t+1}).
+\tau_r(Y_{r,t}^N+Y_{r,t}^O)
+-\phi s_{r,t}H_{r,t}^N
+-r_t^gB_{r,t}
+-G_{r,t}
+-\mathcal C(B_{r,t+1}).
 $$
+
+When the local government chooses $B_{r,t+1}$ dynamically, the continuation value
+should carry the debt state forward.
 
 ---
 
-## 3. Local government objective [Accepted baseline]
+## 4. Local government objective [Accepted baseline]
 
-Local government $r$ chooses the policy wedge $\{s_{r,t}\}_{t\geq0}$ to maximize:
+Local government $r$ chooses $\{s_{r,t},B_{r,t+1}\}_{t\geq0}$ to maximize:
 
 $$
 \mathcal L_r
 =
 \sum_{t=0}^{\infty}\beta^t
 \left[
-\theta_y Y_{r,t}^N
-+ \theta_e L_{r,t}^N
-+ \theta_f FiscalSurplus_{r,t}
-- \frac{\kappa}{2}s_{r,t}^2
-- \frac{\chi_s}{2}(s_{r,t}-s_{r,t-1})^2
+\theta_yY_{r,t}^N
++\theta_eL_{r,t}^N
++\theta_fFiscalSurplus_{r,t}
+-\frac{\chi_s}{2}(s_{r,t}-s_{r,t-1})^2
 \right].
 $$
 
-The baseline sets $\beta_g=\beta$. A shorter political horizon can be discussed
-as motivation or robustness, but it is not the baseline source of
-over-subsidization.
+The baseline sets $\beta_g=\beta$ and does not include an additional
+$\kappa s_{r,t}^2/2$ cost. A separate administrative or implementation-capacity
+cost can be added only as robustness or extension.
 
 Parameter interpretation:
 
@@ -76,114 +89,97 @@ Parameter interpretation:
 |---|---|
 | $\theta_y$ | weight on local NEV output and industrial performance |
 | $\theta_e$ | weight on local NEV employment |
-| $\theta_f$ | weight on fiscal surplus / fiscal pressure |
-| $\kappa$ | administrative, political, or distortionary cost of policy intensity |
-| $\chi_s$ | adjustment friction from sunk commitments and policy reversal costs |
-
-The objective deliberately avoids placing local output, investment, employment,
-and tax revenue into the payoff as four unrestricted overlapping targets.
+| $\theta_f$ | weight on fiscal surplus or fiscal pressure |
+| $\chi_s$ | policy adjustment friction from sunk commitments and policy reversal costs |
+| $\kappa_B$ | convex debt or borrowing cost |
 
 ---
 
-## 4. What local governments do not fully internalize [Accepted baseline]
+## 5. What local governments do not fully internalize [Accepted baseline]
 
-Each local government internalizes its own fiscal outlay and local payoffs, but
+Each local government internalizes its own fiscal surplus and local payoff, but
 does not fully internalize:
 
-- CES-demand price compression caused by national NEV expansion.
-- The effect of its capacity expansion on other regions' returns.
-- Cross-region learning spillovers.
-- Aggregate excess-capacity and MPK losses.
+- CES-demand price compression caused by national NEV expansion;
+- other-region effects of capacity expansion;
+- cross-region learning spillovers;
+- aggregate excess-capacity and MPK losses.
 
-This creates the wedge between the decentralized local FOC and the constrained
-planner FOC.
+These omitted terms create the wedge between the decentralized local FOC and the
+constrained-planner FOC.
 
 ---
 
-## 5. Markov-Nash equilibrium [Accepted baseline]
+## 6. Markov-Nash equilibrium [Accepted baseline]
 
 A decentralized equilibrium is a simultaneous Markov-Nash policy game. For each
-region $r$,
+region $r$:
 
 $$
-s_{r,t}^D
-=
-BR_r(s_{-r,t}^D;\,Z_{r,t},Z_t).
+s_{r,t}^D=BR_r(s_{-r,t}^D;Z_{r,t},Z_t).
 $$
 
-Baseline state vectors:
+Baseline local state:
 
-$$
-Z_{r,t}=(A_{r,t}^N,H_{r,t}^N,B_{r,t},s_{r,t-1}),
-$$
-
-$$
-Z_t=(\{A_{r,t}^N,H_{r,t}^N,B_{r,t}\}_{r=1}^R,Y_t^N,r_t,r_t^g).
-$$
+$$Z_{r,t}=(H_{r,t}^N,A_{r,t}^N,B_{r,t},s_{r,t-1}).$$
 
 The first proof target is a symmetric two-region static game. The proof should
-compare the local FOC with the constrained planner's FOC and state sufficient
+compare the local FOC with the constrained-planner FOC and state sufficient
 conditions for:
 
 $$s^D>s^{CP}.$$
 
 ---
 
-## 6. Strategic interaction [Accepted baseline]
+## 7. Strategic complementarity [Accepted baseline]
 
-The baseline should report whether policy choices are strategic complements or
-substitutes in the two-region proof:
+Early-stage local competition for firms, projects, and mobile capital may imply
+strategic complementarity:
 
 $$
-\frac{\partial BR_r}{\partial s_{-r}}>0
-\quad\text{or}\quad
-\frac{\partial BR_r}{\partial s_{-r}}<0.
+\frac{\partial BR_r}{\partial s_{-r}}>0.
 $$
 
-The NEV story can allow both forces:
-
-- capital attraction and fear of losing firms can generate complementarity;
-- aggregate price compression can generate substitution.
-
-The first analytic model should state which force dominates under the sufficient
-conditions used to prove over-subsidization.
+This is a policy-race mechanism. It should be analytically distinguished from
+late-stage policy exit inertia.
 
 ---
 
-## 7. Equilibrium multiplicity and selection [Accepted baseline]
+## 8. Policy inertia and exit [Accepted baseline]
 
-Multiple Nash equilibria are possible. The baseline numerical discipline, once
-the proof is complete, is:
+Late-stage slow exit is not modeled as a baseline war-of-attrition game. It is a
+dynamic result generated by adjustment cost and local payoff terms:
+
+$$\frac{\chi_s}{2}(s_{r,t}-s_{r,t-1})^2.$$
+
+Potential sources of slow exit:
+
+1. sunk local commitments;
+2. local employment and fiscal-surplus concerns;
+3. debt and public-spending obligations;
+4. strategic concern that lowering support first may move firms elsewhere.
+
+War-of-attrition, stopping-time, mixed-strategy exit, and asymmetric exit timing
+are extensions.
+
+---
+
+## 9. Equilibrium multiplicity and selection [Accepted baseline]
+
+Once numerical work is allowed, the Nash-solution discipline is:
 
 ```text
 grid search -> root refinement -> unilateral deviation check -> selection rule
 ```
 
 If multiple stable equilibria remain, select the equilibrium closest to the
-previous-period policy state $s_{r,t-1}$. This is consistent with policy
-adjustment cost.
+previous-period policy state $s_{r,t-1}$.
 
 ---
 
-## 8. Policy exit [Accepted baseline]
+## 10. Open questions
 
-Policy exit is an important dynamic mechanism, but it is not yet a hard
-proposition. In the baseline notes it should be treated as a dynamic result to
-be proven or shown numerically after the static two-region comparison is closed.
-
-Potential sources of slow exit:
-
-1. adjustment cost $\chi_s$;
-2. sunk industrial-park and fiscal commitments;
-3. local employment and fiscal-surplus objectives;
-4. strategic concern that reducing $s_r$ first sends firms to other regions.
-
----
-
-## 9. Open questions
-
-1. What exact sufficient conditions on $\theta_y$, $\theta_e$, $\theta_f$,
-   $\phi$, $\kappa$, and CES elasticity imply $s^D>s^{CP}$?
-2. In the static proof, should local debt $B_r$ be fixed or chosen jointly with
-   policy?
-3. Should central transfers $T_{r,t}^C$ be set to zero in the baseline proof?
+1. What sufficient conditions on $\theta_y$, $\theta_e$, $\theta_f$, $\phi$,
+   $\chi_s$, $\kappa_B$, and CES elasticity imply $s^D>s^{CP}$?
+2. In the first static proof, should $B_r$ be fixed or chosen jointly with $s_r$?
+3. Which empirical object best measures fiscal pressure in $FiscalSurplus_{r,t}$?

@@ -34,6 +34,7 @@ foreach ($relativePath in $requiredFiles) {
 }
 
 $expectedModules = @(
+    "00_POST_REVISION_MODEL_SKELETON.md",
     "00_MASTER_model_memo.md",
     "01_research_mechanism.md",
     "02_environment_firms.md",

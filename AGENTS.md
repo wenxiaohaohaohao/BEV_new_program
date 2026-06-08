@@ -24,11 +24,13 @@
 
 Use this order when sources conflict:
 
-1. `model_notes/00_MASTER_model_memo.md`: accepted baseline.
-2. Module notes `model_notes/01_...08_*.md`: detailed specifications,
+1. `model_notes/00_POST_REVISION_MODEL_SKELETON.md`: closure contract for the
+   accepted baseline.
+2. `model_notes/00_MASTER_model_memo.md`: accepted baseline summary.
+3. Module notes `model_notes/01_...08_*.md`: detailed specifications,
    alternatives, and open questions.
-3. `model_notes/99_decision_log.md`: accepted/rejected decisions and reasons.
-4. `legacy/`: historical context only.
+4. `model_notes/99_decision_log.md`: accepted/rejected decisions and reasons.
+5. `legacy/`: historical context only.
 
 Do not treat a legacy draft as a current instruction. If useful legacy material
 is reintroduced, review it against the active model, place it in the relevant
@@ -45,7 +47,8 @@ Unless the decision log is deliberately changed, preserve these baseline choices
 - Involution is an equilibrium outcome, not an exogenous shock.
 - The planner internalizes learning spillovers, idle capacity, and aggregate
   misallocation.
-- The baseline equilibrium has the eight conditions stated in the MASTER memo.
+- The baseline equilibrium follows the closure conditions stated in the skeleton
+  and summarized in the MASTER memo.
 - Supply-chain IO, differentiated demand/BLP, soft budget constraints,
   international trade, and financial frictions remain extensions.
 
@@ -53,8 +56,9 @@ A substantive change to an invariant requires:
 
 1. updating the affected module;
 2. recording the accepted and rejected alternatives in `99_decision_log.md`;
-3. updating the MASTER only after the choice is resolved;
-4. updating code and paper text only after the notes are consistent.
+3. updating the skeleton when the closure contract changes;
+4. updating the MASTER only after the choice is resolved;
+5. updating code and paper text only after the notes are consistent.
 
 ## File responsibilities
 
@@ -78,8 +82,9 @@ A substantive change to an invariant requires:
 4. Check equations, notation, state variables, timing, and market clearing across
    all affected modules.
 5. Record resolved choices in the decision log with reasons.
-6. Update MASTER only with the accepted specification.
-7. Update paper or code after the active notes agree.
+6. Update the skeleton if the closure contract changes.
+7. Update MASTER only with the accepted specification.
+8. Update paper or code after the active notes agree.
 
 Do not invent citations, data availability, calibration targets, or empirical
 results. Verify literature and data claims from primary sources where possible.

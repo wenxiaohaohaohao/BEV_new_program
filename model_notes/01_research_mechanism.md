@@ -2,165 +2,151 @@
 
 ## 1. Purpose
 
-This module records:
-- The formal research question (including the "state-contingent" clarification).
-- The core mechanism chain with economic intuition for each step.
-- The formal definition of involution as an equilibrium outcome.
+This module records the paper's research question, the core mechanism, and the
+formal definition of involution after the third-round critique. It uses the
+constrained planner / centralized policy equilibrium as the main benchmark.
 
 ---
 
 ## 2. Research question [Accepted baseline]
 
-**Formal statement:**
+How does decentralized local industrial policy in a strategic emerging industry
+generate over-entry, excess capacity, price and profit compression, and aggregate
+capital misallocation after initially facilitating industrial upgrading?
 
-How does decentralized local industrial policy in a strategic emerging industry generate
-over-entry, excess capacity, price and profit compression, and aggregate capital misallocation
-after initially facilitating industrial upgrading?
+The paper does not argue that industrial policy is always harmful. The claim is
+state-contingent:
 
-**Clarification on "state-contingent":**
+- When learning externalities, market formation, and coordination externalities
+  are sufficiently large, coordinated industrial policy can raise welfare.
+- When the industry matures, capacity is high, and the marginal return to further
+  NEV expansion falls, the coordinated policy wedge should decline.
+- Decentralized local governments may maintain $s^D > s^{CP}$ because each
+  region values local NEV output, employment, and fiscal outcomes while only
+  partially internalizing national overcapacity and aggregate misallocation.
+- The main welfare object is $W^{CP}-W^D$, the gain from replacing decentralized
+  local policy competition with coordinated policy instruments.
 
-The paper does not argue that industrial policy is always harmful. The claim is:
-
-- When learning externalities, market-creation externalities, and coordination externalities
-  are sufficiently large, policy $s^P > 0$ is welfare-improving.
-- When the industry matures (technology accumulated, market created), the optimal policy
-  $s^P$ should decline toward zero.
-- Decentralized local governments, facing adjustment frictions and local incentive structures,
-  maintain $s^D > s^P$ even after the social optimum has declined.
-- The welfare loss is $W^P - W^D > 0$, and it grows as the gap $s^D - s^P$ persists.
-
-**What the paper is NOT arguing:**
-
-- That industrial policy should never exist.
-- That the NEV industry would have succeeded without policy.
-- That all local policies were wasteful from the start.
+The paper is not a no-policy benchmark exercise. A no-policy economy is useful
+as a counterfactual, but the main normative comparison is decentralized local
+policy versus centralized constrained policy.
 
 ---
 
 ## 3. Core mechanism [Accepted baseline]
 
-**Arrow chain:**
-
 $$
 \underbrace{\text{Local policy game}}_{\text{Markov-Nash}}
 \Rightarrow
-\underbrace{\text{Over-entry + excess capacity}}_{\text{H^{N,D} > H^{N,P}}}
+\underbrace{\text{Over-entry and excess NEV capacity}}_{H^{N,D}>H^{N,CP}}
 \Rightarrow
-\underbrace{\text{Price and profit compression}}_{\text{P\downarrow, \, \pi \to 0}}
+\underbrace{\text{CES-demand price compression}}_{P^{N,D}<P^{N,CP}}
 \Rightarrow
-\underbrace{\text{Low utilization + MPK gap}}_{\text{u^{N,D} < u^{N,P}, \, MPK^O > MPK^N}}
+\underbrace{\text{Low utilization and MPK gap}}_{u^{N,D}<u^{N,CP},\;MPK^{O,D}>MPK^{N,D}}
 \Rightarrow
-\underbrace{\text{Aggregate misallocation + welfare loss}}_{\text{W^P - W^D > 0}}
+\underbrace{\text{Aggregate misallocation and welfare loss}}_{W^{CP}-W^D>0}.
 $$
 
-**Step-by-step economic intuition:**
+**Step 1: Local policy game to excess capacity**
 
-**Step 1: Local policy game → over-entry + excess capacity**
+Each local government chooses $s_{r,t}$ to increase local NEV activity, employment,
+and fiscal surplus. The fiscal outlay $\phi s_{r,t}H_{r,t}^N$ is local, but the
+national price compression, cross-region spillovers, and aggregate MPK loss are
+not fully internalized by any single region. The decentralized FOC can therefore
+imply a higher policy wedge than the constrained-planner FOC.
 
-Each local government chooses $s_{r,t}$ to maximize local output, investment, employment,
-and tax base. Because the national excess-capacity cost is shared across all regions, each
-local government does not fully internalize the cost of its own policy.
-The Nash equilibrium policy $s^D$ exceeds the planner's optimum $s^P$.
-With $s^D > s^P$, firm entry and capacity investment are subsidized beyond the social optimum.
+**Step 2: Excess capacity to price and profit compression**
 
-**Step 2: Over-entry + excess capacity → price and profit compression**
+The final-good CES aggregator implies NEV relative demand. With the final-good
+price normalized to one,
 
-When aggregate capacity $H_t^{N,D}$ exceeds demand $D_t^N$, capacity utilization falls below one.
-Output is demand-constrained. The inverse demand function $P_t^N = \mathcal{D}(Q_t^N)$ implies
-that equilibrium price falls as quantity clears the demand constraint at a lower price.
-With marginal cost roughly unchanged (technology $A^N$ still accumulates), profit margins compress.
-This is the model's price-war mechanism.
+$$P_t^N=\eta_N\left(\frac{Y_t}{Y_t^N}\right)^{1/\varepsilon}.$$
 
-**Step 3: Price and profit compression → low utilization + MPK gap**
+As decentralized policy expands NEV quantity/capacity beyond the coordinated
+level, the CES demand system lowers the NEV relative price. Lower prices compress
+profits and reduce the return to additional NEV capacity.
 
-Idle capacity ($u^N < 1$) means capital in the NEV sector earns a lower return than in the outside
-sector. The marginal product of capital diverges: $MPK^O > MPK^N$. Capital is misallocated.
+**Step 3: Price compression to low utilization and MPK gap**
 
-**Step 4: MPK gap → aggregate misallocation + welfare loss**
+NEV installed capacity $H_{r,t}^N$ is the sector-specific capital stock. When
+aggregate NEV capacity exceeds demand, utilization falls:
 
-Standard misallocation accounting (Hsieh-Klenow type): TFP loss from MPK dispersion.
-The welfare loss $W^P - W^D$ measures the gain from switching from decentralized to planner policy.
+$$u_{r,t}^N = Q_{r,t}^N/H_{r,t}^N < 1.$$
+
+Lower utilization and price compression reduce the return on NEV capacity, so
+the decentralized equilibrium can feature $MPK^{N,D}<MPK^{O,D}$.
+
+**Step 4: MPK gap to welfare loss**
+
+The MPK gap is the model's aggregate misallocation object. Welfare loss is
+measured relative to the constrained planner:
+
+$$W^{CP}-W^D.$$
 
 ---
 
 ## 4. Definition of involution [Accepted baseline]
 
-**Involution is not an exogenous shock. It is an equilibrium outcome.**
-
-Formal definition (5-dimensional equilibrium gap vector):
+Involution is not an exogenous shock. It is the joint equilibrium pattern created
+by decentralized local industrial policy competition.
 
 $$
-\text{Involution}_t
-=
+\text{Involution}_t =
 \left(
-\underbrace{s_t^D - s_t^P}_{\text{policy gap}},\;
-\underbrace{H_t^{N,D} - H_t^{N,P}}_{\text{capacity gap}},\;
-\underbrace{u_t^{N,P} - u_t^{N,D}}_{\text{utilization gap}},\;
-\underbrace{MPK_t^{O,D} - MPK_t^{N,D}}_{\text{MPK gap}},\;
-\underbrace{W^P - W^D}_{\text{welfare gap}}
-\right)
+\underbrace{s_t^D-s_t^{CP}}_{\text{policy gap}},\;
+\underbrace{H_t^{N,D}-H_t^{N,CP}}_{\text{capacity gap}},\;
+\underbrace{u_t^{N,CP}-u_t^{N,D}}_{\text{utilization gap}},\;
+\underbrace{MPK_t^{O,D}-MPK_t^{N,D}}_{\text{MPK gap}},\;
+\underbrace{W^{CP}-W^D}_{\text{welfare gap}}
+\right).
 $$
 
-All five components are positive in decentralized equilibrium relative to the planner.
-They are jointly determined; each one is a consequence of the policy game, not an independent shock.
+The components are jointly determined by the policy game and private-sector
+responses. They should not be treated as independent shocks.
 
 ---
 
-## 5. Link to other modules
+## 5. Proposition discipline [Accepted baseline]
 
-- Mechanism details require firm behavior → `02_environment_firms.md`
-- Policy game formalization → `03_government_game.md`
-- Planner benchmark and equilibrium conditions → `04_planner_equilibrium.md`
-- Quantifying the welfare gap → `05_quantification_solution.md` and `06_counterfactuals.md`
+The main theoretical claims should be organized as follows:
+
+1. **Lemma 1:** A higher local policy wedge raises NEV installed capacity under
+   the firm's investment condition.
+2. **Lemma 2:** CES-derived demand implies NEV price compression when aggregate
+   NEV quantity expands relative to final demand.
+3. **Proposition 1:** Coordinated state-contingent policy is welfare-improving
+   when the marginal learning and coordination benefits exceed fiscal and
+   misallocation costs.
+4. **Proposition 2:** Under sufficient conditions on local payoff weights, fiscal
+   costs, and spillover/internalization gaps, the symmetric Markov-Nash policy
+   satisfies $s^D>s^{CP}$.
+5. **Proposition 3:** If $s^D>s^{CP}$ and NEV investment is increasing in the
+   wedge, decentralized policy generates higher NEV capacity, lower utilization,
+   and a lower NEV MPK relative to the coordinated benchmark.
+
+Slow policy exit is not a standalone hard proposition in the current baseline.
+It should be treated as a dynamic or numerical result unless a separate proof is
+written.
 
 ---
 
-## 6. Open questions
+## 6. Links to other modules
 
-*(Record unresolved issues here. Do not move to MASTER until resolved.)*
+- Firm behavior, CES demand, capacity, regional labor, and learning:
+  `02_environment_firms.md`
+- Local government payoff and Markov-Nash game: `03_government_game.md`
+- Constrained planner and equilibrium conditions: `04_planner_equilibrium.md`
+- Quantification discipline and proof-before-code sequence:
+  `05_quantification_solution.md`
+- Counterfactual definitions: `06_counterfactuals.md`
 
 ---
 
-## 7. Imported previous notes
+## 7. Open questions
 
-> Historical source:
-> [`内卷在模型中的位置_notes.md`](../legacy/model_drafts/内卷在模型中的位置_notes.md).
-
-### 7.1 核心判断
-
-内卷不是一个外生冲击，也不是一个单独的原始变量，而是地方分散化产业政策竞争生成的一组均衡结果。
-
-最简洁的逻辑链条是：
-
-\[
-\text{地方政府政策博弈}
-\Rightarrow
-\text{过度进入与产能扩张}
-\Rightarrow
-\text{价格/利润压缩}
-\Rightarrow
-\text{资本错配与福利损失}
-\]
-
-更正式地说：
-
-> **内卷 = 地方分散化政策竞争导致扩张型政策 wedge 过高，使 NEV 部门出现过度进入、过度产能、低价格、低利润、低利用率和低资本回报，并相对于 planner allocation 形成 aggregate misallocation。**
-
-### 7.2 六层内卷结构
-
-| 层面 | 内卷表现 | 模型对象 |
-|---|---|---|
-| 第一层：政策内卷 | 地方政府竞相加码 | $s_{r,t}^D > s_{r,t}^P$ |
-| 第二层：投资内卷 | 过度进入与产能扩张 | $N^{D} > N^{P}, H^{D} > H^{P}$ |
-| 第三层：产能内卷 | 产能利用率下降 | $u^N < 1$ |
-| 第四层：价格战内卷 | 价格下降、利润压缩 | $P^{N,D} < P^{N,P}, \pi^{N,D} < \pi^{N,P}$ |
-| 第五层：资本错配 | 跨部门 MPK 偏离 | $MPK^{N,D} < MPK^{O,D}$ |
-| 第六层：动态内卷 | 政策退出太慢 | $\|\Delta s^D\| < \|\Delta s^P\|$ |
-
-### 7.3 建议在论文中使用的英文表述
-
-> **Involution is not modeled as an exogenous shock. It is an equilibrium outcome of decentralized local industrial policy. In the model, local governments choose expansionary NEV policy wedges to maximize local output, investment, employment, and tax-base gains. Because they do not fully internalize national excess capacity, price compression, and cross-sector capital misallocation, the decentralized equilibrium features excessive policy support, over-entry, excessive capacity, lower utilization, lower NEV prices and profits, and a lower marginal product of capital in NEV relative to the outside sector. I refer to this joint equilibrium pattern as industrial involution.**
-
-### 7.4 建议在论文中使用的中文表述
-
-> **本文不把"内卷"设定为一个外生冲击，而是将其定义为地方分散化产业政策竞争的均衡结果。在模型中，地方政府选择扩张型 NEV 政策 wedge，以最大化本地产值、投资、就业和税基收益。由于地方政府不完全内部化全国层面的产能过剩、价格压缩和跨部门资本错配，分散均衡表现为政策支持过度、企业过度进入、产能过度扩张、产能利用率下降、NEV 价格和利润压缩，以及 NEV 部门资本边际回报低于其他部门。本文将这一组均衡现象定义为产业内卷。**
+1. What are the weakest sufficient conditions for $s^D>s^{CP}$ in the symmetric
+   two-region static model?
+2. Which object should measure the empirical utilization gap: physical capacity,
+   sales-to-capacity, or revenue-to-capacity?
+3. How should the paper report a first-best upper bound, if at all, without
+   confusing it with the main constrained-policy benchmark?

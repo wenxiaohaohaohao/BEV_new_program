@@ -2,113 +2,107 @@
 
 ## 1. Purpose
 
-This module records the full specification of each counterfactual:
-- Model change relative to baseline
-- Economic question being answered
-- Expected variables to report
-- Welfare decomposition
+This module records counterfactuals to run only after the baseline model is
+closed and the static two-region over-subsidization result is proven. The main
+benchmark is the constrained planner / centralized policy equilibrium.
 
 ---
 
-## 2. Counterfactual 1: No local policy competition [Accepted baseline]
+## 2. Counterfactual 1: No local industrial policy
 
-**Model change:** $s_{r,t} = 0$ for all $r, t$.
+**Model change:** Set $s_{r,t}=0$ for all regions and periods.
 
-**Economic question:**
-What would have happened to NEV output, capacity, utilization, and welfare
-if no region had offered industrial policy support?
+**Economic question:** What would NEV output, capacity, learning, utilization,
+and welfare look like without local policy support?
 
 **Expected outputs:**
-- NEV output path $Q_t^{N,\text{CF1}}$ vs. baseline
-- Technology accumulation path $A_t^{N,\text{CF1}}$
-- Welfare: $W^{\text{CF1}} - W^D$
 
-**Welfare decomposition:**
-Gain from eliminating misallocation vs. loss from foregone learning externalities.
+- NEV output and capacity paths.
+- Technology accumulation path.
+- Utilization and MPK gaps.
+- Welfare relative to decentralized equilibrium: $W^{CF1}-W^D$.
 
-**Interpretation:**
-If $W^{\text{CF1}} < W^D$: some policy was welfare-improving even in decentralized form.
-If $W^{\text{CF1}} > W^D$: the policy competition was net harmful even accounting for LBD.
+**Interpretation:** This is not the main normative benchmark. It separates the
+benefit of having some industrial policy from the cost of decentralized policy
+competition.
 
 ---
 
-## 3. Counterfactual 2: Centralized planner industrial policy [Accepted baseline]
+## 3. Counterfactual 2: Centralized constrained policy equilibrium
 
-**Model change:** Replace $s_{r,t}^D$ with $s_{r,t}^P = s^P(Z_{r,t}, Z_t)$ for all $r, t$.
+**Model change:** Replace decentralized local policies $s_{r,t}^D$ with the
+constrained planner's coordinated policy instruments $s_{r,t}^{CP}$.
+Households and firms continue to optimize privately.
 
-**Economic question:**
-What is the welfare gain from coordinating industrial policy at the national level,
-internalizing cross-region spillovers, excess capacity, and capital misallocation?
+**Economic question:** What is the welfare gain from coordinating industrial
+policy at the national level while keeping private decentralized responses?
 
 **Expected outputs:**
-- Welfare gap: $W^P - W^D$ (the key quantitative result)
-- Policy path comparison: $s_t^P$ vs. $s_t^D$
-- Capacity path comparison: $H_t^{N,P}$ vs. $H_t^{N,D}$
-- MPK gap comparison
 
-**Welfare decomposition:**
-Three components: (i) LBD gain, (ii) capacity cost reduction, (iii) misallocation reduction.
+- Welfare gap: $W^{CP}-W^D$.
+- Policy comparison: $s_t^{CP}$ versus $s_t^D$.
+- Capacity comparison: $H_t^{N,CP}$ versus $H_t^{N,D}$.
+- Utilization and MPK gap comparison.
+
+**Welfare decomposition:** learning gains, fiscal-cost savings, idle-capacity
+cost reduction, and misallocation reduction.
 
 ---
 
-## 4. Counterfactual 3: Subsidy cap or anti-duplication rule [Accepted baseline]
+## 4. Counterfactual 3: Subsidy cap or anti-duplication rule
 
-**Model change:** Impose $s_{r,t} \leq \bar{s}$ for all $r, t$,
-where $\bar{s}$ is calibrated to match the planner's early-phase optimum.
+**Model change:** Impose $s_{r,t}\leq\bar s$ for all regions and periods, where
+$\bar s$ is chosen relative to the constrained-planner early-phase policy.
 
-**Economic question:**
-Can a simple national subsidy cap replicate most of the welfare gain
-from full centralized coordination?
+**Economic question:** Can a simple national rule approximate the welfare gains
+from centralized coordination?
 
 **Expected outputs:**
-- $W^{\text{CF3}}$ relative to $W^P$ and $W^D$
-- Fraction of welfare gap $W^P - W^D$ captured by the cap
 
-**Interpretation:**
-This is the policy-relevant counterfactual: a cap is easier to implement than full coordination.
-If $W^{\text{CF3}} \approx W^P$, the cap is nearly first-best.
+- $W^{CF3}$ relative to $W^D$ and $W^{CP}$.
+- Fraction of $W^{CP}-W^D$ captured by the cap.
+- Capacity, utilization, and MPK effects.
 
 ---
 
-## 5. Counterfactual 4: Faster exit and consolidation [Accepted baseline]
+## 5. Counterfactual 4: Faster policy exit
 
-**Model change:** Reduce $\chi_s$ from calibrated value to $\chi_s^{\text{low}}$.
-(Reduce policy adjustment friction — simulate a world where local governments
-can credibly and rapidly withdraw policy.)
+**Model change:** Reduce policy adjustment cost $\chi_s$ or otherwise relax sunk
+policy commitments after overcapacity becomes observable.
 
-**Economic question:**
-How much welfare is lost due to policy inertia (slow exit)?
-What would the industry look like if exit were faster?
+**Economic question:** How much welfare is lost because decentralized policy
+declines too slowly?
 
 **Expected outputs:**
-- Welfare gain from faster exit: $W^{\text{CF4}} - W^D$
-- Number of surviving firms (consolidation)
-- Capacity utilization path
+
+- Welfare gain from faster exit: $W^{CF4}-W^D$.
+- Policy path comparison.
+- Capacity utilization and consolidation outcomes.
+
+**Status:** This counterfactual should be treated as a dynamic result after the
+static proof, not as a hard proposition before proof.
 
 ---
 
-## 6. Counterfactual 5: Expansionary vs. productivity-enhancing support [Accepted baseline]
+## 6. Counterfactual 5: Expansionary versus productivity-enhancing support
 
-**Model change:** Replace expansionary wedge $s_{r,t}$ (which lowers capital cost)
-with a productivity-enhancing policy (which directly increases $A_{r,t}^N$
-at the same fiscal cost).
+**Model change:** Replace the expansionary capacity wedge with a policy that
+raises NEV productivity $A_{r,t}^N$ at comparable fiscal cost.
 
-**Economic question:**
-Is the form of industrial policy important? Would a productivity-targeted policy
-(e.g., R&D subsidies, technology standards) outperform the capacity-expansion wedge?
+**Economic question:** Is the problem mainly the scale of support, or the form of
+support?
 
 **Expected outputs:**
-- Welfare comparison: expansionary vs. productivity-targeted at same fiscal cost
-- Technology accumulation paths
-- Capacity and utilization comparison
 
-**Interpretation:**
-This counterfactual directly addresses whether the problem is the *scale* of policy
-or the *form* of policy.
+- Welfare comparison between expansionary and productivity-enhancing support.
+- Technology, capacity, utilization, and MPK paths.
+- Fiscal-cost comparison using the same budget discipline.
 
 ---
 
 ## 7. Open questions
 
-*(E.g.: For CF2, how to compute the planner's policy function numerically?
-For CF5, how to calibrate the alternative policy instrument?)*
+1. How should $\bar s$ be chosen for the cap counterfactual?
+2. What empirical moments discipline the productivity-enhancing policy in CF5?
+3. Should the first-best upper bound $W^{FB}$ be reported in an appendix
+   counterfactual?

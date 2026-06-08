@@ -2,147 +2,210 @@
 
 ## 1. Purpose
 
-This module records:
-- The social planner's optimization problem (normative benchmark).
-- The full equilibrium definition (8 conditions).
-
-The local government game is in Module 3.
+This module defines the benchmark objects and equilibrium conditions after the
+third-round critique. The main normative benchmark is the constrained planner,
+not a first-best allocation planner.
 
 ---
 
-## 2. Planner problem [Accepted baseline]
+## 2. Three benchmark objects [Accepted baseline]
 
-The planner maximizes aggregate household welfare:
+### 2.1 Decentralized local equilibrium
 
-$$\max_{\{s_{r,t}^P, I_{r,t}^H, K_{r,t}^j\}} \sum_{t=0}^{\infty} \beta^t U(C_t, L_t)$$
+In the decentralized equilibrium, local governments choose policy wedges
+simultaneously in a Markov-Nash game:
 
-subject to:
-- Production function constraints for all firms
-- Capacity law of motion: $H_{r,t+1}^N = (1-\delta_H)H_{r,t}^N + I_{r,t}^H$
-- Learning law of motion: $A_{r,t+1}^N = (1-\delta_A)A_{r,t}^N + \psi_L(Q_{r,t}^N)^\nu + \psi_G(\bar{Q}_t^N)^\nu$
-- Product market demand: $P_t^N = \mathcal{D}(Q_t^N)$
-- Government budget constraint
-- Economy-wide resource constraint
+$$
+s_{r,t}^D=BR_r(s_{-r,t}^D;Z_{r,t},Z_t).
+$$
 
-**The planner is NOT a no-policy benchmark.**
+Households and firms optimize, local labor markets clear, local budgets hold, and
+capacity and productivity evolve according to Module 2.
 
-The planner chooses state-contingent policy:
+### 2.2 Constrained planner / centralized policy equilibrium
 
-$$s_{r,t}^P = s^P(Z_{r,t}, Z_t)$$
+The constrained planner chooses the policy instruments
 
-**What the planner internalizes that local governments do not:**
+$$\{s_{r,t}^{CP}\}_{r=1}^R$$
 
-1. Cross-region learning spillovers ($\psi_G$ term in LBD)
-2. National excess capacity cost: when $H_t^{N,D} > D_t^N$, idle capacity wastes resources
-3. National capital misallocation: $MPK_t^O - MPK_t^N > 0$ implies TFP loss
+to maximize aggregate household welfare, but households and firms still make
+their own decentralized decisions. The planner does not directly choose every
+capital, capacity, labor, output, or entry allocation.
 
-**Planner's state-contingent optimum:**
+A compact representation is:
 
-In the early phase (large learning externality, low $A^N$, low $H^N$): $s^P > 0$
+$$
+\max_{\{s_{r,t}^{CP}\}}
+\sum_{t=0}^{\infty}\beta^t U(C_t)
+$$
 
-In the mature phase (high $H^N/D^N$, high $MPK^O - MPK^N$): $s^P \to 0$
+subject to the private-equilibrium mapping induced by the policy sequence:
 
-The transition point is the key quantitative result. The decentralized equilibrium crosses
-this transition point too slowly (due to $\chi_s > 0$ and local incentives).
+$$
+(C_t,Y_t^N,Y_t^O,H_{r,t}^N,A_{r,t}^N,L_{r,t}^j,w_{r,t},P_t^N)
+\in \mathcal E(\{s_{r,t}^{CP}\}).
+$$
 
----
+The constrained planner internalizes cross-region spillovers, national price
+compression, excess capacity, fiscal costs, and aggregate MPK losses.
 
-## 3. Full equilibrium: 8 conditions [Accepted baseline]
+### 2.3 First-best planner
 
-A decentralized equilibrium is a sequence of prices, quantities, and policies
-$\{P_t^j, Q_{r,t}^j, K_{r,t}^j, L_{r,t}^j, H_{r,t}^N, A_{r,t}^N, s_{r,t}^D\}$ satisfying:
+A first-best planner that directly chooses allocations can be used only as an
+appendix upper bound:
 
-**Condition 1: Household FOC**
-Euler equation for consumption-saving and intratemporal labor supply condition.
+$$W^{FB}\geq W^{CP}\geq W^D.$$
 
-**Condition 2: Firm FOC**
-Capital demand: $MPK_{r,t}^j = R_{r,t}^j$ for $j \in \{N, O\}$
-Labor demand: $MPN_{r,t}^j = W_{r,t}$
-Capacity investment: $\text{(Tobin's Q condition for } I_{r,t}^H\text{)}$
-
-**Condition 3: Local government FOC**
-
-$$\frac{\partial \mathcal{L}_r}{\partial s_{r,t}} = 0$$
-
-(First-order condition of the local government's Lagrangian with respect to $s_{r,t}$)
-
-**Condition 4: Markov-Nash best-response**
-
-$$s_{r,t}^D = BR_r(s_{-r,t}^D; Z_{r,t}, Z_t) \quad \forall r$$
-
-**Condition 5: Market clearing**
-
-Goods: $Y_t = C_t + \sum_r (I_{r,t}^K + I_{r,t}^H) + \text{costs}$
-Labor: $\sum_r (L_{r,t}^N + L_{r,t}^O) = L_t$ (household labor supply)
-Capital: $\sum_r (K_{r,t}^N + K_{r,t}^O) = K_t$
-
-**Condition 6: Laws of motion**
-
-$$H_{r,t+1}^N = (1-\delta_H)H_{r,t}^N + I_{r,t}^H$$
-
-$$A_{r,t+1}^N = (1-\delta_A)A_{r,t}^N + \psi_L(Q_{r,t}^N)^\nu + \psi_G(\bar{Q}_t^N)^\nu$$
-
-**Condition 7: Government budget constraint**
-
-Local government's policy cost $\frac{\kappa}{2}s_{r,t}^2$ must be financed
-(lump-sum tax on households, or central transfer — to be specified in calibration).
-
-**Condition 8: Resource constraint**
-
-$$Y_t = C_t + \sum_r I_{r,t}^H + I_t^K + \frac{\kappa}{2} \sum_r s_{r,t}^2
-+ \text{AdjCost}_t + \text{IdleCost}_t$$
+It is not the main policy benchmark.
 
 ---
 
-## 4. Open questions
+## 3. Decentralized equilibrium conditions [Accepted baseline]
 
-*(E.g.: How to specify the government budget constraint empirically?
-Is capital fully mobile across regions in the baseline?)*
+A decentralized equilibrium is a sequence of prices, quantities, policies, and
+states satisfying the following conditions.
+
+**Condition 1: Household saving**
+
+The representative household chooses consumption and saving. The usual Euler
+condition pins down the economy-wide return on saving.
+
+**Condition 2: Regional labor clearing**
+
+Labor is regionally segmented:
+
+$$L_{r,t}^N+L_{r,t}^O=\bar L_r.$$
+
+The regional wage $w_{r,t}$ clears region $r$'s labor market.
+
+**Condition 3: Firm optimality**
+
+Outside-sector firms choose $K_{r,t}^O$ and $L_{r,t}^O$ given $r_t$ and
+$w_{r,t}$. NEV firms choose capacity investment $I_{r,t}^H$, utilization, and
+labor given:
+
+$$R_{r,t}^N=r_t-\phi s_{r,t}.$$
+
+The marginal return to NEV installed capacity defines $MPK_{r,t}^N$.
+
+**Condition 4: CES-derived product demand**
+
+The final-good producer's FOC implies:
+
+$$
+P_t^N=\eta_N\left(\frac{Y_t}{Y_t^N}\right)^{1/\varepsilon}.
+$$
+
+There is no separate baseline inverse demand equation.
+
+**Condition 5: Local government budget**
+
+Each local government budget satisfies:
+
+$$
+\phi s_{r,t}H_{r,t}^N
++ G_{r,t}
++ \mathcal C_B(B_{r,t+1})
+=
+\tau_r Y_{r,t}
++ B_{r,t+1}
+- (1+r_t^g)B_{r,t}
++ T_{r,t}^C.
+$$
+
+**Condition 6: Local government optimality**
+
+For each region, $s_{r,t}^D$ solves the local objective in Module 3 given other
+regions' policies and the private-sector equilibrium response.
+
+**Condition 7: Markov-Nash best response**
+
+$$
+s_{r,t}^D=BR_r(s_{-r,t}^D;Z_{r,t},Z_t)
+\quad \forall r.
+$$
+
+**Condition 8: Laws of motion and resource feasibility**
+
+NEV installed capacity evolves as:
+
+$$
+H_{r,t+1}^N=(1-\delta_H)H_{r,t}^N+I_{r,t}^H.
+$$
+
+NEV productivity evolves as:
+
+$$
+A_{r,t+1}^N =
+A_{r,t}^N
++ (\bar A^N-A_{r,t}^N)
+\left[
+\psi_L (Y_{r,t}^N)^\nu
++ \psi_G \left(\sum_{r'\neq r}Y_{r',t}^N\right)^\nu
+\right].
+$$
+
+The resource constraint uses $I^H$ as the only NEV capital/capacity investment
+flow and includes the fiscal outlay $\phi s_{r,t}H_{r,t}^N$.
 
 ---
 
-## 5. Imported previous notes
+## 4. Constrained planner FOC target [Accepted baseline]
 
-> Historical source:
-> [`NEV_产业政策_地方竞争_模型整合notes.md`](../legacy/model_drafts/NEV_产业政策_地方竞争_模型整合notes.md),
-> Sections 9-12 (Government, Planner, Equilibrium, and Market clearing).
+The core theoretical task is to compare:
 
-### 5.1 市场出清与一般均衡闭合 (from 整合 notes Sec. 11)
+$$
+\frac{\partial \mathcal L_r}{\partial s_r}=0
+$$
 
-资本市场：$\sum_{r,j,i}k^j_{i,r,t}+\sum_r H^N_{r,t}=K_t$，或将产能资本并入部门资本，简化为 $\sum_{r,j}K^j_{r,t}=K_t$
+with the constrained planner's FOC:
 
-劳动市场：$\sum_{r,j,i}l^j_{i,r,t}=L_t$
+$$
+\frac{\partial W(\mathcal E(s_1,\ldots,s_R))}{\partial s_r}=0.
+$$
 
-NEV 产品市场：$\sum_r Q^N_{r,t}=D^N_t(P^N_t)$，或在存在过剩产能时 $Q^N_t=\min\{\sum_r H^N_{r,t},D^N_t(P^N_t)\}$
+The proof should identify the extra terms internalized by $CP$ but not by an
+individual local government:
 
-最终品市场 / 资源约束：$Y_t=C_t+I^K_t+\sum_r I^H_{r,t}+PolicyCost_t+AdjustmentCost_t+IdleCost_t$
+- national price compression under CES demand;
+- other-region effects of capacity expansion;
+- cross-region learning spillovers;
+- aggregate MPK loss from excessive NEV capacity;
+- full fiscal and debt costs.
 
-有市场出清，模型才是一般均衡；否则只是局部均衡或行业模型。
+The first analytic milestone is a symmetric two-region static proof of sufficient
+conditions for:
 
-### 5.2 均衡定义 (from 整合 notes Sec. 12)
+$$s^D>s^{CP}.$$
 
-**Decentralized equilibrium:** 给定初始状态 $\{K_0, H^N_{r,0}, A^N_{r,0}, s_{r,-1}, \mu_{r,0}(z)\}_r$，一个 decentralized equilibrium 是一组路径 $\{C_t, K_{t+1}, L_t, w_{r,t}, r_t, p^N_t, p^O_t, s_{r,t}, N^N_{r,t}, H^N_{r,t}, Q^N_{r,t}\}_{t=0}^{\infty}$ 满足：
+---
 
-1. 家庭最大化效用
-2. 企业选择进入、退出、资本、劳动和产能投资以最大化价值
-3. 地方政府在给定其他地区政策和 aggregate prices 下最大化本地目标
-4. 劳动市场、资本市场和产品市场清算
-5. 政府预算约束满足
-6. 产能和生产率动态满足
-7. 每个地区政府的政策是 Nash equilibrium：$s^D_{r,t}=BR_r(s^D_{-r,t})$
+## 5. Lemmas and propositions [Accepted baseline]
 
-**Planner allocation:** 与 decentralized 的区别不是有没有产业政策，而是：Planner 会继续支持存在学习外部性和比较优势的地区/企业，但会限制低效率重复进入和过度产能。
+The current proposition structure is:
 
-### 5.3 核心命题 (from 整合 notes Sec. 13)
+1. **Lemma 1:** A higher local policy wedge raises NEV installed capacity through
+   the firm's investment condition.
+2. **Lemma 2:** CES-derived demand implies NEV price compression when aggregate
+   NEV quantity expands.
+3. **Proposition 1:** Coordinated state-contingent policy raises welfare when
+   marginal learning and coordination benefits exceed fiscal and misallocation
+   costs.
+4. **Proposition 2:** Under stated sufficient conditions, decentralized
+   Markov-Nash policy exceeds constrained-planner policy:
+   $s^D>s^{CP}$.
+5. **Proposition 3:** Given Proposition 2, decentralized equilibrium features
+   higher NEV installed capacity, lower utilization, a lower NEV MPK, and lower
+   welfare relative to $CP$.
 
-**Proposition 1:** 当 NEV 部门存在较强学习外部性、市场培育约束和产业链协同不足时，适度产业政策可以提高动态福利。
+Slow policy exit remains a dynamic result unless separately proven.
 
-**Proposition 2:** 若地方政府重视本地 NEV 产值、投资、就业和税基，但不完全内部化全国性产能过剩和资本错配，则 $s^D_{r,t} > s^P_{r,t}$，尤其在 $H^N_t > D^N_t$ 或 $MPK^N_t < MPK^O_t$ 的状态下。
+---
 
-**Proposition 3:** 由于政策降低进入阈值或有效资本成本，分散均衡相对 planner 有过度的进入、产能和更低的利用率。
+## 6. Open questions
 
-**Proposition 4:** 在逆需求下，若地方政策导致总供给/产能相对需求过快增长，则价格下降、利润压缩、亏损退出压力增大。
-
-**Proposition 5:** 若分散均衡使 NEV 部门资本边际回报低于其他部门，则存在资本错配，可能导致 TFP 和福利下降。
-
-**Proposition 6:** 当产能利用率低于阈值或 NEV 部门 MPK 低于 outside sector 时，planner 会更快降低扩张型政策。原因包括：本地投资/就业/税基收益、全国过剩产能未被完全内部化、政策调整成本、招商承诺/园区投资/地方债务惯性、地方政府不愿在竞争中率先退出。
+1. Which minimal static assumptions produce a transparent FOC comparison?
+2. Should the first proof abstract from local borrowing or include a reduced-form
+   fiscal-surplus term?
+3. How should $W^{FB}$ be reported, if at all, without shifting attention away
+   from $W^{CP}-W^D$?

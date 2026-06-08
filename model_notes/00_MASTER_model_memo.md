@@ -4,9 +4,9 @@
 State-Contingent Industrial Policy, Local Competition, and Aggregate Misallocation:
 Evidence from China's NEV Industry
 
-**Status:** Baseline model memo.
-This file records the current accepted model only.
-Detailed discussions, alternatives, and unresolved issues are stored in module-specific notes.
+**Status:** Accepted baseline model memo after third-round critique integration.
+Detailed discussion, alternatives, and unresolved issues remain in module-specific
+notes.
 
 **Last updated:** 2026-06-08
 
@@ -14,228 +14,289 @@ Detailed discussions, alternatives, and unresolved issues are stored in module-s
 
 ## 1. Research question
 
-How does decentralized local industrial policy in a strategic emerging industry generate
-over-entry, excess capacity, price and profit compression, and aggregate capital misallocation
-after initially facilitating industrial upgrading?
+How does decentralized local industrial policy in a strategic emerging industry
+generate over-entry, excess capacity, price and profit compression, and aggregate
+capital misallocation after initially facilitating industrial upgrading?
+
+The paper is not a no-policy critique of industrial policy. It studies whether
+decentralized local policy competition pushes expansionary support above the
+state-contingent level chosen by a constrained centralized policy benchmark.
 
 ---
 
 ## 2. Core mechanism
 
 $$
-\text{local policy game}
+\text{local Markov-Nash policy game}
 \Rightarrow
-\text{over-entry + excess capacity}
+\text{excess NEV installed capacity}
 \Rightarrow
-\text{price and profit compression}
+\text{CES-demand price compression}
 \Rightarrow
-\text{low utilization + MPK gap}
+\text{low utilization and MPK gap}
 \Rightarrow
-\text{aggregate misallocation + welfare loss}
+\text{aggregate misallocation and welfare loss}.
 $$
 
-Industrial policy is not assumed to be always harmful. It is **state-contingent**.
-The policy wedge may be welfare-improving when learning, market creation, and coordination
-externalities are strong. The distortion arises when decentralized local governments
-overuse expansionary policy relative to the planner.
+Industrial policy can be welfare-improving in early states with strong learning
+and coordination benefits. The distortion arises when local governments continue
+to expand NEV capacity beyond the constrained-planner policy level.
 
 ---
 
 ## 3. Environment
 
-- **Time:** discrete, $t = 0, 1, 2, \ldots$
-- **Regions:** $r = 1, \ldots, R$
-- **Sectors:** $j \in \{N, O\}$, where $N$ = NEV sector, $O$ = outside sector
-- **Agents:**
-  1. Representative household
-  2. Heterogeneous firms (idiosyncratic productivity $z$)
-  3. Local governments (one per region)
-  4. Social planner (normative benchmark)
+- **Time:** discrete, $t=0,1,2,\ldots$.
+- **Regions:** $r=1,\ldots,R$; the first analytic model uses two symmetric
+  regions.
+- **Sectors:** $N$ for NEV and $O$ for outside manufacturing.
+- **Agents:** representative household, firms, local governments, and a
+  constrained centralized planner.
 
 ---
 
 ## 4. Policy wedge
 
-The baseline policy object is a single local expansionary policy wedge:
+The baseline policy object is one local expansionary policy wedge:
 
-$$s_{r,t} \geq 0$$
+$$s_{r,t}\geq0.$$
 
-It summarizes all local NEV support: subsidies, land grants, industrial funds, credit support,
-investment facilitation, tax preferences, infrastructure support, and local industrial parks.
-The baseline model does not separately model individual policy instruments.
+It summarizes local NEV support such as subsidies, land support, credit support,
+industrial funds, tax preferences, infrastructure, and investment facilitation.
+The wedge lowers the effective cost of NEV installed capacity:
 
----
+$$R_{r,t}^N=r_t-\phi s_{r,t}.$$
 
-## 5. Household and final good
+The associated local fiscal outlay is:
 
-Representative household maximizes:
-
-$$\sum_{t=0}^{\infty} \beta^t U(C_t, L_t)$$
-
-Final good aggregator (CES):
-
-$$Y_t = \left[ \eta \left(Y_t^N\right)^{\frac{\varepsilon-1}{\varepsilon}}
-+ (1-\eta) \left(Y_t^O\right)^{\frac{\varepsilon-1}{\varepsilon}} \right]^{\frac{\varepsilon}{\varepsilon-1}}$$
-
-Resource constraint:
-
-$$Y_t = C_t + I_t^K + \sum_r I_{r,t}^H + \text{PolicyCost}_t + \text{AdjCost}_t + \text{IdleCost}_t$$
+$$SubsidyOutlay_{r,t}=\phi s_{r,t}H_{r,t}^N.$$
 
 ---
 
-## 6. Firms
+## 5. Household, final good, and labor
 
-**Production function:**
+The representative household consumes the final good, owns firms and financial
+claims, and supplies savings. The household problem pins down the intertemporal
+Euler condition.
 
-$$y_{i,r,t}^j = z_{i,t} \cdot A_{r,t}^j \cdot (k_{i,r,t}^j)^{\alpha_j} (l_{i,r,t}^j)^{1-\alpha_j}$$
+Regional labor is fixed in the baseline:
 
-**Capital cost wedge (baseline):**
+$$L_{r,t}^N+L_{r,t}^O=\bar L_r.$$
 
-$$R_{r,t}^O = r_t, \qquad R_{r,t}^N = r_t - \phi \, s_{r,t}$$
+The regional wage $w_{r,t}$ clears the local labor market.
 
-**Entry cost (extension candidate):**
+Final output is CES:
 
-$$F_{r,t}^N = F_0^N - \phi_F \, s_{r,t}$$
+$$
+Y_t =
+\left[
+\eta_N(Y_t^N)^{\frac{\varepsilon-1}{\varepsilon}}
++ \eta_O(Y_t^O)^{\frac{\varepsilon-1}{\varepsilon}}
+\right]^{\frac{\varepsilon}{\varepsilon-1}},
+\qquad \eta_N+\eta_O=1.
+$$
 
-**Capacity dynamics:**
+With the final-good price normalized to one, NEV relative price is derived from
+the CES FOC:
 
-$$H_{r,t+1}^N = (1 - \delta_H) H_{r,t}^N + I_{r,t}^H$$
+$$
+P_t^N=\eta_N\left(\frac{Y_t}{Y_t^N}\right)^{1/\varepsilon}.
+$$
 
-**Capacity utilization:**
+---
 
-$$u_{r,t}^N = \frac{Q_{r,t}^N}{H_{r,t}^N} \leq 1$$
+## 6. Firms and NEV installed capacity
 
-**Product market (inverse demand):**
+Outside-sector output is:
 
-$$P_t^N = \mathcal{D}(Q_t^N), \qquad \mathcal{D}'(Q_t^N) < 0$$
+$$
+Y_{r,t}^O =
+A_{r,t}^O(K_{r,t}^O)^{\alpha_O}(L_{r,t}^O)^{1-\alpha_O}.
+$$
 
-**Firm value and exit:**
+In the NEV sector, installed capacity $H_{r,t}^N$ is the sector-specific capital
+stock. There is no separate baseline NEV capital stock with a separate
+accumulation equation.
 
-$$V(z) = \max \left\{ 0, \; \pi(z) + \beta \, \mathbb{E}[V(z')] \right\}$$
+Potential NEV output is:
+
+$$
+\tilde Y_{r,t}^N =
+A_{r,t}^N(H_{r,t}^N)^{\alpha_N}(L_{r,t}^N)^{1-\alpha_N}.
+$$
+
+Realized output and utilization satisfy:
+
+$$Y_{r,t}^N=u_{r,t}^N H_{r,t}^N,\qquad 0\leq u_{r,t}^N\leq1.$$
+
+Installed capacity evolves as:
+
+$$H_{r,t+1}^N=(1-\delta_H)H_{r,t}^N+I_{r,t}^H.$$
+
+NEV investment appears only through $I_{r,t}^H$ in the resource constraint.
 
 ---
 
 ## 7. Learning externalities
 
-$$A_{r,t+1}^N = (1 - \delta_A) A_{r,t}^N
-+ \psi_L \left(Q_{r,t}^N\right)^\nu
-+ \psi_G \left(\bar{Q}_t^N\right)^\nu$$
+NEV productivity evolves without mechanical knowledge depreciation:
 
-where $\bar{Q}_t^N = \frac{1}{R} \sum_r Q_{r,t}^N$ is the national average output.
-$\psi_L$ captures local LBD; $\psi_G$ captures cross-region knowledge spillovers.
+$$
+A_{r,t+1}^N =
+A_{r,t}^N
++(\bar A^N-A_{r,t}^N)
+\left[
+\psi_L(Y_{r,t}^N)^\nu
++\psi_G\left(\sum_{r'\neq r}Y_{r',t}^N\right)^\nu
+\right].
+$$
+
+Own-region output drives local learning. Other-region output drives spillovers.
+The frontier-gap term makes learning diminish as a region approaches $\bar A^N$.
 
 ---
 
 ## 8. Local government problem
 
-Local government $r$ chooses $s_{r,t}$ to maximize:
+Each local government chooses $s_{r,t}$ to maximize a reduced-form payoff:
 
-$$\sum_{t=0}^{\infty} \beta_g^t \left[
-\omega_Y Y_{r,t}^N + \omega_I I_{r,t}^H + \omega_E L_{r,t}^N + \omega_T \text{Tax}_{r,t}
-- \frac{\kappa}{2} s_{r,t}^2
-- \frac{\chi_s}{2} (s_{r,t} - s_{r,t-1})^2
-\right]$$
+$$
+\mathcal L_r
+=
+\sum_{t=0}^{\infty}\beta^t
+\left[
+\theta_yY_{r,t}^N
++\theta_eL_{r,t}^N
++\theta_fFiscalSurplus_{r,t}
+-\frac{\kappa}{2}s_{r,t}^2
+-\frac{\chi_s}{2}(s_{r,t}-s_{r,t-1})^2
+\right].
+$$
 
-Local governments internalize local output, investment, employment, and tax base.
-They do **not** fully internalize national excess capacity and aggregate capital misallocation.
+The baseline sets $\beta_g=\beta$. The quadratic $\kappa$ term is an
+administrative, political, or distortionary cost, not the subsidy outlay.
+
+Local fiscal surplus is disciplined by:
+
+$$
+\phi s_{r,t}H_{r,t}^N
++G_{r,t}
++\mathcal C_B(B_{r,t+1})
+=
+\tau_rY_{r,t}
++B_{r,t+1}
+-(1+r_t^g)B_{r,t}
++T_{r,t}^C.
+$$
 
 ---
 
-## 9. Planner problem
+## 9. Constrained planner benchmark
 
-The planner maximizes:
+The main normative benchmark is the constrained planner / centralized policy
+equilibrium. It chooses policy instruments:
 
-$$\max \sum_{t=0}^{\infty} \beta^t U(C_t, L_t)$$
+$$\{s_{r,t}^{CP}\}_{r=1}^R,$$
 
-subject to all production, capacity, learning, demand, budget, and resource constraints.
+while households and firms continue to optimize privately. The constrained
+planner internalizes cross-region learning spillovers, CES price compression,
+excess capacity, fiscal costs, and aggregate MPK losses.
 
-The planner is **not** a no-policy benchmark. It chooses state-contingent policy:
+A first-best planner that directly chooses allocations is only an appendix upper
+bound:
 
-$$s_{r,t}^P = s^P(Z_{r,t}, Z_t)$$
-
-internalizing learning externalities, idle capacity costs, and capital misallocation.
+$$W^{FB}\geq W^{CP}\geq W^D.$$
 
 ---
 
-## 10. Decentralized equilibrium (Markov-Nash)
+## 10. Decentralized equilibrium
 
-The decentralized equilibrium is a Markov-Nash equilibrium among local governments:
+The decentralized equilibrium is a simultaneous Markov-Nash policy game among
+local governments:
 
-$$s_{r,t}^D = BR_r(s_{-r,t}^D;\, Z_{r,t},\, Z_t)$$
+$$
+s_{r,t}^D=BR_r(s_{-r,t}^D;Z_{r,t},Z_t).
+$$
 
-**Full equilibrium: 8 conditions**
+The full equilibrium requires:
 
-1. Household FOC (Euler equation, labor supply)
-2. Firm FOC (capital, labor, investment)
-3. Local government FOC (policy wedge)
-4. Markov-Nash best-response condition
-5. Goods and factor market clearing
-6. Capacity and productivity laws of motion
-7. Government budget constraint
-8. Economy-wide resource constraint
+1. household saving optimality;
+2. regional labor-market clearing;
+3. firm optimality and NEV capacity investment;
+4. CES-derived NEV demand;
+5. local government budget constraints;
+6. local government policy optimality;
+7. Markov-Nash best responses;
+8. capacity, productivity, and resource feasibility.
 
 ---
 
 ## 11. Definition of involution
 
-Involution is **not** an exogenous shock. It is an equilibrium outcome of decentralized local industrial policy.
+Involution is the equilibrium pattern generated by decentralized local industrial
+policy competition:
 
-The five equilibrium gaps that jointly define involution:
-
-$$\text{Involution}_t = \left(
-s_t^D - s_t^P, \quad
-H_t^{N,D} - H_t^{N,P}, \quad
-u_t^{N,P} - u_t^{N,D}, \quad
-MPK_t^{O,D} - MPK_t^{N,D}, \quad
-W^P - W^D
-\right)$$
-
----
-
-## 12. Main propositions
-
-1. State-contingent industrial policy can raise welfare when learning and coordination externalities are strong.
-2. Decentralized local governments overuse expansionary policy relative to the planner: $s^D > s^P$.
-3. Excessive policy support generates over-entry and excess capacity.
-4. Overcapacity compresses prices and profits (the price-war mechanism).
-5. Decentralized policy generates aggregate capital misallocation and welfare loss.
-6. Policy exits too slowly under local adjustment frictions ($\chi_s > 0$).
+$$
+\text{Involution}_t=
+\left(
+s_t^D-s_t^{CP},\;
+H_t^{N,D}-H_t^{N,CP},\;
+u_t^{N,CP}-u_t^{N,D},\;
+MPK_t^{O,D}-MPK_t^{N,D},\;
+W^{CP}-W^D
+\right).
+$$
 
 ---
 
-## 13. Quantification moments
+## 12. Main theoretical sequence
 
-| Parameter / object | Moment | Data source / proxy |
-|---|---|---|
-| $\phi$ | policy-investment elasticity | policy text, investment, capacity |
-| $\phi_F$ | policy-entry elasticity | firm entry, registrations |
-| $\delta_H$ | capacity persistence | capacity utilization data |
-| $\varepsilon_D$ | demand elasticity | prices and sales |
-| $\psi_L, \psi_G$ | learning externality | cumulative output, TFP, cost decline |
-| $\rho_s, \chi_s$ | policy inertia | policy continuation after overcapacity |
-| MPK gap | capital misallocation | firm-level financial data |
-| fiscal cost | subsidy cost | fiscal reports, funds, land, credit proxies |
+1. **Lemma 1:** A higher local policy wedge raises NEV installed capacity.
+2. **Lemma 2:** CES-derived demand implies price compression when NEV quantity
+   expands.
+3. **Proposition 1:** Coordinated state-contingent policy can raise welfare when
+   marginal learning and coordination benefits exceed fiscal and misallocation
+   costs.
+4. **Proposition 2:** Under stated sufficient conditions, decentralized
+   Markov-Nash policy exceeds constrained-planner policy: $s^D>s^{CP}$.
+5. **Proposition 3:** Given over-subsidization, decentralized equilibrium
+   generates excess NEV capacity, lower utilization, an MPK gap, and welfare loss.
 
----
-
-## 14. Counterfactuals (summary)
-
-1. No local policy competition
-2. Centralized planner industrial policy
-3. Subsidy cap or anti-duplication rule
-4. Faster exit and consolidation
-5. Expansionary vs. productivity-enhancing support
-
-*(Full specification in `06_counterfactuals.md`)*
+Policy exit that is too slow is a dynamic or numerical result unless separately
+proven.
 
 ---
 
-## 15. Solution strategy (phases)
+## 13. Quantification discipline
 
-1. Steady-state analytic model (symmetric 2-region)
-2. Deterministic transition dynamics
-3. Local Nash computation: grid search → `nlsolve` → multiple-equilibrium check
-4. Heterogeneous firms + exit
-5. Extensions (supply chain IO, differentiated demand)
+Moments are separated into:
 
-*(Full specification in `05_quantification_solution.md`)*
+- descriptive moments: capacity, utilization, prices, margins, MPK gaps;
+- causal moments: policy effects on capacity, entry, and persistence;
+- calibration/external moments: fiscal outlays, CES elasticity, learning
+  parameters, and local-government weights.
+
+Policy endogeneity must be addressed before policy variation is used causally.
+Learning parameters should start from external evidence or sensitivity analysis
+rather than a naive cumulative-output regression.
+
+---
+
+## 14. Counterfactuals
+
+1. No local industrial policy.
+2. Centralized constrained policy equilibrium.
+3. Subsidy cap or anti-duplication rule.
+4. Faster policy exit.
+5. Expansionary versus productivity-enhancing support.
+
+---
+
+## 15. Work sequence before code
+
+1. Write the closed symmetric two-region static model.
+2. Derive the local government FOC.
+3. Derive the constrained-planner FOC.
+4. Prove sufficient conditions for $s^D>s^{CP}$.
+5. Derive capacity, utilization, MPK, and welfare implications.
+6. Only then plan numerical implementation.

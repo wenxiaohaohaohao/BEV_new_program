@@ -2,202 +2,221 @@
 
 ## 1. Purpose
 
-This module records the basic building blocks of the model:
-environment, household optimization, final good aggregation,
-firm production and dynamics, and learning externalities.
+This module defines the baseline economic environment after the third-round
+critique: household saving, fixed regional labor markets, CES-derived product
+demand, NEV installed capacity as sector-specific capital, and learning-by-doing.
 
 ---
 
 ## 2. Environment [Accepted baseline]
 
-- **Time:** discrete, $t = 0, 1, 2, \ldots$
-- **Regions:** $r = 1, \ldots, R$
-- **Sectors:** $j \in \{N, O\}$ (NEV sector and outside sector)
-- **Agents:** household, heterogeneous firms, local governments, social planner
+- **Time:** discrete, $t=0,1,2,\ldots$.
+- **Regions:** $r=1,\ldots,R$; the first analytic model uses $R=2$ symmetric
+  regions.
+- **Sectors:** $j\in\{N,O\}$, where $N$ is the NEV sector and $O$ is the outside
+  sector.
+- **Agents:** representative household, firms, local governments, and a
+  centralized constrained planner.
+
+The baseline is intentionally minimal. SOE heterogeneity, exports, production
+networks, soft budget constraints, migration, and differentiated product demand
+are extensions.
 
 ---
 
-## 3. Representative household [Accepted baseline]
+## 3. Household and regional labor [Accepted baseline]
 
-$$\max \sum_{t=0}^{\infty} \beta^t U(C_t, L_t)$$
+The representative household owns firms and financial claims, consumes the final
+good, and supplies savings. The household problem delivers the usual Euler
+condition for intertemporal saving.
 
-Standard Euler equation and labor supply condition apply.
+The baseline does not use an aggregate mobile labor market. Each region has a
+fixed labor endowment:
 
----
+$$L_{r,t}^N + L_{r,t}^O = \bar L_r.$$
 
-## 4. Final good [Accepted baseline]
-
-**CES aggregator:**
-
-$$Y_t = \left[ \eta \left(Y_t^N\right)^{\frac{\varepsilon-1}{\varepsilon}}
-+ (1-\eta) \left(Y_t^O\right)^{\frac{\varepsilon-1}{\varepsilon}} \right]^{\frac{\varepsilon}{\varepsilon-1}}$$
-
-**Resource constraint:**
-
-$$Y_t = C_t + I_t^K + \sum_r I_{r,t}^H + \text{PolicyCost}_t + \text{AdjCost}_t + \text{IdleCost}_t$$
-
-**Open question:** How to measure idle cost ($\text{IdleCost}_t$) in the data? [Open question]
+The regional wage $w_{r,t}$ clears region $r$'s labor market. This assumption
+keeps local employment meaningful in the government objective and avoids mixing
+an aggregate wage with regional firm wages.
 
 ---
 
-## 5. Firms [Accepted baseline]
+## 4. Final good and CES-derived demand [Accepted baseline]
 
-### 5.1 Production function
+Final output is produced from NEV and outside-sector goods:
 
-$$y_{i,r,t}^j = z_{i,t} \cdot A_{r,t}^j \cdot (k_{i,r,t}^j)^{\alpha_j} \cdot (l_{i,r,t}^j)^{1-\alpha_j}$$
-
-### 5.2 Capital cost wedge
-
-Outside sector: $R_{r,t}^O = r_t$
-
-NEV sector: $R_{r,t}^N = r_t - \phi \, s_{r,t}$
-
-### 5.3 Entry cost (extension candidate)
-
-$$F_{r,t}^N = F_0^N - \phi_F \, s_{r,t}$$ [Appendix candidate]
-
-### 5.4 Capacity dynamics
-
-$$H_{r,t+1}^N = (1 - \delta_H) H_{r,t}^N + I_{r,t}^H$$
-
-$$u_{r,t}^N = \frac{Q_{r,t}^N}{H_{r,t}^N} \leq 1$$
-
-### 5.5 Product market
-
-$$P_t^N = \mathcal{D}(Q_t^N), \qquad \mathcal{D}'(Q_t^N) < 0$$
-
-**Regime 1 (capacity binding, early phase):** $Q^N = H^N$, shadow price of capacity $> 0$
-
-**Regime 2 (capacity slack, overcapacity phase):** $Q^N < H^N$, price determined by demand curve
-
-### 5.6 Firm entry and exit
-
-$$V(z) = \max \left\{ 0, \; \pi(z) + \beta \, \mathbb{E}[V(z')] \right\}$$
-
-Entry: firm pays cost $F^N$ and draws productivity $z \sim G(z)$.
-Exit: firm shuts down when $V(z) \leq 0$.
-
----
-
-## 6. Learning externalities [Accepted baseline]
-
-$$A_{r,t+1}^N = (1 - \delta_A) A_{r,t}^N
-+ \psi_L \left(Q_{r,t}^N\right)^\nu
-+ \psi_G \left(\bar{Q}_t^N\right)^\nu$$
-
-- $\psi_L$: local learning-by-doing (own-region production)
-- $\psi_G$: cross-region knowledge spillover (national average output $\bar{Q}_t^N$)
-- $\nu$: curvature of LBD (to be calibrated)
-
-**Why $\psi_G$ is essential:** Without cross-region spillovers, regional LBD is fully decoupled.
-The model would underestimate the social gain from coordinated policy and produce a fragmented
-technology landscape. The Chinese NEV case clearly shows national-level spillovers
-(CATL battery, BYD manufacturing processes benefit the whole industry).
-
----
-
-## 7. Open questions
-
-*(Record here.)*
-
----
-
-## 8. Imported previous notes
-
-> Historical source:
-> [`NEV_产业政策_地方竞争_模型整合notes.md`](../legacy/model_drafts/NEV_产业政策_地方竞争_模型整合notes.md),
-> Sections 3-8 (Environment, Household, Firms, LBD, and Product market).
-
-### 8.1 经济环境 (from 整合 notes Sec. 3)
-
-地区：$r = 1, \dots, R$
-
-部门：$j \in \{N, O\}$，其中 $N$ = NEV 部门，$O$ = 其他制造业 / outside sector。
-
-主体：家庭（消费、储蓄、劳动供给）、企业（进入、退出、资本、劳动、产能投资、生产）、地方政府（选择 NEV 政策 wedge $s_{r,t}$）、社会规划者（最大化全国福利）。
-
-### 8.2 家庭 (from 整合 notes Sec. 4)
-
-代表性家庭最大化：
-
-\[
-\max_{\{C_t,K_{t+1},L_t\}}
-\sum_{t=0}^{\infty}\beta^t
+$$
+Y_t =
 \left[
-\frac{C_t^{1-\sigma}}{1-\sigma}
--
-\chi\frac{L_t^{1+\varphi}}{1+\varphi}
-\right]
-\]
+\eta_N\left(Y_t^N\right)^{\frac{\varepsilon-1}{\varepsilon}}
++ \eta_O\left(Y_t^O\right)^{\frac{\varepsilon-1}{\varepsilon}}
+\right]^{\frac{\varepsilon}{\varepsilon-1}},
+\qquad \eta_N+\eta_O=1.
+$$
 
-预算约束：$C_t+K_{t+1} = (1+r_t)K_t+w_tL_t+\Pi_t+T_t$
+With the final-good price normalized to one, the NEV relative price is derived
+from the final-good producer's FOC:
 
-Euler equation：$1=\beta (C_{t+1}/C_t)^{-\sigma} (1+r_{t+1}-\delta_K)$
+$$
+P_t^N =
+\eta_N\left(\frac{Y_t}{Y_t^N}\right)^{1/\varepsilon}.
+$$
 
-劳动供给：$\chi L_t^{\varphi}=w_t C_t^{-\sigma}$
+Thus NEV price falls when NEV quantity expands relative to final demand:
 
-第一版可以将劳动供给设为外生。
+$$\frac{\partial P_t^N}{\partial Y_t^N}<0.$$
 
-### 8.3 企业生产与进入退出 (from 整合 notes Sec. 5)
+The baseline therefore does not impose an additional standalone inverse demand
+curve.
 
-企业 $i$ 在地区 $r$、部门 $j$ 生产：
+---
 
-\[
-y^j_{i,r,t}=z_{i,t}A^j_{r,t}(k^j_{i,r,t})^{\alpha_j}(l^j_{i,r,t})^{1-\alpha_j}
-\]
+## 5. Resource constraint [Accepted baseline]
 
-企业生产率演化：$\log z_{i,t+1}=\rho_z\log z_{i,t}+\varepsilon_{i,t+1}$
+NEV investment is investment in installed capacity $H^N$. It should not be
+counted again as generic NEV capital investment. A compact aggregate resource
+constraint is:
 
-企业利润：$\pi^j_{i,r,t}=p^j_t y^j_{i,r,t}-w_{r,t}l^j_{i,r,t}-R^j_{r,t}k^j_{i,r,t}-F^j_{r,t}$
+$$
+Y_t =
+C_t
++ I_t^O
++ \sum_r I_{r,t}^H
++ \sum_r \phi s_{r,t}H_{r,t}^N
++ \sum_r \frac{\kappa}{2}s_{r,t}^2
++ \sum_r \frac{\chi_s}{2}(s_{r,t}-s_{r,t-1})^2
++ IdleCost_t.
+$$
 
-其他部门资本成本：$R^O_{r,t}=r_t$
+Interpretation:
 
-NEV 部门资本成本受地方政策影响：$R^N_{r,t}=r_t-\phi s_{r,t}$
+- $I_t^O$ is investment in outside-sector capital.
+- $I_{r,t}^H$ is the only NEV capital/capacity investment flow.
+- $\phi s_{r,t}H_{r,t}^N$ is the fiscal outlay associated with the capital-cost
+  wedge.
+- $\kappa s_{r,t}^2/2$ is administrative, political, or distortionary cost; it
+  is not the subsidy outlay.
 
-进入条件：$V^N_{i,r,t}(z)\geq V^O_{i,r,t}(z)$ 或 $V^N_{i,r,t}(z)\geq F^N_{r,t}$
+---
 
-政策比较静态：$\partial \bar z^N_{r,t}/\partial s_{r,t}<0$，政策越强，进入阈值越低。
+## 6. Firms [Accepted baseline]
 
-退出条件：$V^N_{i,r,t}(z)<\bar V^{exit}\Rightarrow exit$
+### 6.1 Outside sector
 
-### 8.4 产品市场与价格压缩 (from 整合 notes Sec. 6)
+The outside sector uses ordinary capital and local labor:
 
-基准：逆需求 + 产能约束
+$$
+Y_{r,t}^O =
+A_{r,t}^O (K_{r,t}^O)^{\alpha_O}(L_{r,t}^O)^{1-\alpha_O}.
+$$
 
-\[
-P^N_t=\mathcal D(Q^N_t),\quad \mathcal D'(\cdot)<0
-\]
+The outside-sector rental cost is:
 
-总产量：$Q^N_t=\sum_r Q^N_{r,t}$，产能约束：$Q^N_{r,t}\leq H^N_{r,t}$
+$$R_{r,t}^O=r_t.$$
 
-地区 NEV 利润：$\pi^N_{r,t}=P^N_tQ^N_{r,t}-w_{r,t}L^N_{r,t}-R^N_{r,t}K^N_{r,t}-FC^N_{r,t}$
+### 6.2 NEV installed capacity as sector-specific capital
 
-当地方政策推动产能扩张但需求增长有限时：$H^N_t>D^N_t \Rightarrow P^N_t\downarrow, \pi^N_t\downarrow, u^N_t\downarrow$
+In the NEV sector, installed capacity $H_{r,t}^N$ is the sector-specific capital
+stock. There is no separate baseline object $k^N$ with its own accumulation law.
 
-### 8.5 产能动态与区制切换 (from 整合 notes Sec. 7)
+Potential NEV output is:
 
-产能积累：$H^N_{r,t+1}=(1-\delta_H)H^N_{r,t}+I^H_{r,t}$
+$$
+\tilde Y_{r,t}^N =
+A_{r,t}^N (H_{r,t}^N)^{\alpha_N}(L_{r,t}^N)^{1-\alpha_N}.
+$$
 
-产能利用率：$u^N_{r,t}=Q^N_{r,t}/H^N_{r,t}$
+Realized NEV output satisfies the utilization/capacity relation:
 
-全国过剩产能：$IdleCapacity_t=\max\{0,\sum_r H^N_{r,t}-D^N_t\}$
+$$
+Y_{r,t}^N = u_{r,t}^N H_{r,t}^N,\qquad 0\leq u_{r,t}^N\leq 1.
+$$
 
-两个区制：
-- **Regime B (capacity constrained):** $D^N_t(P^N_t)>H^N_t$，产能约束绑定，产能影子价值为正
-- **Regime S (excess capacity):** $H^N_t>D^N_t(P^N_t)$，产能约束松弛，利用率下降
+The capacity law of motion is:
 
-关键：不要假设产能闲置时投资自动停止。内卷机制恰恰是"即使社会边际回报下降，地方政策 wedge 仍可能使地方政府和企业继续投资"。
+$$
+H_{r,t+1}^N=(1-\delta_H)H_{r,t}^N+I_{r,t}^H.
+$$
 
-### 8.6 学习外部性与产业链协同 (from 整合 notes Sec. 8)
+The NEV effective rental cost is lowered by local policy:
 
-基准学习方程：
+$$
+R_{r,t}^N=r_t-\phi s_{r,t}.
+$$
 
-\[
-A^N_{r,t+1}=(1-\delta_A)A^N_{r,t}
-+ \psi_L(Q^N_{r,t})^{\nu}
-+ \psi_G(\bar Q^N_t)^{\nu}
-\]
+The associated fiscal outlay is:
 
-其中 $\bar Q^N_t=\sum_r Q^N_{r,t}$。
+$$
+SubsidyOutlay_{r,t}=\phi s_{r,t}H_{r,t}^N.
+$$
 
-政策的社会边际收益包括：学习外部性、市场培育、基础设施、产业链协同、需求牵引创新。
+### 6.3 Entry and exit
+
+Firm entry and exit remain part of the broader model, but the first closed
+two-region proof can use a representative regional NEV producer. Heterogeneous
+firm entry, productivity draws, and exit thresholds should be restored only after
+the static wedge comparison is closed.
+
+An entry-cost channel,
+
+$$F_{r,t}^N=F_0^N-\phi_F s_{r,t},$$
+
+is an appendix candidate rather than a required baseline channel.
+
+---
+
+## 7. Capacity regimes [Accepted baseline]
+
+Two regimes organize the intuition:
+
+- **Capacity-building / early phase:** learning and market-formation benefits are
+  high; the constrained planner may choose $s^{CP}>0$.
+- **Excess-capacity phase:** aggregate NEV capacity is high relative to demand;
+  utilization falls and the marginal social return to additional capacity
+  declines.
+
+The model should not assume that investment stops automatically when capacity is
+slack. The point of the paper is that decentralized local incentives can keep
+the expansionary wedge high even after social marginal benefits have declined.
+
+---
+
+## 8. Learning externalities [Accepted baseline]
+
+Baseline learning has no mechanical knowledge depreciation. Productivity evolves
+as:
+
+$$
+A_{r,t+1}^N =
+A_{r,t}^N
++ \left(\bar A^N-A_{r,t}^N\right)
+\left[
+\psi_L (Y_{r,t}^N)^\nu
++ \psi_G \left(\sum_{r'\neq r}Y_{r',t}^N\right)^\nu
+\right],
+$$
+
+where $\bar A^N$ is the NEV productivity frontier. The frontier-gap term makes
+learning diminish as the region approaches the frontier.
+
+Interpretation:
+
+- $\psi_L$ captures own-region learning-by-doing.
+- $\psi_G$ captures spillovers from other regions and excludes own-region output.
+- $A_{r,t}^N$ can include technological productivity and supply-chain
+  coordination efficiency.
+
+The baseline does not introduce a separate supply-chain state variable $S_t^N$.
+Supply-chain coordination is absorbed into $A_{r,t}^N$ or the spillover parameter.
+
+---
+
+## 9. Open questions
+
+1. Should realized output be written as the minimum of potential production,
+   installed capacity, and CES demand in the analytic proof, or should the proof
+   use a reduced-form utilization equation?
+2. How should $IdleCost_t$ be measured in the data: physical idle capacity,
+   forgone return, or accounting losses?
+3. What is the minimal static firm problem needed to prove that
+   $\partial H_r^N/\partial s_r>0$?

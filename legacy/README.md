@@ -18,6 +18,9 @@ into the self-contained `NEV_model_project`.
 | Planning | `planning/NEV_model_notes_简化结构_确认版.md` | Transitional structure plan used before the current files were created |
 | Model draft | `model_drafts/NEV_model_memo_en.md` | Pre-modular full memo; contains fuller prose and differences to review before paper writing |
 | Model draft | `model_drafts/NEV_model_memo_en.pdf` | Rendered snapshot of the pre-modular memo |
+| Model draft | `model_drafts/NEV_JMP_Critique.md` | First-round JMP critique input; review material only, not an authoritative model specification |
+| Model draft | `model_drafts/NEV_Claude_Second_Review_Response.md` | Second-round Claude review response; review material only, not an authoritative model specification |
+| Model draft | `model_drafts/NEV_JMP_Critique_review_acceptance_notes.md` | Third-round review acceptance notes used to update the active model modules on 2026-06-08 |
 | Model draft | `model_drafts/NEV_产业政策_地方竞争_模型整合notes.md` | Broad source notes; selected material was imported, but several empirical and closure details remain historical source material |
 | Model draft | `model_drafts/内卷在模型中的位置_notes.md` | Source note for the active involution module; contains fuller mechanism and measurement discussion |
 | Model draft | `model_drafts/地方政府博弈_notes.md` | Source note for the active government-game module; contains fuller Nash-solution discussion |

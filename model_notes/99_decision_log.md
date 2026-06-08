@@ -7,99 +7,218 @@ Open questions should remain in module notes, not here.
 
 ## Decision 1: Baseline policy variable
 
-**Accepted:** Single local expansionary policy wedge $s_{r,t} \geq 0$.
+**Accepted:** A single local expansionary policy wedge $s_{r,t} \geq 0$.
 
-**Rejected:** Modeling 6–7 specific policy instruments separately in the baseline.
+**Rejected:** Modeling each local policy instrument separately in the baseline.
 
-**Reason:** A single wedge is consistent with macro misallocation models (Restuccia-Rogerson,
-Hsieh-Klenow) and avoids excessive dimensionality. Specific instruments (subsidies, land grants,
-credit, industrial funds) will be used to construct and calibrate the composite wedge.
-
----
-
-## Decision 2: Policy state dependence
-
-**Accepted:** Policy is state-dependent and subject to adjustment frictions ($\chi_s > 0$).
-
-**Rejected:** Assuming policy is fixed or that local governments never exit.
-
-**Reason:** The core mechanism is not that local policy never exits, but that it exits
-more slowly than the planner's policy. A fixed policy assumption would eliminate
-the dynamic dimension of the involution mechanism.
+**Reason:** The paper's core object is a region-sector policy wedge that changes
+the effective cost of expanding NEV activity. A single wedge keeps the baseline
+tractable and leaves subsidies, land grants, credit support, industrial funds,
+tax preferences, and investment facilitation to the empirical construction of
+the composite policy measure.
 
 ---
 
-## Decision 3: Government game
+## Decision 2: NEV capital and capacity
 
-**Accepted:** Local governments play a Markov-Nash game in the baseline.
+**Accepted:** In the baseline model, NEV installed capacity $H_{r,t}^N$ is the
+sector-specific capital stock used for NEV expansion and MPK comparisons.
 
-**Rejected:** Treating local policy as purely exogenous.
+**Rejected:** Maintaining both generic NEV capital $k^N$ and a separate capacity
+stock $H^N$ with independent accumulation equations.
+
+**Reason:** The central welfare object is capital misallocation. MPK comparisons
+and welfare accounting require a single, well-defined NEV capital/capacity stock.
+The outside sector may use ordinary capital $K^O$, but the NEV sector's expandable
+stock is $H^N$.
+
+---
+
+## Decision 3: Product market
+
+**Accepted:** Baseline NEV demand is derived from the CES final-good aggregator.
+With the final-good price normalized to one,
+
+$$P_t^N = \eta_N \left(\frac{Y_t}{Y_t^N}\right)^{1/\varepsilon}.$$
+
+**Rejected:** Imposing a standalone inverse demand curve
+$P_t^N = \mathcal{D}(Q_t^N)$ in addition to the CES aggregator.
+
+**Reason:** A CES final-good aggregator already implies a relative demand system.
+Adding an independent inverse demand curve overdetermines the product market.
+CES-derived demand still delivers price compression when NEV quantity expands.
+
+---
+
+## Decision 4: Policy fiscal cost and government budget
+
+**Accepted:** The real fiscal outlay associated with the capital-cost wedge is
+
+$$\phi s_{r,t} H_{r,t}^N.$$
+
+Local governments face an explicit budget constraint that finances this outlay
+through fiscal revenue, borrowing, or transfers.
+
+**Rejected:** Treating $\kappa s_{r,t}^2/2$ as the full fiscal cost of policy.
+
+**Reason:** A wedge that lowers the effective cost of NEV capital must be financed
+on the stock it subsidizes. The quadratic term remains useful, but it represents
+administrative, political, or distortionary costs rather than the subsidy outlay.
+
+---
+
+## Decision 5: Local government objective
+
+**Accepted:** The baseline local objective is a reduced-form political economy
+objective with three core terms: local NEV output, local NEV employment, and local
+fiscal surplus, net of administrative/political policy cost and adjustment cost.
+
+**Rejected:** Simultaneously placing local output, investment, employment, and tax
+revenue in the objective without discipline.
+
+**Reason:** Output, investment, employment, and tax revenue are highly correlated
+local outcomes. Keeping all of them as separate unrestricted payoff components
+creates double-counting and makes the over-subsidization mechanism hard to
+interpret.
+
+---
+
+## Decision 6: Local government discounting
+
+**Accepted:** The baseline sets $\beta_g=\beta$.
+
+**Rejected:** Using $\beta_g<\beta$ as an unexplained source of over-subsidization
+in the first closed version.
+
+**Reason:** Finite-tenure political incentives may matter, but the first model
+should prove the decentralized-versus-centralized wedge from local externalities
+and fiscal incentives. Short-horizon political discounting can be added later as
+an extension or robustness device.
+
+---
+
+## Decision 7: Learning law
+
+**Accepted:** NEV productivity accumulates without mechanical knowledge
+depreciation and with diminishing learning as the region approaches a frontier.
+Cross-region spillovers exclude own-region output.
+
+**Rejected:** A law of motion with $(1-\delta_A)A_{r,t}^N$ and a national spillover
+term that double-counts own-region production.
+
+**Reason:** The baseline mechanism is learning-by-doing and spillovers, not
+exogenous knowledge depreciation. Own production should not appear once in local
+learning and again inside the spillover term.
+
+---
+
+## Decision 8: Regional labor markets
+
+**Accepted:** The baseline has fixed regional labor endowments:
+
+$$L_{r,t}^N + L_{r,t}^O = \bar L_r,$$
+
+with regional wages $w_{r,t}$ clearing local labor markets.
+
+**Rejected:** Mixing an aggregate household wage $w_t$ with firm-level regional
+wages $w_{r,t}$ without a labor mobility assumption.
+
+**Reason:** Fixed regional labor keeps the model closed, gives local employment
+a meaningful role in the government objective, and captures regional labor-market
+segmentation without modeling migration or hukou frictions explicitly.
+
+---
+
+## Decision 9: Government game
+
+**Accepted:** Local governments play a simultaneous Markov-Nash policy game in
+the baseline.
+
+**Rejected:** Treating local policy as exogenous.
 
 **Reason:** The core mechanism requires decentralized local policy competition.
-Exogenous policy would miss the endogenous amplification through regional competition.
+Exogenous policy would show that policy affects capacity, but not why local
+governments systematically choose too much support relative to a coordinated
+benchmark.
 
 ---
 
-## Decision 4: Product market
+## Decision 10: Planner benchmark
 
-**Accepted:** Inverse demand function $P^N = \mathcal{D}(Q^N)$ in the baseline.
+**Accepted:** The main normative benchmark is a constrained planner, also called
+the centralized policy equilibrium. It chooses policy instruments
+$\{s_{r,t}^{CP}\}$ while households and firms remain decentralized optimizers.
 
-**Rejected:** Full BLP differentiated demand system in the baseline.
+**Rejected:** Using a first-best planner that directly chooses all allocations as
+the main benchmark.
 
-**Reason:** The baseline model needs a transparent price/profit mechanism that allows
-analytical characterization. BLP is reserved as an extension (Module 8).
+**Reason:** The relevant policy reform is centralized coordination of policy
+instruments, not direct command over every capital, capacity, labor, and output
+allocation. First-best allocation may be reported only as an appendix upper bound.
 
 ---
 
-## Decision 5: Involution definition
+## Decision 11: Involution definition
 
-**Accepted:** Involution is an equilibrium outcome, not an exogenous shock.
+**Accepted:** Involution is an equilibrium outcome, not an exogenous shock. The
+main comparison is decentralized equilibrium $D$ versus constrained planner $CP$:
 
-**Definition:**
-
-$$\text{Involution}_t = \left(
-s_t^D - s_t^P,\;
-H_t^{N,D} - H_t^{N,P},\;
-u_t^{N,P} - u_t^{N,D},\;
+$$\text{Involution}_t =
+\left(
+s_t^D - s_t^{CP},\;
+H_t^{N,D} - H_t^{N,CP},\;
+u_t^{N,CP} - u_t^{N,D},\;
 MPK_t^{O,D} - MPK_t^{N,D},\;
-W^P - W^D
-\right)$$
+W^{CP} - W^D
+\right).$$
+
+**Rejected:** Defining the main welfare comparison as decentralized equilibrium
+versus a first-best planner.
+
+**Reason:** The paper studies excessive decentralized industrial policy relative
+to a feasible centralized policy benchmark. First-best comparisons can overstate
+the implementable policy gain.
 
 ---
 
-## Decision 6: Planner is not no-policy benchmark
+## Decision 12: Proposition discipline
 
-**Accepted:** The planner chooses state-contingent $s^P(Z_{r,t}, Z_t)$,
-which is positive in the early phase and declines in the mature phase.
+**Accepted:** Before numerical code, the project must write a static symmetric
+two-region model and prove sufficient conditions for
+$s^D > s^{CP}$.
 
-**Rejected:** Defining the planner as a no-policy world ($s = 0$ always).
+**Rejected:** Treating $s^D > s^{CP}$ and slow policy exit as asserted propositions
+without proof.
 
-**Reason:** A no-policy benchmark conflates two distinct inefficiencies:
-(i) the inefficiency of having any policy at all, and
-(ii) the inefficiency of having too much policy for too long.
-The paper is about (ii). The planner benchmark isolates (ii).
-
----
-
-## Decision 7: Separate government game and planner (Module 3 vs. Module 4)
-
-**Accepted:** Local government game in Module 3. Planner problem in Module 4.
-
-**Rejected:** Combining government game and planner in one module.
-
-**Reason:** The local government game describes the decentralized competitive equilibrium.
-The planner problem is a normative benchmark. They are conceptually distinct
-and have different first-order conditions, constraints, and equilibrium objects.
-Merging them creates confusion between positive and normative analysis.
+**Reason:** Over-subsidization is the central theoretical result. It must follow
+from the local government FOC relative to the constrained-planner FOC. Slow exit
+should be a dynamic or numerical result unless a separate proof is supplied.
 
 ---
 
-## Decision 8: Separate counterfactuals (Module 6)
+## Decision 13: Counterfactual organization
 
-**Accepted:** Counterfactuals in a dedicated Module 6.
+**Accepted:** Counterfactuals remain in a dedicated Module 6.
 
-**Rejected:** Including counterfactual specifications in Module 5 (quantification).
+**Rejected:** Folding counterfactual specifications into quantification notes.
 
-**Reason:** Counterfactuals are the main quantitative output of the paper.
-Each counterfactual requires careful specification of model change, economic question,
-output variables, and welfare decomposition. They deserve a dedicated module.
+**Reason:** Counterfactuals are the paper's main quantitative outputs. Each one
+needs a clear model change, economic question, variables to report, and welfare
+decomposition.
+
+---
+
+## Decision 14: Baseline versus extensions
+
+**Accepted:** The baseline includes reduced-form credit/fiscal support through
+the wedge, local fiscal budgets, fixed regional labor, CES-derived demand, and a
+two-region proof target.
+
+**Rejected for the baseline:** SOE heterogeneity, export relief valve, soft budget
+constraints, production networks, supplier payment and innovation, full
+Dixit-Stiglitz/Melitz/BLP demand, sequential central-local games, full promotion
+tournaments, and partial labor mobility.
+
+**Reason:** These features are important, but adding them before the core
+decentralized-policy-misallocation mechanism is closed would obscure the main
+theoretical comparison.

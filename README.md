@@ -9,13 +9,14 @@ Evidence from China's NEV Industry
 
 **Project root:** this directory
 
-**Last reorganized:** 2026-06-08
+**Last reorganized:** 2026-06-09
 
 ## Scope
 
 This project studies China's new energy vehicle (NEV) industry through a dynamic
 macro model of state-contingent industrial policy, local government competition,
-overcapacity, capital misallocation, and welfare.
+private firm entry/capacity responses, overcapacity, capital misallocation, and
+welfare.
 
 This directory is intentionally self-contained. It does not depend on the parent
 AI compute-subsidy project and can later be moved into a separate Git repository.
@@ -107,8 +108,9 @@ begins.
   `[Main-text candidate]`, and `[Appendix candidate]`.
 - Do not rewrite the whole model after each discussion. Update the affected
   module, then update the decision log and MASTER when the choice is settled.
-- Do not promote supply-chain IO, BLP demand, soft budget constraints, trade, or
-  financial frictions into the baseline without a recorded decision.
+- Do not promote supply-chain IO, BLP demand, soft budget constraints, trade,
+  financial frictions, entry-cost wedges, or full heterogeneous-firm dynamics
+  into the baseline without a recorded decision.
 - Historical files in `legacy/` may be consulted for context but must not silently
   override active notes.
 

@@ -44,13 +44,17 @@ Unless the decision log is deliberately changed, preserve these baseline choices
 - A single local expansionary policy wedge `s_{r,t}` represents the policy bundle.
 - Industrial policy is state-contingent; the planner is not a no-policy benchmark.
 - Local governments play a Markov-Nash policy game.
+- Firms actively respond to policy and market states through reduced-form entry
+  or capacity margins; the first baseline does not carry full heterogeneous-firm
+  dynamics.
 - Involution is an equilibrium outcome, not an exogenous shock.
 - The planner internalizes learning spillovers, idle capacity, and aggregate
   misallocation.
 - The baseline equilibrium follows the closure conditions stated in the skeleton
   and summarized in the MASTER memo.
 - Supply-chain IO, differentiated demand/BLP, soft budget constraints,
-  international trade, and financial frictions remain extensions.
+  international trade, financial frictions, entry-cost wedges, and full
+  heterogeneous-firm dynamics remain extensions.
 
 A substantive change to an invariant requires:
 

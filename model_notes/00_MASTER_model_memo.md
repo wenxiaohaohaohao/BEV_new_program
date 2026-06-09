@@ -4,10 +4,11 @@
 State-Contingent Industrial Policy, Local Competition, and Aggregate Misallocation:
 Evidence from China's NEV Industry
 
-**Status:** Accepted baseline model memo after the Claude second-review response.
-The closure contract is `00_POST_REVISION_MODEL_SKELETON.md`.
+**Status:** Accepted baseline model memo after the Claude second-review response
+and the external notes on active firm response and macro-JMP positioning. The
+closure contract is `00_POST_REVISION_MODEL_SKELETON.md`.
 
-**Last updated:** 2026-06-08
+**Last updated:** 2026-06-09
 
 ---
 
@@ -20,6 +21,11 @@ capital misallocation after initially facilitating industrial upgrading?
 The paper is not a no-policy critique of industrial policy. It studies whether
 decentralized local policy competition pushes expansionary support above the
 state-contingent level chosen by a constrained centralized policy benchmark.
+It is also not a "government versus firms" story. Firms actively respond to
+policy, expected demand, expected prices, financing conditions, and productivity;
+the distortion comes from decentralized local and private decisions that do not
+fully internalize national price compression, idle capacity, MPK gaps, and
+welfare losses.
 
 ---
 
@@ -27,6 +33,8 @@ state-contingent level chosen by a constrained centralized policy benchmark.
 
 $$
 \text{local Markov-Nash policy game}
+\;+\;
+\text{private firm entry/capacity response}
 \Rightarrow
 \text{excess NEV installed capacity}
 \Rightarrow
@@ -39,7 +47,8 @@ $$
 
 Industrial policy can be welfare-improving in early states with strong learning
 and coordination benefits. The distortion arises when local governments continue
-to expand NEV capacity beyond the constrained-planner policy level.
+to support NEV expansion and firms continue to enter or expand capacity beyond
+the constrained-planner policy level.
 
 ---
 
@@ -136,6 +145,14 @@ $$A_{r,t}^O=A_r^O.$$
 NEV output is represented by installed capacity and utilization:
 
 $$Y_{r,t}^N=u_{r,t}^NH_{r,t}^N,\qquad 0\leq u_{r,t}^N\leq1.$$
+
+Firms are active optimizers. In the baseline, this is represented by the private
+capacity response to policy and market states rather than by a full
+heterogeneous-firm dynamic state. A reduced-form entry or expansion margin may
+depend on the local policy wedge, expected NEV demand, expected NEV prices,
+financing conditions, and firm productivity, but the first closed model only
+requires that NEV installed capacity responds positively to the effective return
+created by the policy wedge.
 
 Local policy lowers the effective cost of NEV installed capacity:
 
@@ -240,8 +257,8 @@ $$W^{FB}\geq W^{CP}\geq W^D.$$
 
 ## 10. Decentralized equilibrium
 
-The decentralized equilibrium is a simultaneous Markov-Nash policy game among
-local governments:
+The decentralized equilibrium combines a simultaneous Markov-Nash policy game
+among local governments with private firm responses to policy and market states:
 
 $$s_{r,t}^D=BR_r(s_{-r,t}^D;Z_{r,t},Z_t).$$
 
@@ -298,10 +315,13 @@ proven.
 
 Moments are separated into:
 
-- descriptive moments: capacity, utilization, prices, margins, MPK gaps;
+- descriptive moments: entry, capacity, utilization, prices, margins, MPK gaps;
 - causal moments: policy effects on capacity, entry, and persistence;
 - calibration/external moments: fiscal outlays, CES elasticity, learning
-  parameters, and local-government weights.
+  parameters, financing conditions, and local-government weights.
+
+Firm-entry moments validate the private-response mechanism. They do not require
+the first quantitative model to carry a full firm productivity distribution.
 
 Demonstration-city or pilot designation is potential policy variation requiring
 validation, not an automatically exogenous instrument.

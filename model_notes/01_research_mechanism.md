@@ -3,8 +3,9 @@
 ## 1. Purpose
 
 This module records the paper's research question, the core mechanism, and the
-formal definition of involution after the third-round critique. It uses the
-constrained planner / centralized policy equilibrium as the main benchmark.
+formal definition of involution after the third-round critique and the external
+notes on active firm response. It uses the constrained planner / centralized
+policy equilibrium as the main benchmark.
 
 ---
 
@@ -24,6 +25,10 @@ state-contingent:
 - Decentralized local governments may maintain $s^D > s^{CP}$ because each
   region values local NEV output, employment, and fiscal outcomes while only
   partially internalizing national overcapacity and aggregate misallocation.
+- Firms are not passive recipients of policy. They enter or expand capacity in
+  response to policy support, expected demand, expected prices, financing
+  conditions, and productivity. Their private responses can be rational even when
+  simultaneous entry is excessive in the aggregate.
 - The main welfare object is $W^{CP}-W^D$, the gain from replacing decentralized
   local policy competition with coordinated policy instruments.
 
@@ -37,6 +42,8 @@ policy versus centralized constrained policy.
 
 $$
 \underbrace{\text{Local policy game}}_{\text{Markov-Nash}}
+\;+\;
+\underbrace{\text{private firm response}}_{\text{entry/capacity}}
 \Rightarrow
 \underbrace{\text{Over-entry and excess NEV capacity}}_{H^{N,D}>H^{N,CP}}
 \Rightarrow
@@ -47,13 +54,20 @@ $$
 \underbrace{\text{Aggregate misallocation and welfare loss}}_{W^{CP}-W^D>0}.
 $$
 
-**Step 1: Local policy game to excess capacity**
+**Step 1: Local policy game and firm response to excess capacity**
 
 Each local government chooses $s_{r,t}$ to increase local NEV activity, employment,
 and fiscal surplus. The fiscal outlay $\phi s_{r,t}H_{r,t}^N$ is local, but the
 national price compression, cross-region spillovers, and aggregate MPK loss are
 not fully internalized by any single region. The decentralized FOC can therefore
 imply a higher policy wedge than the constrained-planner FOC.
+
+Firms then respond privately. A higher local policy wedge raises the private
+return to NEV entry or capacity expansion by lowering effective capital costs
+and by signaling local support. Expected demand growth, expected NEV prices,
+financing conditions, and productivity can reinforce this response. The first
+baseline proof only needs a reduced-form positive capacity response; a full
+heterogeneous-firm entry model is an extension.
 
 **Step 2: Excess capacity to price and profit compression**
 
@@ -104,14 +118,19 @@ $$
 The components are jointly determined by the policy game and private-sector
 responses. They should not be treated as independent shocks.
 
+This definition avoids two misreadings. The paper does not claim that local
+governments alone mechanically create involution, and it does not claim that firm
+entry is irrational. The distortion is an equilibrium gap between locally or
+privately rational decentralized choices and the coordinated policy benchmark.
+
 ---
 
 ## 5. Proposition discipline [Accepted baseline]
 
 The main theoretical claims should be organized as follows:
 
-1. **Lemma 1:** A higher local policy wedge raises NEV installed capacity under
-   the firm's investment condition.
+1. **Lemma 1:** A higher local policy wedge raises private NEV entry or installed
+   capacity under the firm's response condition.
 2. **Lemma 2:** CES-derived demand implies NEV price compression when aggregate
    NEV quantity expands relative to final demand.
 3. **Proposition 1:** Coordinated state-contingent policy is welfare-improving

@@ -3,8 +3,9 @@
 ## 1. Purpose
 
 This module records quantification discipline and the proof-before-code sequence.
-It also records empirical-design cautions from the Claude second-review response.
-It does not authorize numerical implementation yet.
+It also records empirical-design cautions from the Claude second-review response
+and the external notes on active firm response. It does not authorize numerical
+implementation yet.
 
 ---
 
@@ -48,6 +49,7 @@ identification.
 
 | Object | Use |
 |---|---|
+| NEV firm or project entry | document whether policy-support regions attract more private entry |
 | NEV capacity and output | match scale and overcapacity patterns |
 | utilization | discipline the slack-capacity regime |
 | NEV prices and margins | discipline CES demand and price compression |
@@ -59,8 +61,9 @@ identification.
 | Object | Use |
 |---|---|
 | policy to NEV investment/capacity | discipline $\phi$ and capacity response |
-| policy to firm entry | discipline optional entry channel |
+| policy to firm/project entry | validate the active private-response mechanism |
 | policy persistence after overcapacity | discipline $\chi_s$ |
+| policy to utilization or MPK gap | check whether expansionary support is associated with slack capacity and lower returns |
 
 ### 4.3 Calibration and external moments
 
@@ -70,7 +73,13 @@ identification.
 | net NEV fiscal cost | compare gross support to NEV tax revenue |
 | CES elasticity $\epsilon$ | discipline demand curvature |
 | learning parameters $\psi_L,\psi_G,\nu,g_A$ | start from literature or external evidence, then test sensitivity |
+| financing conditions | mechanism shifter for entry and expansion, not a baseline state |
 | local objective weights | discipline with policy responses or simplify further |
+
+Firm-entry moments are mechanism evidence. They can support the claim that firms
+actively respond to policy and market states, but the first quantitative version
+does not need a full dynamic firm-entry model or a state variable
+$\mu_{r,t}(z)$.
 
 ---
 
@@ -85,6 +94,10 @@ The empirical work must separately record fiscal outlays where possible, because
 the model's gross fiscal subsidy is:
 
 $$\phi s_{r,t}H_{r,t}^N.$$
+
+Policy texts and project data can also be used to distinguish mechanisms:
+capacity investment, firm or project entry, and persistence after utilization
+falls should be measured separately where data allow.
 
 ---
 
@@ -123,7 +136,9 @@ Use literature calibration, external estimates, or sensitivity analysis first.
 - Use CES-derived demand.
 - Use $H^N$ as NEV installed capital/capacity.
 - Use total-regional-output tax base.
-- Derive firm response $\partial H_r^N/\partial s_r>0$.
+- Derive firm capacity response $\partial H_r^N/\partial s_r>0$; optional
+  entry responses should be treated as mechanism validation unless the first
+  proof explicitly adds an entry margin.
 - Derive local FOC and constrained-planner FOC.
 - State sufficient conditions for $s^D>s^{CP}$.
 

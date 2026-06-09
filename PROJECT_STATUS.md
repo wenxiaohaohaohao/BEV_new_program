@@ -1,6 +1,6 @@
 # Project Status
 
-**As of:** 2026-06-08
+**As of:** 2026-06-09
 
 **Phase:** post-review model closure before formal derivation
 
@@ -11,6 +11,9 @@
 - Topic: state-contingent industrial policy, local competition, overcapacity,
   aggregate capital misallocation, and welfare in China's NEV industry.
 - Baseline policy object: one local expansionary policy wedge.
+- Firms are active private responders to policy and market states; the first
+  model represents this through a reduced-form entry/capacity response, not a
+  full heterogeneous-firm dynamic state.
 - NEV installed capacity $H^N$ is the sector-specific NEV capital stock.
 - Aggregate capital clearing is $K_t=K_t^O+\sum_rH_{r,t}^N$.
 - Product demand is CES-derived; the baseline no longer uses a standalone
@@ -22,6 +25,8 @@
 - Baseline labor market: fixed regional labor endowments and regional wages.
 - Baseline learning: combined frontier-gap local learning and cross-regional
   spillovers with exogenous frontier $\bar A_{t+1}=(1+g_A)\bar A_t$.
+- Supply-chain finance, supplier innovation, BLP demand, business stealing,
+  financing/valuation channels, and full firm heterogeneity remain extensions.
 - Planned numerical implementation: Julia, only after the static two-region
   proof and model closure are complete.
 
@@ -56,6 +61,10 @@ modules and decision log.
    cross-regional spillovers and exogenous frontier growth.
 10. State-space overexpansion: baseline state vector reduced to
    $\{H^N,A^N,B,s_{-1}\}$ by region.
+11. Firm passivity concern: resolved by adding reduced-form active firm response
+    while keeping full heterogeneous-firm dynamics outside the baseline.
+12. JMP positioning risk: resolved by keeping aggregate misallocation, MPK gaps,
+    welfare counterfactuals, and the $D$ versus $CP$ comparison as the main axis.
 
 ## Unresolved items before coding
 
@@ -71,7 +80,9 @@ modules and decision log.
 8. Calibration or external discipline for CES elasticity and learning parameters.
 9. Measurement of gross subsidy cost, net NEV fiscal cost, debt cost, and idle
    capacity cost.
-10. Literature-gap verification against recent single-industry macro,
+10. Measurement or validation of firm/project entry responses without requiring
+    a full dynamic firm-entry model.
+11. Literature-gap verification against recent single-industry macro,
     misallocation, industrial policy, and NEV demand papers.
 
 These are open research decisions, not implementation tasks. Resolve them in the
@@ -87,6 +98,7 @@ Produce a fully closed, symmetric two-region static model with:
 - outside-sector capital and resource feasibility;
 - fixed regional labor-market clearing;
 - total-tax-base local budget constraints;
+- reduced-form private firm capacity response to the policy wedge;
 - local-government and constrained-planner first-order conditions;
 - sufficient conditions for $s^D>s^{CP}$;
 - capacity, utilization, MPK, and welfare implications.

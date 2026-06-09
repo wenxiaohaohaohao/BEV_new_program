@@ -35,32 +35,64 @@ costs and local fiscal/employment incentives.
 
 ---
 
-## 3. Differentiated demand
+## 3. Entry-cost wedge
 
-Replace CES-derived aggregate demand with Dixit-Stiglitz, Melitz-style varieties,
-or BLP-type vehicle demand.
+Let local policy reduce a private NEV entry cost:
 
-**Purpose:** Capture product-level differentiation, markups, and brand-level
-competition.
+$$F_{r,t}^N=F_0^N-\phi_Fs_{r,t}.$$
 
-**Reason outside baseline:** It adds varieties, markups, firm-level demand, and
-market-share data requirements before the policy-wedge mechanism is closed.
+**Purpose:** Model firm or project entry directly and distinguish entry subsidies
+from capital-cost support.
+
+**Reason outside baseline:** The first closed model uses a single capital-cost
+wedge to discipline installed capacity and MPK gaps. Adding a second policy
+channel before the static proof would weaken identification of the core wedge.
 
 ---
 
-## 4. Production network and supplier innovation
+## 4. Differentiated demand and BLP
 
-Add upstream battery/material suppliers, component firms, OEMs, and supplier
-payment/innovation channels.
+Replace CES-derived aggregate demand with Dixit-Stiglitz, nested logit,
+Melitz-style varieties, or BLP-type vehicle demand.
 
-**Purpose:** Study how local NEV expansion propagates through supply chains.
+**Purpose:** Capture product-level differentiation, markups, business stealing,
+brand competition, and vehicle-market substitution.
+
+**Reason outside baseline:** It adds varieties, markups, product-level demand,
+market-share data, and instruments before the policy-wedge mechanism is closed.
+The baseline keeps CES-derived demand to preserve the macro welfare comparison.
+
+---
+
+## 5. Business stealing and markup competition
+
+Add an explicit firm-entry externality in which an entrant does not fully
+internalize its effect on other firms' profits, markups, or price competition.
+
+**Purpose:** Microfound why privately rational simultaneous entry can be socially
+excessive even before aggregate capital misallocation is measured.
+
+**Reason outside baseline:** The current CES price-compression and MPK-gap
+channels already generate the main aggregate inefficiency. A full business-
+stealing block would move the baseline toward IO.
+
+---
+
+## 6. Production network and supply-chain amplification
+
+Add upstream battery/material suppliers, component firms, OEM cash-flow pressure,
+payment delays, supplier financing constraints, and supplier innovation quality.
+
+**Purpose:** Study how NEV overcapacity and price compression propagate through
+supply chains and amplify productivity consequences.
 
 **Reason outside baseline:** It changes the object from local policy and capital
-misallocation to network propagation.
+misallocation to network propagation. It is an amplification channel, not the JMP
+core.
 
 ---
 
-## 5. Soft budget constraints
+## 7. Soft budget constraints
 
 Allow local governments, state banks, or local financing vehicles to keep
 loss-making firms alive.
@@ -72,7 +104,7 @@ budget constraint is closed.
 
 ---
 
-## 6. SOE heterogeneity
+## 8. SOE heterogeneity
 
 Distinguish state-owned and private NEV firms or suppliers.
 
@@ -84,7 +116,7 @@ representative or region-level model is proven.
 
 ---
 
-## 7. Export relief valve
+## 9. Export relief valve
 
 Add rest-of-world demand for NEV exports.
 
@@ -96,29 +128,35 @@ and should be added only after the domestic benchmark is clear.
 
 ---
 
-## 8. Financial frictions
+## 10. Financial frictions and valuation channel
 
-Add borrowing constraints or external-finance premia for firms.
+Add borrowing constraints, external-finance premia, capital-market valuation
+effects, or high-growth financing narratives for firms.
 
-**Purpose:** Interpret credit support as relaxing firm financing constraints.
+**Purpose:** Interpret credit support, local guarantees, or market valuations as
+amplifying private entry and capacity expansion.
 
 **Reason outside baseline:** The reduced-form capital-cost wedge already captures
-credit support in the first model.
+credit support in the first model. Financing and valuation variables can be used
+as empirical shifters before they become model states.
 
 ---
 
-## 9. Firm productivity distribution
+## 11. Firm heterogeneity, entry, and productivity distribution
 
-Carry the full firm productivity distribution $\mu_{r,t}(z)$ in the state vector.
+Carry the full firm productivity distribution $\mu_{r,t}(z)$ in the state vector
+and model entry, exit, productivity selection, or threshold entry explicitly.
 
-**Purpose:** Model entry, exit, and productivity selection directly.
+**Purpose:** Model active firm entry, exit, productivity selection, and
+over-entry directly.
 
 **Reason outside baseline:** The first model uses region-level sufficient states
-to keep the dynamic problem feasible.
+to keep the dynamic problem feasible. Firm-entry moments can validate the
+mechanism without adding $\mu_{r,t}(z)$ to the baseline state vector.
 
 ---
 
-## 10. Outside-sector endogenous learning
+## 12. Outside-sector endogenous learning
 
 Allow $A_{r,t}^O$ to evolve endogenously.
 
@@ -129,7 +167,7 @@ capital opportunity cost and MPK gaps.
 
 ---
 
-## 11. Full promotion tournament
+## 13. Full promotion tournament
 
 Model officials' career concerns or promotion tournaments explicitly.
 
@@ -140,7 +178,7 @@ to keep the policy game analytically tractable.
 
 ---
 
-## 12. Labor mobility and hukou frictions
+## 14. Labor mobility and hukou frictions
 
 Replace fixed regional labor with partial migration, hukou frictions, or mobility
 costs.
@@ -152,7 +190,7 @@ employment block for the first version.
 
 ---
 
-## 13. Sequential central-local game
+## 15. Sequential central-local game
 
 Replace simultaneous Markov-Nash local policy choice with a sequential or
 Stackelberg central-local policy game.
@@ -164,7 +202,7 @@ with a clear $D$ versus $CP$ comparison.
 
 ---
 
-## 14. Promotion rule for extensions
+## 16. Promotion rule for extensions
 
 An extension can enter the baseline only if:
 

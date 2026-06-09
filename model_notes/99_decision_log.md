@@ -336,15 +336,62 @@ should be a dynamic or numerical result unless a separate proof is supplied.
 ## Decision 19: Baseline versus extensions
 
 **Accepted:** The baseline includes the single policy wedge, NEV installed
-capacity, CES-derived demand, total-tax-base local budgets, fixed regional labor,
-frontier-gap learning with spillovers, and a simultaneous local policy game.
+capacity, reduced-form active firm response, CES-derived demand,
+total-tax-base local budgets, fixed regional labor, frontier-gap learning with
+spillovers, and a simultaneous local policy game.
 
 **Rejected for the baseline:** SOE heterogeneity, export relief valve, soft budget
 constraints, production networks, full differentiated demand, full promotion
 tournaments, war-of-attrition exit, partial labor mobility, outside-sector
-endogenous learning, administrative $\kappa s^2/2$ costs, and full firm
-productivity distributions.
+endogenous learning, administrative $\kappa s^2/2$ costs, entry-cost wedges,
+BLP demand, supply-chain finance modules, business-stealing blocks, and full
+firm productivity distributions.
 
 **Reason:** These features are important, but adding them before the core
 decentralized-policy-misallocation mechanism is closed would obscure the main
 theoretical comparison.
+
+---
+
+## Decision 20: Active firm response
+
+**Accepted:** Firms are active optimizing agents. In the baseline, they respond
+to policy and market states through a reduced-form entry or installed-capacity
+margin. The first closed proof only needs the firm-side condition:
+
+$$\frac{\partial H_{r,t}^N}{\partial s_{r,t}}>0.$$
+
+An empirical entry measure may depend on policy support, expected NEV demand,
+expected NEV prices, financing conditions, and productivity, but it is a
+mechanism and measurement object rather than a new baseline state variable.
+
+**Rejected for baseline:** Treating firms as mechanically determined by local
+government policy; carrying the full heterogeneous-firm dynamic distribution
+$\mu_{r,t}(z)$; making financing or valuation conditions separate state
+variables in the first closed model.
+
+**Reason:** The paper should not imply that local governments alone create
+involution or that firms are irrational. The distortion is a decentralized
+equilibrium outcome: locally and privately rational choices fail to internalize
+national price compression, idle capacity, MPK gaps, fiscal costs, and welfare
+losses.
+
+---
+
+## Decision 21: Macro-JMP main axis
+
+**Accepted:** The project's main positioning is macro-development / spatial macro
+/ quantitative industrial policy with aggregate misallocation and welfare
+counterfactuals. IO, demand-estimation, supply-chain, and corporate-finance
+mechanisms can discipline or amplify the story, but they do not replace the core
+model.
+
+**Rejected for baseline:** Restoring standalone inverse demand, using $s^P$ or
+$W^P$ as the main planner notation, adding $\kappa s^2/2$ as a baseline policy
+cost, making BLP the main demand system, or making the supply-chain finance /
+supplier-innovation mechanism the JMP core.
+
+**Reason:** The first model must remain solvable, quantifiable, and tied to the
+$D$ versus $CP$ welfare comparison. Additional IO or supply-chain structure is
+valuable only after the static two-region proof and constrained-planner
+comparison are closed.

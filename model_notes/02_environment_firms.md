@@ -5,7 +5,8 @@
 This module defines the baseline economic environment after the Claude second
 review response: fixed regional labor, outside-sector capital, NEV installed
 capacity as sector-specific capital, CES-derived demand, resource feasibility,
-and frontier-gap learning with cross-region spillovers.
+frontier-gap learning with cross-region spillovers, and a reduced-form active
+firm response to policy and market states.
 
 ---
 
@@ -20,8 +21,8 @@ and frontier-gap learning with cross-region spillovers.
   centralized constrained planner.
 
 SOE heterogeneity, exports, production networks, soft budget constraints,
-migration, differentiated demand, and full firm productivity distributions are
-extensions.
+migration, differentiated demand, financing/valuation channels, entry-cost
+wedges, and full firm productivity distributions are extensions.
 
 ---
 
@@ -149,11 +150,41 @@ The gross fiscal subsidy cost is:
 
 $$SubsidyCost_{r,t}=\phi s_{r,t}H_{r,t}^N.$$
 
-### 7.3 Entry and exit
+### 7.3 Firm response and entry margin
 
-Firm entry, exit, and productivity distributions are not part of the first
-closed baseline. They can be reintroduced later through a reduced-form threshold
-or a heterogeneous-firm extension.
+Firms are not passive recipients of local policy. They choose NEV entry,
+capacity expansion, utilization, and labor after observing policy and market
+states. For the first closed model, this private response is summarized by a
+reduced-form capacity response:
+
+$$\frac{\partial H_{r,t}^N}{\partial s_{r,t}}>0,$$
+
+holding the relevant static state fixed. This condition is the minimum firm-side
+object needed for the two-region proof.
+
+An empirical entry margin may be recorded as:
+
+$$
+Entry_{r,t}^N
+=
+\mathcal E
+\left(
+s_{r,t},
+E_tY_{t+1}^N,
+E_tP_{t+1}^N,
+Finance_t,
+\bar z_{r,t}
+\right),
+$$
+
+where expected demand, expected prices, financing conditions, and average or
+threshold productivity shift private entry incentives. This object is a mechanism
+and measurement guide, not a new baseline state variable.
+
+The baseline policy channel is the capital-cost wedge
+$R_{r,t}^{N,eff}=r_t-\phi s_{r,t}$. An entry-cost wedge
+$F_{r,t}^N=F_0^N-\phi_Fs_{r,t}$, full entry/exit dynamics, and the firm
+productivity distribution $\mu_{r,t}(z)$ are extensions.
 
 ---
 
@@ -204,3 +235,5 @@ double-counting of own-region output in the spillover term.
    proof?
 3. What is the minimal firm optimality condition needed to prove
    $\partial H_r^N/\partial s_r>0$?
+4. Which entry measure, if any, is most useful as a mechanism check without
+   requiring a full dynamic entry model?

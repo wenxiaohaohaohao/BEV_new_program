@@ -83,7 +83,8 @@ stealing block would move the baseline toward IO.
 Add upstream battery/material suppliers, component firms, OEM cash-flow pressure,
 payment delays, supplier financing constraints, and supplier innovation quality.
 
-**Purpose:** Study how NEV overcapacity and price compression propagate through
+**Purpose:** Study how NEV overcapacity and producer price/revenue compression,
+after consumer or final-good price benefits are accounted for, propagate through
 supply chains and amplify productivity consequences.
 
 **Reason outside baseline:** It changes the object from local policy and capital

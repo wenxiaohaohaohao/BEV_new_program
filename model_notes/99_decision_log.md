@@ -169,8 +169,8 @@ tax revenue in the objective without discipline, and retaining a separate
 $\kappa s^2/2$ baseline cost.
 
 **Reason:** Output, investment, employment, and tax revenue are overlapping local
-targets. A parsimonious objective makes the over-subsidization result easier to
-interpret.
+targets. A parsimonious objective makes the local-policy wedge easier to
+interpret in the misallocation-dominant regime.
 
 ---
 
@@ -178,8 +178,8 @@ interpret.
 
 **Accepted:** The baseline sets $\beta_g=\beta$.
 
-**Rejected:** Using $\beta_g<\beta$ as an unexplained source of
-over-subsidization in the first closed version.
+**Rejected:** Using $\beta_g<\beta$ as an unexplained source of the decentralized
+expansionary-policy wedge in the first closed version.
 
 **Reason:** Finite-tenure political incentives may matter, but the first model
 should prove the decentralized-versus-centralized wedge from local externalities,
@@ -295,41 +295,52 @@ capacity, urban characteristics, and other local fundamentals.
 
 ---
 
-## Decision 17: Involution definition
+## Decision 17: Creative destruction versus aggregate misallocation diagnostic
 
-**Accepted:** Involution is an equilibrium outcome. The main comparison is
-decentralized equilibrium $D$ versus constrained planner $CP$:
+**Accepted:** Involution is one possible equilibrium regime, not a maintained
+conclusion. The main diagnostic compares decentralized equilibrium $D$ with the
+implementable constrained planner $CP$:
 
 $$
-\text{Involution}_t =
+\mathcal T_t =
 \left(
 s_t^D-s_t^{CP},\;
 H_t^{N,D}-H_t^{N,CP},\;
 u_t^{N,CP}-u_t^{N,D},\;
 MPK_t^{O,D}-MPK_t^{N,D},\;
-W^{CP}-W^D
+W^D-W^{CP}
 \right).
 $$
 
 **Rejected:** Defining the main welfare comparison as decentralized equilibrium
-versus a first-best planner.
+versus a first-best planner, or defining aggregate misallocation by assuming
+$W^D<W^{CP}$.
 
-**Reason:** The paper studies excessive decentralized industrial policy relative
-to a feasible centralized policy benchmark.
+**Reason:** The paper studies whether decentralized local implementation across
+the NEV industry lifecycle acts as discovery and creative destruction, an
+offsetting trade-off, or aggregate misallocation relative to a feasible
+centralized policy benchmark. The welfare component is a net object: it credits
+consumer or final-good benefits, learning, discovery, firm screening, and
+private-capital mobilization before subtracting fiscal, duplicated-capacity, and
+capital-misallocation costs.
 
 ---
 
 ## Decision 18: Proposition discipline
 
 **Accepted:** Before numerical code, the project must write a static symmetric
-two-region model and prove sufficient conditions for $s^D>s^{CP}$.
+two-region model and prove sufficient conditions for $s^D>s^{CP}$ in the
+misallocation-dominant regime.
 
 **Rejected:** Treating $s^D>s^{CP}$ and slow policy exit as asserted propositions
 without proof.
 
-**Reason:** Over-subsidization is the central theoretical result. It must follow
-from the local government FOC relative to the constrained-planner FOC. Slow exit
-should be a dynamic or numerical result unless a separate proof is supplied.
+**Reason:** The decentralized expansionary-policy wedge is a conditional
+theoretical result, not the whole paper. It must follow from the local
+government FOC relative to the
+constrained-planner FOC when cost wedges dominate learning and decentralized
+implementation benefits. Slow exit should be a dynamic or numerical result unless
+a separate proof is supplied.
 
 ---
 
@@ -371,18 +382,21 @@ $\mu_{r,t}(z)$; making financing or valuation conditions separate state
 variables in the first closed model.
 
 **Reason:** The paper should not imply that local governments alone create
-involution or that firms are irrational. The distortion is a decentralized
-equilibrium outcome: locally and privately rational choices fail to internalize
-national price compression, idle capacity, MPK gaps, fiscal costs, and welfare
-losses.
+aggregate misallocation or that firms are irrational. The outcome is a decentralized
+equilibrium trade-off: locally and privately rational choices may generate
+learning, discovery, consumer benefits, and private-capital mobilization, but may
+also fail to internalize producer price/revenue compression, idle capacity, MPK
+gaps, fiscal costs, and net welfare effects.
 
 ---
 
 ## Decision 21: Macro-JMP main axis
 
 **Accepted:** The project's main positioning is macro-development / spatial macro
-/ quantitative industrial policy with aggregate misallocation and welfare
-counterfactuals. IO, demand-estimation, supply-chain, and corporate-finance
+/ quantitative industrial policy about the lifecycle role of decentralized local
+industrial policy in a strategic emerging industry: early industry building and
+creative destruction versus later duplicated capacity and aggregate
+misallocation. IO, demand-estimation, supply-chain, and corporate-finance
 mechanisms can discipline or amplify the story, but they do not replace the core
 model.
 
@@ -392,6 +406,184 @@ cost, making BLP the main demand system, or making the supply-chain finance /
 supplier-innovation mechanism the JMP core.
 
 **Reason:** The first model must remain solvable, quantifiable, and tied to the
-$D$ versus $CP$ welfare comparison. Additional IO or supply-chain structure is
-valuable only after the static two-region proof and constrained-planner
-comparison are closed.
+$D$ versus $CP$ welfare comparison without pre-signing that comparison. Additional
+IO or supply-chain structure is valuable only after the static two-region
+trade-off and constrained-planner comparison are closed.
+
+---
+
+## Decision 22: First static proof fixes inherited debt
+
+**Accepted:** The first symmetric two-region static proof fixes inherited local
+debt $\bar B$ and treats the debt burden as a predetermined fiscal state:
+
+$$
+\bar D=r^g\bar B+\frac{\kappa_B}{2}\bar B^2.
+$$
+
+The local government chooses only the policy wedge $s_r$ in the static proof.
+
+**Rejected for the first static proof:** Jointly choosing $s_r$ and new debt in
+the same static FOC system.
+
+**Reason:** The first proof must isolate the decentralized-policy wedge
+$s^D>s^{CP}$. Adding a debt-choice FOC before that comparison is closed would
+make the algebra less transparent and risk attributing the
+expansionary-policy wedge to debt dynamics rather than to local externalities,
+fiscal incentives, and incomplete internalization. Debt choice remains important
+and should return in the dynamic extension.
+
+---
+
+## Decision 23: Static proof uses utilization-capacity output
+
+**Accepted:** The first static proof uses:
+
+$$
+Y_r^N=u_r^NH_r^N,
+$$
+
+with realized sales allocated by installed capacity:
+
+$$
+Y_r^N=\frac{H_r^N}{H_1^N+H_2^N}Q(H_1^N+H_2^N).
+$$
+
+The richer production formulation:
+
+$$
+\tilde Y_r^N=A^NF(H_r^N,L_r^N)
+$$
+
+is retained as an appendix candidate or later extension.
+
+**Rejected for the first static proof:** Making the richer production function
+necessary for proving $s^D>s^{CP}$.
+
+**Reason:** The core static proof only needs a positive firm capacity response,
+CES price compression with consumer benefits credited, falling utilization in
+the scale-competition region, and the local-versus-planner FOC comparison. The
+richer production block is useful for later quantification, but it is not needed
+to characterize the first misallocation-dominant sufficient conditions.
+
+---
+
+## Decision 24: Static proof includes aggregate capital opportunity cost
+
+**Accepted:** The strengthened static two-region proof explicitly imposes:
+
+$$
+\bar K=K^O+H_1^N+H_2^N,
+$$
+
+with outside-sector output:
+
+$$
+Y^O=\Omega(K^O;A^O,\bar L),\qquad
+\Omega_K>0,\qquad
+\Omega_{KK}<0.
+$$
+
+The constrained planner internalizes the outside-sector capital opportunity
+cost through the wedge $\Delta^K$. Gross subsidies remain fiscal transfers and
+are not double-counted as separate aggregate resource absorption.
+
+**Rejected for the first static proof:** Keeping outside-sector output fixed in
+the planner welfare comparison or treating $\phi s_rH_r^N$ as an additional real
+resource cost on top of the capital allocation and fiscal-shadow-cost terms.
+
+**Reason:** The central welfare object is aggregate capital misallocation.
+Making $K^O=\bar K-H^N$ explicit connects excess NEV installed capacity to the
+outside-sector MPK and makes the implication $MPK^{N,D}<MPK^{O,D}$ more directly
+tied to resource feasibility. Dynamic debt issuance and debt FOCs remain outside
+the first static proof.
+
+---
+
+## Decision 25: Welfare sign is state-contingent and not preset
+
+**Accepted:** The project frames NEV industrial policy as state-contingent across
+the industry lifecycle. In the early stage, when learning externalities, weak
+market formation, and supply-chain coordination failures bind, local governments
+combined with private capital can support industry takeoff, cost decline, and
+firm screening. In the scale-competition stage, continued expansionary
+investment attraction, subsidies, and capacity support can generate duplicated
+entry, low utilization, price compression, capital-return gaps, and aggregate
+resource misallocation. The paper does not pre-commit to $W^D<W^{CP}$. It
+evaluates whether industry-upgrading, discovery, learning, consumer,
+firm-screening, and private-capital mobilization benefits exceed fiscal,
+fixed-cost, low-utilization, and aggregate capital-misallocation costs.
+
+Lower NEV prices can raise consumer or final-good welfare. In the model, price
+compression affects welfare only after this benefit is credited. A sufficient
+condition for the misallocation-dominant regime is:
+
+$$
+\Delta^G+\Delta^P+\Delta^K+\Delta^F>\Delta^A+\Delta^D,
+$$
+
+where $\Delta^P$ is the consumer-benefit-adjusted price/revenue wedge and
+$\Delta^D$ is the decentralized implementation/discovery benefit that the
+centralized benchmark may not fully reproduce.
+
+**Rejected for baseline:** A blanket claim that decentralized industrial policy
+is harmful; a no-policy benchmark as the main normative comparison; or a claim
+that price wars or lower prices mechanically cause welfare loss. Also rejected:
+treating $W^D<W^{CP}$ as a maintained result before quantification.
+
+**Reason:** Reviewers can correctly object that lower prices raise consumer
+surplus or final-good welfare, and that decentralized local governments may have
+information and implementation advantages. The project must therefore evaluate a
+net state-contingent trade-off. Three results are all valid: $W^D<W^{CP}$,
+$W^D\approx W^{CP}$, and $W^D>W^{CP}$. The main benchmark remains $D$ versus
+implementable $CP$, not policy versus no policy.
+
+---
+
+## Decision 26: Main title and positive-literature boundary
+
+**Accepted:** The working title is:
+
+Local Industrial Policy after Success: Creative Destruction or Aggregate
+Misallocation? Evidence from China's NEV Industry
+
+The safe boundary sentence is:
+
+Existing studies explain how China's NEV industry rose. This paper asks whether
+the decentralized local implementation that helped generate this rise also
+produced duplicated capacity and aggregate misallocation once the industry
+entered the scale-competition stage.
+
+**Rejected for baseline:** Positioning the paper as a rebuttal to positive
+studies of China's NEV policy or as a proof that local industrial policy caused
+welfare losses.
+
+**Reason:** The paper should build on the positive NEV literature, not fight it.
+The contribution is to evaluate whether the same decentralized local
+implementation that helped create success later acts as creative destruction, an
+offsetting trade-off, or aggregate misallocation.
+
+---
+
+## Decision 27: Main axis is lifecycle dual role and state-contingent welfare
+
+**Accepted:** The paper studies the dual role of decentralized local industrial
+policy across development stages of a strategic emerging industry. In the early
+stage, local governments and private capital may correct learning externalities,
+weak market formation, and supply-chain coordination failures. In the
+scale-competition stage, the same expansionary policy toolkit may generate
+duplicated capacity, low utilization, price compression, capital-return gaps,
+and aggregate resource misallocation. The main empirical setting is China's NEV
+industry. The main comparison is decentralized local implementation versus
+implementable centralized coordination.
+
+**Rejected:** Framing the project as a one-sided claim that local industrial
+policy caused welfare losses; treating price declines as welfare losses by
+themselves; or making $W^D<W^{CP}$ a maintained assumption before theory and
+quantification.
+
+**Reason:** The contribution is to evaluate when local competition is discovery
+and creative destruction and when it becomes duplicated capacity and aggregate
+misallocation. This framing preserves the positive role of NEV industrial policy
+and local government-private capital coordination while still allowing the model
+and data to identify misallocation-dominant states.

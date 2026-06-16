@@ -100,13 +100,20 @@ Parameter interpretation:
 Each local government internalizes its own fiscal surplus and local payoff, but
 does not fully internalize:
 
-- CES-demand price compression caused by national NEV expansion;
+- national consumer or final-good benefits from lower NEV prices;
+- producer price/revenue compression caused by national NEV expansion;
 - other-region effects of capacity expansion;
 - cross-region learning spillovers;
-- aggregate excess-capacity and MPK losses.
+- duplicated capacity and aggregate MPK losses.
 
 These omitted terms create the wedge between the decentralized local FOC and the
-constrained-planner FOC.
+constrained-planner FOC in the misallocation-dominant regime.
+
+The comparison is not one-sided. A centralized policy benchmark may not fully
+replicate local information, investment-attraction capacity, multi-region
+experimentation, and private-capital mobilization. These decentralized
+implementation benefits can offset or exceed the costs listed above, so the sign
+of $W^D-W^{CP}$ remains a quantitative object.
 
 ---
 
@@ -125,7 +132,8 @@ $$Z_{r,t}=(H_{r,t}^N,A_{r,t}^N,B_{r,t},s_{r,t-1}).$$
 
 The first proof target is a symmetric two-region static game. The proof should
 compare the local FOC with the constrained-planner FOC and state sufficient
-conditions for:
+conditions under which the scale-competition or misallocation-dominant regime
+implies:
 
 $$s^D>s^{CP}.$$
 
@@ -179,7 +187,8 @@ previous-period policy state $s_{r,t-1}$.
 
 ## 10. Open questions
 
-1. What sufficient conditions on $\theta_y$, $\theta_e$, $\theta_f$, $\phi$,
-   $\chi_s$, $\kappa_B$, and CES elasticity imply $s^D>s^{CP}$?
-2. In the first static proof, should $B_r$ be fixed or chosen jointly with $s_r$?
+1. How should the local payoff weights $\theta_y$, $\theta_e$, and $\theta_f$
+   be disciplined empirically once data work begins?
+2. When the dynamic extension restores debt choice, should $B_{r,t+1}$ be
+   introduced before or together with policy inertia?
 3. Which empirical object best measures fiscal pressure in $FiscalSurplus_{r,t}$?

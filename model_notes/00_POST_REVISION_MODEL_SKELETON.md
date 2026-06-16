@@ -115,6 +115,17 @@ $$
 
 The baseline does not impose a standalone inverse demand curve.
 
+Lower NEV relative prices are not welfare losses by themselves. In the CES
+system, lower prices can raise consumer or final-good welfare. Any welfare
+comparison must credit this benefit, along with learning, discovery, and
+implementation benefits, and then compare it with fiscal costs, duplicated
+capacity, capital misallocation, delayed exit, and innovation distortions.
+
+The model's main question is therefore state-contingent across the industry
+lifecycle: when does decentralized local implementation act as discovery and
+creative destruction, and when does it become duplicated capacity and aggregate
+misallocation?
+
 ---
 
 ## 5. Resource constraint
@@ -297,13 +308,16 @@ state vector.
 
 ## 13. Results to prove before code
 
-1. State-contingent policy is beneficial when learning gains exceed fiscal and
-   misallocation costs.
-2. Local governments over-subsidize relative to the constrained planner:
-   $s^D>s^{CP}$.
-3. Decentralized policy generates excessive NEV capacity:
-   $H^{N,D}>H^{N,CP}$.
-4. Decentralized policy lowers utilization and NEV capital returns:
-   $u^{N,D}<u^{N,CP}$ and $MPK^{N,D}<MPK^{O,D}$.
-5. Welfare under decentralized local policy is below constrained centralized
-   policy: $W^D<W^{CP}$.
+1. Early-stage decentralized local implementation can be beneficial when
+   learning externalities, weak market formation, and supply-chain coordination
+   failures make industry takeoff, cost decline, and firm screening valuable.
+2. In the scale-competition or misallocation-dominant regime, derive sufficient
+   conditions under which decentralized Markov-Nash policy exceeds implementable
+   centralized coordination: $s^D>s^{CP}$.
+3. Under those same sufficient conditions, derive duplicated capacity, lower
+   utilization, NEV price compression, and an MPK gap:
+   $H^{N,D}>H^{N,CP}$, $u^{N,D}<u^{N,CP}$, and $MPK^{N,D}<MPK^{O,D}$.
+4. The net welfare comparison is not preset. The model must characterize the
+   conditions under which $W^D<W^{CP}$, $W^D\approx W^{CP}$, or $W^D>W^{CP}$
+   after crediting consumer or final-good benefits from lower NEV prices,
+   learning, discovery, firm screening, and private-capital mobilization.

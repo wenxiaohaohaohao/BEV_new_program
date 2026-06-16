@@ -19,7 +19,8 @@ must complete:
 3. the local government FOC;
 4. the constrained planner FOC;
 5. sufficient conditions for $s^D>s^{CP}$;
-6. implications for $H^{N,D}>H^{N,CP}$, utilization, MPK gaps, and welfare.
+6. conditional implications for $H^{N,D}>H^{N,CP}$, utilization, MPK gaps, and
+   welfare regimes.
 
 The current phase is model derivation, not numerical implementation.
 
@@ -50,11 +51,13 @@ identification.
 | Object | Use |
 |---|---|
 | NEV firm or project entry | document whether policy-support regions attract more private entry |
-| NEV capacity and output | match scale and overcapacity patterns |
+| NEV capacity, output, and effective demand | match scale, overcapacity, and whether capacity grows faster than demand |
 | utilization | discipline the slack-capacity regime |
-| NEV prices and margins | discipline CES demand and price compression |
+| NEV prices, margins, and consumer or final-good price benefit | discipline CES demand and separate low-price benefits from producer return compression |
 | MPK / MRPK gap | measure capital misallocation |
 | regional employment | discipline local labor-market effects |
+| cost decline and quality upgrading | discipline learning, discovery, and creative-destruction benefits |
+| local investment attraction and private capital mobilization | discipline decentralized implementation advantages |
 
 ### 4.2 Causal moments
 
@@ -64,6 +67,8 @@ identification.
 | policy to firm/project entry | validate the active private-response mechanism |
 | policy persistence after overcapacity | discipline $\chi_s$ |
 | policy to utilization or MPK gap | check whether expansionary support is associated with slack capacity and lower returns |
+| policy to prices, sales, and effective demand | check whether consumer or final-good benefits are large enough to offset expansion costs |
+| policy to cost decline, quality, and survival/exit | check whether competition accelerates learning, selection, or creative destruction |
 
 ### 4.3 Calibration and external moments
 
@@ -71,9 +76,10 @@ identification.
 |---|---|
 | gross fiscal outlay $\phi sH$ | discipline subsidy cost and budget closure |
 | net NEV fiscal cost | compare gross support to NEV tax revenue |
-| CES elasticity $\epsilon$ | discipline demand curvature |
+| CES elasticity $\epsilon$ and pass-through | discipline demand curvature and the consumer or final-good benefit from lower NEV prices |
 | learning parameters $\psi_L,\psi_G,\nu,g_A$ | start from literature or external evidence, then test sensitivity |
 | financing conditions | mechanism shifter for entry and expansion, not a baseline state |
+| decentralized implementation benefit $\mathcal B_m^I$ | discipline local information, investment-attraction capacity, experimentation, and private-capital mobilization |
 | local objective weights | discipline with policy responses or simplify further |
 
 Firm-entry moments are mechanism evidence. They can support the claim that firms
@@ -98,6 +104,13 @@ $$\phi s_{r,t}H_{r,t}^N.$$
 Policy texts and project data can also be used to distinguish mechanisms:
 capacity investment, firm or project entry, and persistence after utilization
 falls should be measured separately where data allow.
+
+A price decline is not evidence of welfare loss by itself. Quantification must
+credit consumer or final-good benefits from lower NEV prices, learning, discovery,
+and private-capital mobilization before subtracting fiscal costs, idle capacity,
+capital misallocation, delayed exit, and innovation distortions. The quantitative
+output should classify whether $W^D<W^{CP}$, $W^D\approx W^{CP}$, or
+$W^D>W^{CP}$.
 
 ---
 
@@ -140,7 +153,9 @@ Use literature calibration, external estimates, or sensitivity analysis first.
   entry responses should be treated as mechanism validation unless the first
   proof explicitly adds an entry margin.
 - Derive local FOC and constrained-planner FOC.
-- State sufficient conditions for $s^D>s^{CP}$.
+- State sufficient conditions for $s^D>s^{CP}$ in the scale-competition or
+  misallocation-dominant regime, and state why this is not a global welfare
+  conclusion.
 
 **Phase 2: Dynamic policy-exit mechanism**
 
@@ -152,7 +167,8 @@ Use literature calibration, external estimates, or sensitivity analysis first.
 
 - Only after Phases 0-2 are written should the project plan numerical routines.
 - The intended later discipline is grid search, root refinement, unilateral
-  deviation checks, and an equilibrium selection rule.
+  deviation checks, an equilibrium selection rule, and welfare-regime
+  classification.
 
 ---
 
@@ -160,10 +176,18 @@ Use literature calibration, external estimates, or sensitivity analysis first.
 
 The model should distinguish:
 
-- **capacity-building phase:** learning and market-formation benefits are high;
-  $s^{CP}$ may be positive;
-- **excess-capacity phase:** utilization is low, price compression is stronger,
-  and the marginal social return to additional NEV capacity declines.
+- **Early industry-building phase:** learning externalities, weak market
+  formation, and supply-chain coordination failures are important; local
+  governments and private capital can support industry takeoff, cost decline, and
+  firm screening.
+- **Creative-destruction phase:** decentralized experimentation, entry, and
+  private-capital mobilization generate learning, cost decline, consumer gains,
+  and selection benefits that can offset duplicated capacity.
+- **Scale-competition / duplicated-capacity phase:** continued expansionary
+  investment attraction, subsidies, and capacity support can generate duplicated
+  entry, low utilization, price compression, capital-return gaps, and aggregate
+  resource misallocation. Consumer or final-good price benefits may still be
+  positive, so the welfare sign depends on the net trade-off.
 
 Do not hard-code $s^{CP}\to0$ as an assumption. It should follow from the
 constrained planner's marginal-benefit and marginal-cost comparison.
@@ -176,3 +200,7 @@ constrained planner's marginal-benefit and marginal-cost comparison.
 2. Which demand elasticity source is credible enough for the first calibration?
 3. Should local objective weights be estimated or normalized in the first
    quantitative version?
+4. Which data can discipline effective demand and the consumer or final-good
+   benefit from lower NEV prices?
+5. Which data can discipline decentralized implementation benefits and distinguish
+   discovery-dominant competition from aggregate misallocation?

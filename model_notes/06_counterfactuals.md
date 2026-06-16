@@ -3,8 +3,11 @@
 ## 1. Purpose
 
 This module records counterfactuals to run only after the baseline model is
-closed and the static two-region over-subsidization result is proven. The main
-benchmark is the constrained planner / centralized policy equilibrium.
+closed and the static two-region trade-off conditions are written. The main
+benchmark is the comparison between `decentralized local implementation` and
+`implementable centralized coordination`, and the welfare sign is not preset.
+Counterfactuals should report how effects differ between the early
+industry-building phase and the later scale-competition phase.
 
 ---
 
@@ -13,7 +16,8 @@ benchmark is the constrained planner / centralized policy equilibrium.
 **Model change:** Set $s_{r,t}=0$ for all regions and periods.
 
 **Economic question:** What would NEV output, capacity, learning, utilization,
-and welfare look like without local policy support?
+consumer or final-good price benefits, and welfare look like without local policy
+support?
 
 **Expected outputs:**
 
@@ -34,18 +38,22 @@ competition.
 constrained planner's coordinated policy instruments $s_{r,t}^{CP}$.
 Households and firms continue to optimize privately.
 
-**Economic question:** What is the welfare gain from coordinating industrial
-policy at the national level while keeping private decentralized responses?
+**Economic question:** Does coordinating industrial policy at the national level
+raise, leave unchanged, or lower net welfare relative to decentralized local
+implementation?
 
 **Expected outputs:**
 
-- Welfare gap: $W^{CP}-W^D$.
+- Welfare comparison: $W^D-W^{CP}$.
 - Policy comparison: $s_t^{CP}$ versus $s_t^D$.
 - Capacity comparison: $H_t^{N,CP}$ versus $H_t^{N,D}$.
 - Utilization and MPK gap comparison.
 
-**Welfare decomposition:** learning gains, fiscal-cost savings, idle-capacity
-cost reduction, and misallocation reduction.
+**Welfare decomposition:** consumer or final-good price-benefit changes, learning
+gains, discovery and implementation benefits, fiscal-cost savings,
+idle-capacity cost reduction, capital reallocation, and misallocation reduction.
+Consumer, learning, discovery, and mobilization benefits must be credited before
+declaring a net welfare gain from coordination.
 
 ---
 
@@ -54,13 +62,14 @@ cost reduction, and misallocation reduction.
 **Model change:** Impose $s_{r,t}\leq\bar s$ for all regions and periods, where
 $\bar s$ is chosen relative to the constrained-planner early-phase policy.
 
-**Economic question:** Can a simple national rule approximate the welfare gains
-from centralized coordination?
+**Economic question:** Can a simple national rule improve the decentralized
+trade-off without eliminating useful experimentation and private-capital
+mobilization?
 
 **Expected outputs:**
 
 - $W^{CF3}$ relative to $W^D$ and $W^{CP}$.
-- Fraction of $W^{CP}-W^D$ captured by the cap.
+- Fraction of any coordination gain captured by the cap, if $W^{CP}>W^D$.
 - Capacity, utilization, and MPK effects.
 
 ---
@@ -70,8 +79,9 @@ from centralized coordination?
 **Model change:** Reduce policy adjustment cost $\chi_s$ or otherwise relax sunk
 policy commitments after overcapacity becomes observable.
 
-**Economic question:** How much welfare is lost because decentralized policy
-declines too slowly?
+**Economic question:** Does faster policy exit raise welfare by reducing
+misallocation, or lower welfare by cutting off useful discovery, learning, and
+selection?
 
 **Expected outputs:**
 

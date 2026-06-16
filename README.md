@@ -2,8 +2,8 @@
 
 **Project title**
 
-State-Contingent Industrial Policy, Local Competition, and Aggregate Misallocation:
-Evidence from China's NEV Industry
+Local Industrial Policy after Success: Creative Destruction or Aggregate
+Misallocation? Evidence from China's NEV Industry
 
 **Current phase:** model architecture consolidation
 
@@ -13,10 +13,21 @@ Evidence from China's NEV Industry
 
 ## Scope
 
-This project studies China's new energy vehicle (NEV) industry through a dynamic
-macro model of state-contingent industrial policy, local government competition,
-private firm entry/capacity responses, overcapacity, capital misallocation, and
-welfare.
+This project studies the dual role of decentralized local industrial policy
+across development stages of a strategic emerging industry. In the early stage,
+when learning externalities, weak market formation, and supply-chain coordination
+failures bind, the combination of local governments and private capital can help
+launch the industry, reduce costs, and screen firms. After the industry enters a
+scale-competition stage, continued expansionary investment attraction,
+subsidies, and capacity support can generate duplicated entry, low utilization,
+price compression, capital-return gaps, and aggregate resource misallocation.
+
+The core comparison is between `decentralized local implementation` and
+`implementable centralized coordination`. The welfare effect of local industrial
+policy is state-contingent: the project tests when local competition is
+`discovery and creative destruction`, and when it becomes `duplicated capacity
+and aggregate misallocation`. The sign of $W^D-W^{CP}$ is an object for theory
+discipline and quantification, not a maintained conclusion.
 
 This directory is intentionally self-contained. It does not depend on the parent
 AI compute-subsidy project and can later be moved into a separate Git repository.
@@ -73,7 +84,7 @@ discussion
 |---|---|
 | [`00_POST_REVISION_MODEL_SKELETON.md`](model_notes/00_POST_REVISION_MODEL_SKELETON.md) | Closure contract for the post-review baseline |
 | [`00_MASTER_model_memo.md`](model_notes/00_MASTER_model_memo.md) | Current accepted baseline |
-| [`01_research_mechanism.md`](model_notes/01_research_mechanism.md) | Research question, mechanism, and involution |
+| [`01_research_mechanism.md`](model_notes/01_research_mechanism.md) | Research question, mechanism, and welfare regimes |
 | [`02_environment_firms.md`](model_notes/02_environment_firms.md) | Environment, household, firms, and learning-by-doing |
 | [`03_government_game.md`](model_notes/03_government_game.md) | Local government objective and Markov-Nash game |
 | [`04_planner_equilibrium.md`](model_notes/04_planner_equilibrium.md) | Planner problem and full equilibrium definition |

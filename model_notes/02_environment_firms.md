@@ -83,8 +83,10 @@ With the final-good price normalized to one, the NEV relative price is:
 
 $$P_t^N=\eta_N\left(\frac{Y_t}{Y_t^N}\right)^{1/\epsilon}.$$
 
-Thus NEV price falls when NEV quantity expands relative to final demand. The
-baseline does not impose an additional standalone inverse demand curve.
+Thus NEV price falls when NEV quantity expands relative to final demand. This
+price decline can raise consumer or final-good welfare; it is not a welfare loss
+by itself. The baseline does not impose an additional standalone inverse demand
+curve.
 
 ---
 
@@ -190,10 +192,18 @@ productivity distribution $\mu_{r,t}(z)$ are extensions.
 
 ## 8. Capacity regimes [Accepted baseline]
 
-- **Capacity-building phase:** learning and market-formation benefits are high;
-  the constrained planner may choose $s^{CP}>0$.
-- **Excess-capacity phase:** utilization is low, price compression is stronger,
-  and the marginal social return to additional NEV capacity declines.
+- **Early industry-building phase:** learning externalities, weak market
+  formation, and supply-chain coordination failures are important; local
+  governments and private capital can support industry takeoff, cost decline, and
+  firm screening.
+- **Creative-destruction phase:** decentralized experimentation, firm entry,
+  consumer price gains, cost decline, and winner selection may offset duplicated
+  capacity and fiscal costs.
+- **Scale-competition / duplicated-capacity phase:** continued expansionary
+  investment attraction, subsidies, and capacity support can generate duplicated
+  entry, low utilization, price compression, capital-return gaps, and aggregate
+  resource misallocation. Consumer or final-good price benefits may still be
+  positive, so the welfare sign depends on the net trade-off.
 
 The model should not assume that investment stops automatically when capacity is
 slack. Whether decentralized policy exits too slowly must be derived dynamically
@@ -229,11 +239,9 @@ double-counting of own-region output in the spillover term.
 
 ## 10. Open questions
 
-1. Should the first two-region proof use $Y_{r,t}^N=u_{r,t}^NH_{r,t}^N$ directly
-   or a richer production-plus-utilization formulation?
-2. How should $DebtCost_t$ and $AdjCost_t$ be specified for the first static
-   proof?
-3. What is the minimal firm optimality condition needed to prove
-   $\partial H_r^N/\partial s_r>0$?
-4. Which entry measure, if any, is most useful as a mechanism check without
+1. What primitive firm problem should later microfound the reduced-form capacity
+   response $h_s(s)>0$?
+2. How should the richer production-plus-utilization formulation be introduced
+   after the static two-region proof is accepted?
+3. Which entry measure, if any, is most useful as a mechanism check without
    requiring a full dynamic entry model?

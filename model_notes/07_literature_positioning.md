@@ -12,17 +12,23 @@ drafting.
 ## 2. JMP positioning [Accepted baseline]
 
 The project should be positioned as a macro-development / spatial macro /
-quantitative industrial policy paper about aggregate misallocation and welfare,
-not as a pure empirical IO paper, a BLP demand-estimation paper, a supplier
-innovation paper, or a corporate-finance paper.
+quantitative industrial policy paper about the dual role of decentralized local
+industrial policy across development stages of a strategic emerging industry. It
+asks when local competition is discovery and creative destruction, and when it
+becomes duplicated capacity and aggregate misallocation. It is not a pure
+empirical IO paper, a BLP demand-estimation paper, a supplier innovation paper,
+or a corporate-finance paper.
 
 The core object is a solvable multi-region macro model with:
 
 - decentralized local industrial policy;
 - private firm entry and capacity responses;
+- local information, investment-attraction capacity, experimentation, and
+  private-capital mobilization;
 - NEV and outside-sector capital allocation;
-- CES-disciplined price compression;
-- MPK/MRPK gaps and welfare counterfactuals;
+- CES-disciplined demand, including consumer or final-good benefits from lower
+  prices and producer price/revenue compression;
+- MPK/MRPK gaps and net welfare counterfactuals;
 - a constrained centralized policy benchmark.
 
 ---
@@ -31,12 +37,12 @@ The core object is a solvable multi-region macro model with:
 
 | Literature group | Role in this paper |
 |---|---|
-| Industrial policy and learning | motivate state-contingent policy benefits and learning externalities |
-| Competition and industrial policy | motivate why policy can interact with competition and market structure |
-| Misallocation and wedges | support MPK/MRPK dispersion and aggregate welfare-loss accounting |
-| Spatial policy and local competition | support decentralized local policy incentives and cross-region externalities |
+| Industrial policy and learning | motivate state-contingent policy benefits, learning externalities, and why NEV policy can be successful |
+| Competition and industrial policy | motivate why policy can interact with competition, discovery, cost decline, and selection |
+| Misallocation and wedges | support MPK/MRPK dispersion and net welfare accounting |
+| Spatial policy and local competition | support decentralized local policy incentives, local information, experimentation, and cross-region externalities |
 | Chinese local fiscal incentives | support the local-government objective and fiscal/budget channel |
-| NEV and automobile demand | discipline product-market demand, price compression, and utilization |
+| NEV and automobile demand | discipline product-market demand, consumer price benefits, price/revenue compression, and utilization |
 | Learning curves / Wright's Law | discipline learning-by-doing and cost decline |
 | Firm dynamics and industrial entry | motivate private entry/capacity response without making firm heterogeneity the baseline |
 
@@ -71,11 +77,16 @@ The paper contributes a macro model of decentralized local industrial policy in
 which local governments play a Markov-Nash policy game, firms actively respond
 through entry and NEV installed capital/capacity, product prices are disciplined
 by CES-derived demand, and the central comparison is between decentralized
-equilibrium and a constrained planner that coordinates policy instruments.
+equilibrium and an implementable constrained planner that coordinates policy
+instruments.
 
-The paper is not a generic argument against industrial policy. It asks when a
-state-contingent policy that may be socially valuable early becomes excessive
-under decentralized local competition and private entry/capacity responses.
+The paper is not a generic argument against industrial policy. Existing studies
+explain how China's NEV industry rose. This paper asks whether the decentralized
+local implementation that helped generate this rise also produced duplicated
+capacity and aggregate misallocation once the industry entered scale competition.
+It is also not an argument that lower prices are mechanically harmful: low prices
+can raise consumer or final-good welfare, and the paper's welfare comparison
+against $CP$ can be negative, near zero, or positive.
 
 ---
 
@@ -83,12 +94,14 @@ under decentralized local competition and private entry/capacity responses.
 
 1. Use industrial-policy and learning papers to justify why $s^{CP}$ can be
    positive in early states.
-2. Use misallocation papers to justify MPK/MRPK gaps and welfare accounting.
+2. Use misallocation papers to justify MPK/MRPK gaps and net welfare accounting.
 3. Use local fiscal and spatial-policy papers to justify why local governments
-   do not fully internalize national overcapacity and price compression.
-4. Use automobile/NEV demand papers to discipline demand elasticity and price
-   compression, not to replace the baseline CES demand before the model is
-   closed.
+   may have both distorted expansion incentives and real implementation
+   advantages through information, investment attraction, experimentation, and
+   mobilization.
+4. Use automobile/NEV demand papers to discipline demand elasticity, consumer
+   price benefits, and price/revenue compression, not to replace the baseline
+   CES demand before the model is closed.
 5. Use firm-entry and industrial-organization references to motivate active firm
    response, not to force a full heterogeneous-firm dynamic model into the first
    baseline.

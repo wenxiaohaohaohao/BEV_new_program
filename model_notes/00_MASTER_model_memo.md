@@ -1,54 +1,99 @@
 # MASTER Model Memo
 
 **Project title:**
-State-Contingent Industrial Policy, Local Competition, and Aggregate Misallocation:
-Evidence from China's NEV Industry
+Local Industrial Policy after Success: Creative Destruction or Aggregate
+Misallocation? Evidence from China's NEV Industry
 
 **Status:** Accepted baseline model memo after the Claude second-review response
 and the external notes on active firm response and macro-JMP positioning. The
 closure contract is `00_POST_REVISION_MODEL_SKELETON.md`.
 
-**Last updated:** 2026-06-09
+**Last updated:** 2026-06-16
 
 ---
 
 ## 1. Research question
 
-How does decentralized local industrial policy in a strategic emerging industry
-generate over-entry, excess capacity, price and profit compression, and aggregate
-capital misallocation after initially facilitating industrial upgrading?
+This paper studies the dual role of decentralized local industrial policy across
+development stages of a strategic emerging industry. In the early stage, when the
+industry is constrained by learning externalities, weak market formation, and
+supply-chain coordination failures, the combination of local governments and
+private capital can promote industry takeoff, cost decline, and firm screening.
+After the industry enters a scale-competition stage, continued expansionary
+investment attraction, subsidies, and capacity support can generate duplicated
+entry, low utilization, price compression, capital-return gaps, and aggregate
+resource misallocation.
 
-The paper is not a no-policy critique of industrial policy. It studies whether
-decentralized local policy competition pushes expansionary support above the
-state-contingent level chosen by a constrained centralized policy benchmark.
+The paper compares decentralized local implementation with implementable
+centralized coordination and asks when local competition is discovery and creative
+destruction, and when it becomes duplicated capacity and aggregate
+misallocation. The welfare effect of local industrial policy is
+state-contingent.
+
+The paper is not a no-policy critique of industrial policy or a claim that low
+prices are mechanically harmful. Existing studies explain how China's NEV
+industry rose. This paper asks whether the decentralized local implementation
+that helped generate this rise also produced duplicated capacity and aggregate
+misallocation once the industry entered the scale-competition stage.
 It is also not a "government versus firms" story. Firms actively respond to
 policy, expected demand, expected prices, financing conditions, and productivity;
-the distortion comes from decentralized local and private decisions that do not
-fully internalize national price compression, idle capacity, MPK gaps, and
-welfare losses.
+the sign of the welfare effect depends on whether decentralized discovery,
+learning, cost reduction, consumer gains, and private-capital mobilization exceed
+producer price/revenue compression, idle capacity, MPK gaps, fiscal costs, and
+delayed exit or innovation distortions.
 
 ---
 
 ## 2. Core mechanism
 
 $$
-\text{local Markov-Nash policy game}
+\text{local Markov-Nash policy game across industry stages}
 \;+\;
 \text{private firm entry/capacity response}
 \Rightarrow
-\text{excess NEV installed capacity}
+\left\{
+\begin{array}{l}
+\text{early stage: learning, market formation, supply-chain coordination}\\
+\text{scale-competition stage: investment attraction, subsidies, capacity support}
+\end{array}
+\right.
 \Rightarrow
-\text{CES-demand price compression}
+\left\{
+\begin{array}{l}
+\text{industry takeoff, cost decline, firm screening, creative destruction}\\
+\text{duplicated entry, low utilization, price compression, MPK gaps}
+\end{array}
+\right.
 \Rightarrow
-\text{low utilization and MPK gap}
-\Rightarrow
-\text{aggregate misallocation and welfare loss}.
+\text{net welfare comparison } W^D-W^{CP}.
 $$
 
-Industrial policy can be welfare-improving in early states with strong learning
-and coordination benefits. The distortion arises when local governments continue
-to support NEV expansion and firms continue to enter or expand capacity beyond
-the constrained-planner policy level.
+Industrial policy can be welfare-improving in early states with strong learning,
+market-formation, and supply-chain coordination benefits. Decentralized local
+implementation can also have information, investment-attraction,
+experimentation, and private-capital-mobilization advantages. The potential
+distortion arises when the same decentralized expansionary tools continue after
+the industry enters scale competition and capacity expands faster than effective
+demand.
+
+The price channel is state-contingent. Lower NEV prices can raise consumer or
+final-good welfare. The paper does not pre-commit to $W^D<W^{CP}$. The
+quantitative object is the net trade-off: in some states consumer, learning,
+discovery, and mobilization benefits may offset misallocation costs; in other
+states fiscal costs, low utilization, wasted fixed or capital costs, delayed
+exit, and innovation distortions may dominate.
+
+The three admissible outcomes are:
+
+1. $W^D<W^{CP}$: NEV policy can still be successful overall, but decentralized
+   local implementation generates lower welfare relative to central
+   coordination.
+2. $W^D\approx W^{CP}$: local competition creates duplicated capacity, but local
+   information, investment-attraction capacity, and private-capital mobilization
+   offset much of the misallocation cost.
+3. $W^D>W^{CP}$: decentralized competition functions as a discovery mechanism;
+   multi-region experimentation and firm competition waste some resources but
+   accelerate learning, cost decline, and winner selection.
 
 ---
 
@@ -245,13 +290,20 @@ equilibrium. It chooses policy instruments:
 $$\{s_{r,t}^{CP}\}_{r=1}^R,$$
 
 while households and firms continue to optimize privately. The constrained
-planner internalizes cross-region learning spillovers, CES price compression,
-excess capacity, fiscal costs, debt costs, and aggregate MPK losses.
+planner internalizes cross-region learning spillovers, the consumer or final-good
+benefit from lower NEV prices, producer price/revenue compression, excess
+capacity, fiscal costs, debt costs, and aggregate MPK losses.
 
 A first-best planner that directly chooses allocations is only an appendix upper
 bound:
 
-$$W^{FB}\geq W^{CP}\geq W^D.$$
+$$W^{FB}\geq \max\{W^{CP},W^D\}.$$
+
+If a full-information constrained planner that can reproduce all decentralized
+implementation advantages is introduced as a separate upper-bound benchmark, it
+will satisfy $W^{CP,FI}\geq W^D$ by construction. The main $CP$ object is the
+implementable centralized policy benchmark, so $W^D-W^{CP}$ is not signed by
+definition.
 
 ---
 
@@ -275,21 +327,29 @@ learning, and resource feasibility.
 
 ---
 
-## 11. Definition of involution
+## 11. Definition of creative destruction versus aggregate misallocation
 
-Involution is the equilibrium pattern generated by decentralized local industrial
-policy competition:
+The same decentralized local policy system can generate creative destruction or
+aggregate misallocation. Define the diagnostic vector:
 
 $$
-\text{Involution}_t=
+\mathcal T_t=
 \left(
 s_t^D-s_t^{CP},\;
 H_t^{N,D}-H_t^{N,CP},\;
 u_t^{N,CP}-u_t^{N,D},\;
 MPK_t^{O,D}-MPK_t^{N,D},\;
-W^{CP}-W^D
+W^D-W^{CP}
 \right).
 $$
+
+The welfare component is not signed by definition. It credits consumer or
+final-good benefits from lower NEV prices, learning, discovery, and mobilization
+benefits before subtracting fiscal, duplicated-capacity,
+capital-misallocation, delayed-exit, and innovation-distortion costs. The
+economy is in a misallocation-dominant regime only when duplicated capacity, low
+utilization, MPK gaps, and the net welfare gap jointly indicate that
+decentralized competition has become socially costly relative to $CP$.
 
 ---
 
@@ -297,14 +357,19 @@ $$
 
 1. **Lemma 1:** A higher local policy wedge raises NEV installed capacity.
 2. **Lemma 2:** CES-derived demand implies price compression when NEV quantity
-   expands.
-3. **Proposition 1:** Coordinated state-contingent policy can raise welfare when
-   marginal learning and coordination benefits exceed fiscal and misallocation
-   costs.
-4. **Proposition 2:** Under stated sufficient conditions, decentralized
-   Markov-Nash policy exceeds constrained-planner policy: $s^D>s^{CP}$.
-5. **Proposition 3:** Given over-subsidization, decentralized equilibrium
-   generates excess NEV capacity, lower utilization, an MPK gap, and welfare loss.
+   expands relative to effective demand; the welfare sign of lower prices is
+   ambiguous before fiscal and resource costs are included.
+3. **Proposition 1:** Early-stage decentralized or coordinated policy can raise
+   welfare when marginal learning, market-formation, and supply-chain
+   coordination benefits exceed fiscal and misallocation costs.
+4. **Proposition 2:** In the scale-competition or misallocation-dominant regime,
+   stated sufficient conditions imply decentralized Markov-Nash policy exceeds
+   implementable centralized coordination: $s^D>s^{CP}$.
+5. **Proposition 3:** Given Proposition 2 and the net-cost-dominance condition,
+   decentralized equilibrium generates duplicated NEV capacity, lower
+   utilization, an MPK gap, and lower welfare relative to $CP$. Without that
+   condition, $W^D-W^{CP}$ remains a quantitative trade-off rather than a
+   theorem.
 
 Policy exit that is too slow is a dynamic or numerical result unless separately
 proven.
@@ -315,10 +380,13 @@ proven.
 
 Moments are separated into:
 
-- descriptive moments: entry, capacity, utilization, prices, margins, MPK gaps;
+- descriptive moments: entry, capacity, utilization, effective demand, prices,
+  margins, learning/cost decline, consumer or final-good price benefits, MPK
+  gaps;
 - causal moments: policy effects on capacity, entry, and persistence;
 - calibration/external moments: fiscal outlays, CES elasticity, learning
-  parameters, financing conditions, and local-government weights.
+  parameters, financing conditions, local information/mobilization advantages,
+  and local-government weights.
 
 Firm-entry moments validate the private-response mechanism. They do not require
 the first quantitative model to carry a full firm productivity distribution.
@@ -344,6 +412,8 @@ validation, not an automatically exogenous instrument.
 2. Write the closed symmetric two-region static model.
 3. Derive the local government FOC.
 4. Derive the constrained-planner FOC.
-5. Prove sufficient conditions for $s^D>s^{CP}$.
-6. Derive capacity, utilization, MPK, and welfare implications.
+5. Prove sufficient conditions for $s^D>s^{CP}$ in the scale-competition or
+   misallocation-dominant regime.
+6. Derive duplicated-capacity, utilization, MPK, and welfare-regime
+   implications.
 7. Only then plan numerical implementation.

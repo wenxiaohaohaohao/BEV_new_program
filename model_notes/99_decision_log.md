@@ -232,16 +232,17 @@ benchmark in the misallocation-dominant regime.
 
 ## Decision 13: Strategic complementarity and policy inertia
 
-**Accepted:** Early-stage local policy competition may be modeled as strategic
-complementarity in best responses:
+**Accepted:** Local policy competition for firms, projects, and mobile capital
+may be modeled as strategic complementarity in best responses:
 
 $$\frac{\partial BR_r}{\partial s_{-r}}>0.$$
 
-Late-stage slow exit is modeled through policy adjustment costs and local
+Slow policy exit is modeled through policy adjustment costs and local
 fiscal/employment incentives.
 
-**Rejected for baseline:** Modeling late-stage exit as a war-of-attrition or
-stopping-time game.
+**Rejected for baseline:** Modeling policy exit as a war-of-attrition or
+stopping-time game, or treating exit inertia as the mechanical result of an
+exogenous industry phase.
 
 **Reason:** Strategic complementarity and policy inertia are different
 mechanisms. The baseline keeps them separate to avoid overcomplicating the local
@@ -394,12 +395,14 @@ gaps, fiscal costs, and net welfare effects.
 ## Decision 21: Macro-JMP main axis
 
 **Accepted:** The project's main positioning is macro-development / spatial macro
-/ quantitative industrial policy about the lifecycle role of decentralized local
-industrial policy in a strategic emerging industry: early industry building and
-creative destruction versus later duplicated capacity and aggregate
-misallocation. IO, demand-estimation, supply-chain, and corporate-finance
-mechanisms can discipline or amplify the story, but they do not replace the core
-model.
+/ quantitative industrial policy about the dynamic welfare effect of
+decentralized expansionary local industrial policy over the endogenous industry
+life-cycle path of a strategic emerging industry. The core transition is from
+discovery and creative destruction to duplicated capacity and aggregate
+misallocation when capacity, demand absorption, price, utilization, profit, and
+MPK conditions make local and central policy returns diverge. IO,
+demand-estimation, supply-chain, and corporate-finance mechanisms can discipline
+or amplify the story, but they do not replace the core model.
 
 **Rejected for baseline:** Restoring standalone inverse demand, using $s^P$ or
 $W^P$ as the main planner notation, adding $\kappa s^2/2$ as a baseline policy
@@ -463,9 +466,9 @@ necessary for proving $s^D>s^{CP}$.
 
 **Reason:** The core static proof only needs a positive firm capacity response,
 CES price compression with consumer benefits credited, falling utilization in
-the scale-competition region, and the local-versus-planner FOC comparison. The
+the duplicated-capacity range, and the local-versus-planner FOC comparison. The
 richer production block is useful for later quantification, but it is not needed
-to characterize the first misallocation-dominant sufficient conditions.
+to characterize the first local-central return-divergence sufficient conditions.
 
 ---
 
@@ -503,17 +506,17 @@ the first static proof.
 
 ## Decision 25: Welfare sign is state-contingent and not preset
 
-**Accepted:** The project frames NEV industrial policy as state-contingent across
-the industry lifecycle. In the early stage, when learning externalities, weak
-market formation, and supply-chain coordination failures bind, local governments
-combined with private capital can support industry takeoff, cost decline, and
-firm screening. In the scale-competition stage, continued expansionary
-investment attraction, subsidies, and capacity support can generate duplicated
-entry, low utilization, price compression, capital-return gaps, and aggregate
-resource misallocation. The paper does not pre-commit to $W^D<W^{CP}$. It
-evaluates whether industry-upgrading, discovery, learning, consumer,
-firm-screening, and private-capital mobilization benefits exceed fiscal,
-fixed-cost, low-utilization, and aggregate capital-misallocation costs.
+**Accepted:** The project frames NEV industrial policy as state-contingent along
+an endogenous industry-life-cycle path. Local governments combined with private
+capital can support industry takeoff, cost decline, firm screening,
+experimentation, and learning when expansion has high social return. The same
+expansionary toolkit can generate duplicated entry, low utilization, price
+compression, capital-return gaps, and aggregate resource misallocation when
+capacity expands faster than effective demand and the central return to further
+expansion falls. The paper does not pre-commit to $W^D<W^{CP}$. It evaluates
+whether industry-upgrading, discovery, learning, consumer, firm-screening, and
+private-capital mobilization benefits exceed fiscal, fixed-cost,
+low-utilization, and aggregate capital-misallocation costs.
 
 Lower NEV prices can raise consumer or final-good welfare. In the model, price
 compression affects welfare only after this benefit is credited. A sufficient
@@ -545,38 +548,38 @@ implementable $CP$, not policy versus no policy.
 
 **Accepted:** The working title is:
 
-Local Industrial Policy after Success: Creative Destruction or Aggregate
-Misallocation? Evidence from China's NEV Industry
+Decentralized Industrial Policy over the Industry Life Cycle: Creative
+Destruction or Aggregate Misallocation? Evidence from China's NEV Industry
 
 The safe boundary sentence is:
 
-Existing studies explain how China's NEV industry rose. This paper asks whether
-the decentralized local implementation that helped generate this rise also
-produced duplicated capacity and aggregate misallocation once the industry
-entered the scale-competition stage.
+Existing studies explain how China's NEV industry rose. This paper asks how the
+marginal welfare return to the same decentralized local implementation changes
+with endogenous capacity, demand absorption, prices, utilization, profits, and
+MPK gaps.
 
 **Rejected for baseline:** Positioning the paper as a rebuttal to positive
 studies of China's NEV policy or as a proof that local industrial policy caused
-welfare losses.
+welfare losses. Also rejected is the prior post-success framing that could be
+read as assuming policy becomes harmful after an exogenous maturity threshold.
 
 **Reason:** The paper should build on the positive NEV literature, not fight it.
 The contribution is to evaluate whether the same decentralized local
-implementation that helped create success later acts as creative destruction, an
-offsetting trade-off, or aggregate misallocation.
+implementation acts as creative destruction, an offsetting trade-off, or
+aggregate misallocation as the endogenous state changes.
 
 ---
 
 ## Decision 27: Main axis is lifecycle dual role and state-contingent welfare
 
-**Accepted:** The paper studies the dual role of decentralized local industrial
-policy across development stages of a strategic emerging industry. In the early
-stage, local governments and private capital may correct learning externalities,
-weak market formation, and supply-chain coordination failures. In the
-scale-competition stage, the same expansionary policy toolkit may generate
-duplicated capacity, low utilization, price compression, capital-return gaps,
-and aggregate resource misallocation. The main empirical setting is China's NEV
-industry. The main comparison is decentralized local implementation versus
-implementable centralized coordination.
+**Accepted:** The paper studies the dual role of decentralized expansionary local
+industrial policy over the endogenous industry life cycle of a strategic
+emerging industry. The life cycle is not an exogenous stage split. It is the
+dynamic path jointly determined by local policy, firm entry, capacity
+investment, demand absorption, price adjustment, utilization, profit, and
+capital returns. The main empirical setting is China's NEV industry. The main
+comparison is decentralized local implementation versus implementable
+centralized coordination.
 
 **Rejected:** Framing the project as a one-sided claim that local industrial
 policy caused welfare losses; treating price declines as welfare losses by
@@ -616,9 +619,9 @@ invent new primitives without literature sources.
 local and central intervention index logic:
 
 $$
-\zeta_{rt}^{L,NEV}\neq\zeta_{rt}^{C,NEV},
+\zeta_{rt}^{L,NEV}(Z_t)\neq\zeta_{rt}^{C,NEV}(Z_t),
 \qquad
-Gap_{rt}^{NEV}=\zeta_{rt}^{L,NEV}-\zeta_{rt}^{C,NEV}.
+Gap_{rt}^{NEV}(Z_t)=\zeta_{rt}^{L,NEV}(Z_t)-\zeta_{rt}^{C,NEV}(Z_t).
 $$
 
 The existing local FOC versus constrained-planner FOC comparison is interpreted
@@ -652,15 +655,17 @@ why installed capacity may not translate one-for-one into realized sales.
 ## Decision 31: Klepper supplies lifecycle interpretation only
 
 **Accepted:** Klepper is used for industry-life-cycle interpretation: entry,
-exit, innovation, competition, and market structure evolve over maturity.
+exit, innovation, competition, and market structure evolve over the dynamic
+path of the industry.
 
 **Rejected for baseline:** Deriving local policy, welfare counterfactuals, or
 new state variables such as `ScaleCompetitionState` or `SelectionState` from
 Klepper.
 
 **Reason:** Lifecycle language should describe the path of sourced model objects
-such as policy, entry, investment, capacity, demand, prices, utilization, profit,
-exit, and MPK gaps. It is not an independent model block.
+such as policy, entry, investment, capacity, demand absorption, prices,
+utilization, profit, exit, and MPK gaps. It is not an independent model block
+and does not define exogenous phases.
 
 ---
 
@@ -677,3 +682,48 @@ consumer/final-good welfare, firm outcomes, or continuation value.
 
 **Reason:** Learning is central to the state-contingent benefit side, but the
 formal object must remain source-disciplined.
+
+---
+
+## Decision 33: Industry life cycle is endogenous in the baseline framing
+
+**Accepted:** The baseline treats the industry life cycle as the dynamic path
+jointly determined by local policy, firm entry, capacity investment, demand
+absorption, price adjustment, utilization, profits, and capital returns.
+
+**Rejected for baseline:** Treating the life cycle as a set of exogenous phases
+or assuming that expansionary industrial policy becomes socially costly after a
+fixed maturity threshold.
+
+**Reason:** The paper's mechanism is dynamic lag plus state-dependent returns.
+Capacity investment is lagged and partly irreversible. Simultaneous local
+expansion can make future capacity release concentrated. Whether that expansion
+is discovery or misallocation depends on demand absorption, utilization, prices,
+profits, fiscal costs, and MPK gaps, not on an externally assigned phase label.
+
+---
+
+## Decision 34: Core transition condition is local-positive, central-nonpositive return
+
+**Accepted:** The key transition condition is:
+
+$$
+\zeta_{rt}^{L,NEV}(Z_t)>0
+\quad \text{but} \quad
+\zeta_{rt}^{C,NEV}(Z_t)\leq0.
+$$
+
+Here $Z_t$ denotes already defined endogenous objects such as capacity, demand
+absorption, prices, utilization, profits, fiscal costs, and MPK gaps. It is a
+compact notation for the state of the model, not a new primitive.
+
+**Rejected for baseline:** Explaining duplicated capacity and aggregate
+misallocation by assuming that policy simply turns bad in a later period.
+
+**Reason:** When local returns remain positive, local governments can rationally
+continue expansionary support because they internalize local investment,
+employment, output, and tax-base gains. When central returns are nonpositive,
+coordinated policy would reduce the expansionary wedge because it internalizes
+duplicated capacity, fiscal costs, and aggregate capital misallocation. The
+gap between these two returns is the formal discovery-to-misallocation
+transition.

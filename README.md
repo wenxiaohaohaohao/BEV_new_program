@@ -2,8 +2,12 @@
 
 **Project title**
 
-Local Industrial Policy after Success: Creative Destruction or Aggregate
-Misallocation? Evidence from China's NEV Industry
+Decentralized Industrial Policy over the Industry Life Cycle: Creative
+Destruction or Aggregate Misallocation? Evidence from China's NEV Industry
+
+**中文主线**
+
+产业生命周期中的地方分散化产业政策：创造性破坏还是总量错配——来自中国新能源汽车产业的证据
 
 **Current phase:** model architecture consolidation
 
@@ -13,21 +17,38 @@ Misallocation? Evidence from China's NEV Industry
 
 ## Scope
 
-This project studies the dual role of decentralized local industrial policy
-across development stages of a strategic emerging industry. In the early stage,
-when learning externalities, weak market formation, and supply-chain coordination
-failures bind, the combination of local governments and private capital can help
-launch the industry, reduce costs, and screen firms. After the industry enters a
-scale-competition stage, continued expansionary investment attraction,
-subsidies, and capacity support can generate duplicated entry, low utilization,
-price compression, capital-return gaps, and aggregate resource misallocation.
+This project studies the dynamic welfare effect of decentralized expansionary
+local industrial policy over the industry life cycle of a strategic emerging
+industry. The life cycle is not an exogenous sequence of stages, and the model
+does not assume that industrial policy suddenly stops working after a calendar
+date or maturity threshold. It is the dynamic path jointly determined by local
+policy, firm entry, capacity investment, demand absorption, price adjustment,
+utilization, profit, and capital returns.
+
+Local expansionary policy can be a discovery mechanism when it lowers entry and
+capacity-expansion costs, mobilizes private capital, and accelerates firm
+experimentation, cost decline, technological learning, and selection. Because
+capacity investment is lagged and partly irreversible, simultaneous expansion by
+many local governments can make future capacity release concentrated. When
+effective demand cannot absorb new capacity at the same speed, utilization
+falls, prices compress, profits fall, and the NEV-sector MPK declines relative
+to the outside sector.
 
 The core comparison is between `decentralized local implementation` and
-`implementable centralized coordination`. The welfare effect of local industrial
-policy is state-contingent: the project tests when local competition is
-`discovery and creative destruction`, and when it becomes `duplicated capacity
-and aggregate misallocation`. The sign of $W^D-W^{CP}$ is an object for theory
-discipline and quantification, not a maintained conclusion.
+`implementable centralized coordination`. The key transition condition is:
+
+$$
+\zeta_{rt}^{L,NEV}(Z_t)>0
+\quad \text{but} \quad
+\zeta_{rt}^{C,NEV}(Z_t)\leq0.
+$$
+
+Here $Z_t$ is shorthand for already defined endogenous model objects such as
+capacity, effective demand, prices, utilization, profits, and MPK gaps. It is
+not a new state variable. The condition says that decentralized local expansion
+can remain locally rational when the aggregate return to the same expansionary
+policy has already fallen or turned negative. The sign of $W^D-W^{CP}$ is an
+object for theory discipline and quantification, not a maintained conclusion.
 
 Model discipline is provenance-controlled: every primitive in the baseline must
 come from an existing literature or be a direct NEV mapping of an existing
@@ -49,29 +70,31 @@ Read the project in this order:
    and the next milestone.
 2. [`REORGANIZATION_LOG.md`](REORGANIZATION_LOG.md): what changed in the 2026-06
    cleanup and where old materials went.
-3. [`model_notes/00_POST_REVISION_MODEL_SKELETON.md`](model_notes/00_POST_REVISION_MODEL_SKELETON.md):
+3. `NEV 项目当前主轴 Notes.pdf`: current project axis and title.
+4. [`model_notes/00_POST_REVISION_MODEL_SKELETON.md`](model_notes/00_POST_REVISION_MODEL_SKELETON.md):
    the unified closure contract after the review revisions.
-4. [`model_notes/00_MASTER_model_memo.md`](model_notes/00_MASTER_model_memo.md):
+5. [`model_notes/00_MASTER_model_memo.md`](model_notes/00_MASTER_model_memo.md):
    the current accepted baseline.
-5. The relevant module under `model_notes/` for assumptions, alternatives, and
+6. The relevant module under `model_notes/` for assumptions, alternatives, and
    open questions.
-6. `references/模型模块审计与文献来源纪律_NEV项目.md` and
+7. `references/模型模块审计与文献来源纪律_NEV项目.md` and
    `references/基准模型变量收紧与文献来源纪律_NEV项目.md`: provenance and source
    discipline inputs for the active baseline.
-7. [`model_notes/99_decision_log.md`](model_notes/99_decision_log.md): accepted
+8. [`model_notes/99_decision_log.md`](model_notes/99_decision_log.md): accepted
    and rejected modeling decisions.
-8. [`AGENTS.md`](AGENTS.md): operating rules for Codex and other contributors.
+9. [`AGENTS.md`](AGENTS.md): operating rules for Codex and other contributors.
 
 ## Source-of-truth hierarchy
 
 | Priority | Location | Meaning |
 |---|---|---|
-| 1 | `model_notes/00_POST_REVISION_MODEL_SKELETON.md` | Closure contract for the accepted baseline |
-| 2 | `model_notes/00_MASTER_model_memo.md` | Accepted baseline summary |
-| 3 | `references/模型模块审计与文献来源纪律_NEV项目.md` and `references/基准模型变量收紧与文献来源纪律_NEV项目.md` | Provenance discipline inputs |
-| 4 | `model_notes/01_...08_*.md` | Module detail, alternatives, and open questions |
-| 5 | `model_notes/99_decision_log.md` | Reasons for accepted and rejected choices |
-| 6 | `legacy/` | Historical context only; never authoritative by itself |
+| 1 | `NEV 项目当前主轴 Notes.pdf` plus Decision 33-34 in `model_notes/99_decision_log.md` | Current project axis and title |
+| 2 | `model_notes/00_POST_REVISION_MODEL_SKELETON.md` | Closure contract for the accepted baseline |
+| 3 | `model_notes/00_MASTER_model_memo.md` | Accepted baseline summary |
+| 4 | `references/模型模块审计与文献来源纪律_NEV项目.md` and `references/基准模型变量收紧与文献来源纪律_NEV项目.md` | Provenance discipline inputs |
+| 5 | `model_notes/01_...08_*.md` | Module detail, alternatives, and open questions |
+| 6 | `model_notes/99_decision_log.md` | Reasons for accepted and rejected choices |
+| 7 | `legacy/` | Historical context only; never authoritative by itself |
 
 If two files conflict, use the higher-priority source and record any substantive
 resolution in the decision log.

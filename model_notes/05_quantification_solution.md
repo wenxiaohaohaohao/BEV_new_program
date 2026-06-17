@@ -65,6 +65,11 @@ identification.
 | cost decline and quality upgrading | discipline learning, discovery, and creative-destruction benefits |
 | local investment attraction and private capital mobilization | discipline decentralized implementation advantages |
 
+The descriptive target is not to assign observations to exogenous life-cycle
+phases. It is to measure the endogenous state vector behind the return
+comparison: capacity, effective demand, prices, utilization, profits, and
+MPK/MRPK gaps.
+
 ### 4.2 Causal moments
 
 | Object | Use |
@@ -75,6 +80,7 @@ identification.
 | policy to utilization or MPK gap | check whether expansionary support is associated with slack capacity and lower returns |
 | policy to prices, sales, and effective demand | check whether consumer or final-good benefits are large enough to offset expansion costs |
 | policy to cost decline, quality, and survival/exit | check whether competition accelerates learning, selection, or creative destruction |
+| policy-state interaction in local versus central returns | estimate or discipline when $\zeta^{L,NEV}(Z_t)>0$ while $\zeta^{C,NEV}(Z_t)\leq0$ |
 
 ### 4.3 Calibration and external moments
 
@@ -159,9 +165,9 @@ Use literature calibration, external estimates, or sensitivity analysis first.
   entry responses should be treated as mechanism validation unless the first
   proof explicitly adds an entry margin.
 - Derive local FOC and constrained-planner FOC.
-- State sufficient conditions for $s^D>s^{CP}$ in the scale-competition or
-  misallocation-dominant regime, and state why this is not a global welfare
-  conclusion.
+- State sufficient conditions for $s^D>s^{CP}$ when
+  $\zeta^{L,NEV}(Z_t)>0$ but $\zeta^{C,NEV}(Z_t)\leq0$, and state why this is
+  not a global welfare conclusion.
 
 **Phase 2: Dynamic policy-exit mechanism**
 
@@ -178,22 +184,25 @@ Use literature calibration, external estimates, or sensitivity analysis first.
 
 ---
 
-## 8. Capacity-regime handling [Accepted baseline]
+## 8. Endogenous-state handling [Accepted baseline]
 
-The model should distinguish:
+The model should not hard-code industry phases. It should track the endogenous
+objects that determine the local and central returns to expansionary policy:
+entry, capacity investment, installed capacity, effective demand, prices,
+utilization, profits, fiscal costs, and MPK/MRPK gaps.
 
-- **Early industry-building phase:** learning externalities, weak market
-  formation, and supply-chain coordination failures are important; local
-  governments and private capital can support industry takeoff, cost decline, and
-  firm screening.
-- **Creative-destruction phase:** decentralized experimentation, entry, and
-  private-capital mobilization generate learning, cost decline, consumer gains,
-  and selection benefits that can offset duplicated capacity.
-- **Scale-competition / duplicated-capacity phase:** continued expansionary
-  investment attraction, subsidies, and capacity support can generate duplicated
-  entry, low utilization, price compression, capital-return gaps, and aggregate
-  resource misallocation. Consumer or final-good price benefits may still be
-  positive, so the welfare sign depends on the net trade-off.
+The model should distinguish three possible return configurations:
+
+1. **Discovery-dominant state:** learning, market formation, experimentation,
+   consumer benefits, and private-capital mobilization make expansionary policy
+   valuable from both local and central perspectives.
+2. **Return-divergence state:** local expansionary returns remain positive
+   because local governments internalize investment, employment, output, and
+   tax-base gains, while central returns fall or turn negative because capacity
+   pressure, fiscal costs, and MPK gaps dominate.
+3. **Offsetting trade-off state:** duplicated capacity is present, but consumer
+   benefits, learning, discovery, and implementation advantages offset much of
+   the resource-misallocation cost.
 
 Do not hard-code $s^{CP}\to0$ as an assumption. It should follow from the
 constrained planner's marginal-benefit and marginal-cost comparison.

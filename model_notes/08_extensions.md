@@ -30,8 +30,8 @@ now would double-count policy costs.
 
 ## 2. War-of-attrition or stopping-time exit game
 
-Model late-stage policy exit as a war-of-attrition, stopping-time, mixed-strategy,
-or asymmetric exit-timing game.
+Model policy exit under low-return or high-capacity-pressure states as a
+war-of-attrition, stopping-time, mixed-strategy, or asymmetric exit-timing game.
 
 **Purpose:** Microfound why local governments are reluctant to exit first.
 

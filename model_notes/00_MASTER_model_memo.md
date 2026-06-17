@@ -1,8 +1,11 @@
 # MASTER Model Memo
 
 **Project title:**
-Local Industrial Policy after Success: Creative Destruction or Aggregate
-Misallocation? Evidence from China's NEV Industry
+Decentralized Industrial Policy over the Industry Life Cycle: Creative
+Destruction or Aggregate Misallocation? Evidence from China's NEV Industry
+
+**中文主线:**
+产业生命周期中的地方分散化产业政策：创造性破坏还是总量错配——来自中国新能源汽车产业的证据
 
 **Status:** Accepted baseline model memo after the Claude second-review response
 and the external notes on active firm response and macro-JMP positioning. The
@@ -62,6 +65,12 @@ used in Modules 3 and 4.
 | Welfare comparison | $W^D-W^{CP}$ | Chen-Liu-Song; Barwick-Kalouptsidi-Zahur | local vs central welfare / policy counterfactuals | decentralized implementation versus implementable centralized coordination | Baseline |
 | Industry life cycle | entry-exit-innovation-market structure path | Klepper | product life-cycle regularities | interpretation of changing entry, competition, exit, innovation, and market structure over time | Narrative only |
 
+The life cycle is not an exogenous phase split. It is the dynamic path traced by
+policy, entry, capacity investment, demand absorption, price adjustment,
+utilization, profits, and capital returns. When $Z_t$ is used below, it denotes
+this collection of already defined endogenous objects. It is not an additional
+state variable.
+
 The baseline does not contain `LearningState`, `SelectionState`,
 `InvolutionState`, `CapacityPressureState`, `MisallocationState`, or
 `ScaleCompetitionState`. These labels can appear only as narrative descriptions
@@ -75,27 +84,46 @@ output/TFP loss.
 
 ## 1. Research question
 
-This paper studies the dual role of decentralized local industrial policy across
-development stages of a strategic emerging industry. In the early stage, when the
-industry is constrained by learning externalities, weak market formation, and
-supply-chain coordination failures, the combination of local governments and
-private capital can promote industry takeoff, cost decline, and firm screening.
-After the industry enters a scale-competition stage, continued expansionary
-investment attraction, subsidies, and capacity support can generate duplicated
-entry, low utilization, price compression, capital-return gaps, and aggregate
-resource misallocation.
+This paper studies the dynamic welfare effect of decentralized expansionary
+local industrial policy over the industry life cycle of a strategic emerging
+industry. The paper does not treat the life cycle as an exogenous sequence of
+stages or assume that industrial policy suddenly becomes ineffective after a
+particular time. The life cycle is the dynamic path jointly determined by local
+policy, firm entry, capacity investment, demand absorption, price adjustment,
+utilization, profit, and capital returns.
+
+Local expansionary policy can raise dynamic efficiency when it lowers entry and
+capacity-expansion costs, mobilizes private capital, and accelerates firm
+experimentation, cost decline, technological learning, and selection. Because
+capacity investment is lagged and partly irreversible, simultaneous expansion by
+many local governments can make future capacity release concentrated. When
+effective demand cannot absorb the new capacity at the same speed, utilization
+falls, prices compress, profits fall, and the NEV-sector MPK declines relative
+to the outside sector.
 
 The paper compares decentralized local implementation with implementable
-centralized coordination and asks when local competition is discovery and creative
-destruction, and when it becomes duplicated capacity and aggregate
-misallocation. The welfare effect of local industrial policy is
+centralized coordination and asks when local competition works as discovery and
+creative destruction, and when it becomes duplicated capacity and aggregate
+misallocation. The key transition condition is:
+
+$$
+\zeta_{rt}^{L,NEV}(Z_t)>0
+\quad \text{but} \quad
+\zeta_{rt}^{C,NEV}(Z_t)\leq0.
+$$
+
+When this condition holds, local governments can rationally maintain high
+expansionary policy because they internalize local investment, employment,
+output, and tax-base gains, while the central return to the same expansionary
+policy has fallen or turned negative because of idle capacity, fiscal costs, and
+capital misallocation. The welfare effect of local industrial policy is
 state-contingent.
 
 The paper is not a no-policy critique of industrial policy or a claim that low
 prices are mechanically harmful. Existing studies explain how China's NEV
-industry rose. This paper asks whether the decentralized local implementation
-that helped generate this rise also produced duplicated capacity and aggregate
-misallocation once the industry entered the scale-competition stage.
+industry rose. This paper asks how the marginal welfare return to the same
+decentralized local implementation changes with endogenous capacity, demand,
+price, utilization, profit, and MPK conditions.
 It is also not a "government versus firms" story. Firms actively respond to
 policy, expected demand, expected prices, financing conditions, and productivity;
 the sign of the welfare effect depends on whether decentralized discovery,
@@ -118,14 +146,17 @@ $$
 \Rightarrow
 \underbrace{MPK_t^N-MPK_t^O}_{\text{misallocation block}}
 \Rightarrow
+\underbrace{\zeta_{rt}^{L,NEV}(Z_t)-\zeta_{rt}^{C,NEV}(Z_t)}_{\text{local-central return gap}}
+\Rightarrow
 \underbrace{W^D-W^{CP}}_{\text{net welfare comparison}}.
 $$
 
 The industry life-cycle interpretation follows Klepper, but it is not an
 independent state variable. It is the path traced by policy, entry, investment,
 capacity, demand absorption, prices, utilization, profits, and MPK gaps. The
-potential distortion arises when the same decentralized expansionary tools
-continue after capacity expands faster than effective demand.
+potential distortion arises when capacity expands faster than effective demand
+and the local return to expansionary policy remains positive while the central
+return falls or turns negative.
 
 The price channel is state-contingent. Lower NEV prices can raise consumer or
 final-good welfare. The paper does not pre-commit to $W^D<W^{CP}$. The
@@ -414,9 +445,10 @@ decentralized competition has become socially costly relative to $CP$.
 3. **Proposition 1:** Early-stage decentralized or coordinated policy can raise
    welfare when marginal learning, market-formation, and supply-chain
    coordination benefits exceed fiscal and misallocation costs.
-4. **Proposition 2:** In the scale-competition or misallocation-dominant regime,
-   stated sufficient conditions imply decentralized Markov-Nash policy exceeds
-   implementable centralized coordination: $s^D>s^{CP}$.
+4. **Proposition 2:** When
+   $\zeta^{L,NEV}(Z_t)>0$ but $\zeta^{C,NEV}(Z_t)\leq0$, stated sufficient
+   conditions imply decentralized Markov-Nash policy exceeds implementable
+   centralized coordination: $s^D>s^{CP}$.
 5. **Proposition 3:** Given Proposition 2 and the net-cost-dominance condition,
    decentralized equilibrium generates duplicated NEV capacity, lower
    utilization, an MPK gap, and lower welfare relative to $CP$. Without that
@@ -468,8 +500,8 @@ new welfare primitives.
 2. Write the closed symmetric two-region static model.
 3. Derive the local government FOC.
 4. Derive the constrained-planner FOC.
-5. Prove sufficient conditions for $s^D>s^{CP}$ in the scale-competition or
-   misallocation-dominant regime.
+5. Prove sufficient conditions for $s^D>s^{CP}$ when local policy returns remain
+   positive but central policy returns have fallen or turned negative.
 6. Derive duplicated-capacity, utilization, MPK, and welfare-regime
    implications.
 7. Only then plan numerical implementation.

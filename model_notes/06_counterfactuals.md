@@ -6,8 +6,9 @@ This module records counterfactuals to run only after the baseline model is
 closed and the static two-region trade-off conditions are written. The main
 benchmark is the comparison between `decentralized local implementation` and
 `implementable centralized coordination`, and the welfare sign is not preset.
-Counterfactuals should report how effects differ between the early
-industry-building phase and the later scale-competition phase.
+Counterfactuals should report how effects vary with the endogenous state
+summarized by capacity, demand absorption, prices, utilization, profits, fiscal
+costs, and MPK/MRPK gaps, not with exogenous life-cycle phase labels.
 
 All counterfactuals must be policy or allocation experiments over sourced model
 objects: $s_{r,t}$, entry, investment, capacity, utilization, prices, fiscal
@@ -47,7 +48,7 @@ constrained planner's coordinated policy instruments $s_{r,t}^{CP}$.
 Households and firms continue to optimize privately.
 
 **Provenance:** This is the direct implementation of the
-$\zeta^{L,NEV}$ versus $\zeta^{C,NEV}$ comparison.
+$\zeta^{L,NEV}(Z_t)$ versus $\zeta^{C,NEV}(Z_t)$ comparison.
 
 **Economic question:** Does coordinating industrial policy at the national level
 raise, leave unchanged, or lower net welfare relative to decentralized local
@@ -59,6 +60,8 @@ implementation?
 - Policy comparison: $s_t^{CP}$ versus $s_t^D$.
 - Capacity comparison: $H_t^{N,CP}$ versus $H_t^{N,D}$.
 - Utilization and MPK gap comparison.
+- The state range where
+  $\zeta^{L,NEV}(Z_t)>0$ but $\zeta^{C,NEV}(Z_t)\leq0$.
 
 **Welfare decomposition:** consumer or final-good price-benefit changes, learning
 gains, discovery and implementation benefits, fiscal-cost savings,
@@ -71,7 +74,8 @@ declaring a net welfare gain from coordination.
 ## 4. Counterfactual 3: Subsidy cap or anti-duplication rule
 
 **Model change:** Impose $s_{r,t}\leq\bar s$ for all regions and periods, where
-$\bar s$ is chosen relative to the constrained-planner early-phase policy.
+$\bar s$ is chosen relative to the constrained-planner policy in high-return
+discovery-dominant states.
 
 **Provenance:** This remains a rule over the single composite policy wedge
 $s_{r,t}$, not a new policy-tool vector.

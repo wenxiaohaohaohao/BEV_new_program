@@ -3,8 +3,9 @@
 ## 1. Purpose
 
 This module records the paper's research question, the core mechanism, and the
-formal distinction between creative destruction and aggregate misallocation
-after the third-round critique and the external notes on active firm response.
+formal distinction between discovery and creative destruction versus duplicated
+capacity and aggregate misallocation after the third-round critique and the
+external notes on active firm response.
 It uses the constrained planner / centralized policy equilibrium as the main
 benchmark.
 
@@ -17,14 +18,22 @@ prices, utilization, profits, and MPK gaps.
 
 ## 2. Research question [Accepted baseline]
 
-This paper studies the dual role of decentralized local industrial policy across
-development stages of a strategic emerging industry. In the early stage, when the
-industry is constrained by learning externalities, weak market formation, and
-supply-chain coordination failures, local governments and private capital can
-promote industry takeoff, cost decline, and firm screening. After the industry
-enters a scale-competition stage, continued expansionary investment attraction,
-subsidies, and capacity support can generate duplicated entry, low utilization,
-price compression, capital-return gaps, and aggregate resource misallocation.
+This paper studies the dynamic welfare effect of decentralized expansionary
+local industrial policy over the industry life cycle of a strategic emerging
+industry. It does not treat the life cycle as an exogenous sequence of stages or
+assume that industrial policy suddenly fails after a particular point. The life
+cycle is the dynamic path jointly determined by local policy, firm entry,
+capacity investment, demand absorption, price adjustment, utilization, profit,
+and capital returns.
+
+Local expansionary policy can act as a discovery mechanism: it lowers entry and
+capacity-expansion costs, mobilizes private capital, and accelerates firm
+experimentation, cost decline, technological learning, and selection. Because
+capacity investment is lagged and partly irreversible, simultaneous expansion by
+many local governments can make future capacity release concentrated. When
+effective demand cannot absorb the new capacity at the same speed, utilization
+falls, prices compress, profits fall, and the NEV-sector MPK declines relative
+to the outside sector.
 
 The paper compares decentralized local implementation with implementable
 centralized coordination and asks when local competition is discovery and
@@ -36,15 +45,15 @@ not argue that lower NEV prices are mechanically welfare-reducing. The claim is
 state-contingent:
 
 - When learning externalities, market formation, and coordination externalities
-  are sufficiently large, coordinated industrial policy can raise welfare.
-- When the industry enters scale competition, capacity is high, and the marginal
-  return to further NEV expansion falls, the coordinated policy wedge should
-  decline.
-- Decentralized local governments may maintain $s^D > s^{CP}$ in
-  scale-competition or misallocation-dominant states because each region values
-  local NEV output,
-  employment, and fiscal outcomes while only partially internalizing national
-  duplicated capacity and aggregate misallocation.
+  are sufficiently large, expansionary industrial policy can raise welfare.
+- When capacity pressure, weak demand absorption, price compression, low
+  utilization, and MPK gaps make the central return to further NEV expansion
+  fall, coordinated policy should become less expansionary.
+- Decentralized local governments may maintain $s^D > s^{CP}$ when
+  $\zeta_{rt}^{L,NEV}(Z_t)>0$ but $\zeta_{rt}^{C,NEV}(Z_t)\leq0$, because each
+  region values local investment, employment, output, and tax-base gains while
+  only partially internalizing national duplicated capacity and aggregate
+  misallocation.
 - Firms are not passive recipients of policy. They enter or expand capacity in
   response to policy support, expected demand, expected prices, financing
   conditions, and productivity. Their private responses can be rational even when
@@ -55,9 +64,9 @@ state-contingent:
   fixed-cost, low-utilization, and capital-misallocation costs.
 
 Existing studies explain how China's NEV industry rose. This paper asks whether
-the decentralized local implementation that helped generate this rise also
-produced duplicated capacity and aggregate misallocation once the industry
-entered the scale-competition stage.
+the marginal welfare return to the same decentralized local implementation
+changes with endogenous capacity, demand, price, utilization, profit, and MPK
+conditions.
 
 The paper is not a no-policy benchmark exercise. A no-policy economy is useful
 as a counterfactual, but the main normative comparison is decentralized local
@@ -78,6 +87,8 @@ $$
 \Rightarrow
 \underbrace{MPK_t^N-MPK_t^O}_{\text{capital misallocation}}
 \Rightarrow
+\underbrace{\zeta_{rt}^{L,NEV}(Z_t)-\zeta_{rt}^{C,NEV}(Z_t)}_{\text{local-central return gap}}
+\Rightarrow
 \underbrace{\text{Net welfare comparison}}_{W^D-W^{CP}\lessgtr0}.
 $$
 
@@ -88,14 +99,15 @@ over time. It does not create a separate `ScaleCompetitionState`,
 **Step 1: Local policy game and firm response to capacity competition**
 
 Each local government chooses $s_{r,t}$ to increase local NEV activity,
-employment, and fiscal surplus. The fiscal outlay $\phi s_{r,t}H_{r,t}^N$ is
-local, but the national consumer benefit from lower prices, producer
-price/revenue compression, cross-region spillovers, fiscal financing costs, and
-aggregate MPK loss are not fully internalized by any single region. The
+  employment, and fiscal surplus. The fiscal outlay $\phi s_{r,t}H_{r,t}^N$ is
+  local, but the national consumer benefit from lower prices, producer
+  price/revenue compression, cross-region spillovers, fiscal financing costs, and
+  aggregate MPK loss are not fully internalized by any single region. The
 decentralized FOC can imply a higher policy wedge than the constrained-planner
-FOC in the scale-competition or misallocation-dominant regime, but this is not
-imposed globally. In other states, local information, investment-attraction
-capacity, and private-capital mobilization may justify decentralized intensity.
+FOC when local expansionary returns remain positive but central returns fall or
+turn negative. This is not imposed globally. In other states, local information,
+investment-attraction capacity, and private-capital mobilization may justify
+decentralized intensity.
 
 In Chen-Liu-Song notation, this is a comparison between the local intervention
 index $\zeta_{rt}^{L,NEV}$ and the central intervention index
@@ -192,10 +204,10 @@ The main theoretical claims should be organized as follows:
 3. **Proposition 1:** Coordinated state-contingent policy is welfare-improving
    when the marginal learning and coordination benefits exceed fiscal and
    misallocation costs.
-4. **Proposition 2:** In the scale-competition or misallocation-dominant regime,
-   sufficient conditions on local payoff weights, fiscal costs, and
-   spillover/internalization gaps imply the symmetric Markov-Nash policy
-   satisfies $s^D>s^{CP}$.
+4. **Proposition 2:** When
+   $\zeta^{L,NEV}(Z_t)>0$ but $\zeta^{C,NEV}(Z_t)\leq0$, sufficient conditions
+   on local payoff weights, fiscal costs, and spillover/internalization gaps
+   imply the symmetric Markov-Nash policy satisfies $s^D>s^{CP}$.
 5. **Proposition 3:** If $s^D>s^{CP}$, NEV investment is increasing in the
    wedge, and duplicated-capacity and resource-misallocation costs dominate
    consumer or final-good price benefits and learning gains, decentralized policy

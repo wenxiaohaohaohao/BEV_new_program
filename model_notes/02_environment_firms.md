@@ -207,29 +207,32 @@ productivity distribution $\mu_{r,t}(z)$ are extensions.
 
 ---
 
-## 8. Capacity regimes [Accepted baseline]
+## 8. Endogenous capacity and return configurations [Accepted baseline]
 
-- **Early industry-building phase:** learning externalities, weak market
-  formation, and supply-chain coordination failures are important; local
-  governments and private capital can support industry takeoff, cost decline, and
-  firm screening.
-- **Creative-destruction phase:** decentralized experimentation, firm entry,
-  consumer price gains, cost decline, and winner selection may offset duplicated
-  capacity and fiscal costs.
-- **Scale-competition / duplicated-capacity phase:** continued expansionary
-  investment attraction, subsidies, and capacity support can generate duplicated
-  entry, low utilization, price compression, capital-return gaps, and aggregate
-  resource misallocation. Consumer or final-good price benefits may still be
-  positive, so the welfare sign depends on the net trade-off.
+The model should not assign the industry to exogenous life-cycle phases. It
+should track the endogenous objects that determine local and central returns to
+expansionary policy: entry, investment, installed capacity, demand absorption,
+utilization, prices, profit/markup, fiscal costs, and MPK or MRPK gaps.
+
+- **Discovery-dominant configuration:** learning externalities, weak market
+  formation, supply-chain coordination failures, local information,
+  experimentation, and private-capital mobilization make expansion valuable.
+- **Offsetting trade-off configuration:** duplicated capacity or fiscal costs
+  appear, but consumer price gains, cost decline, learning, and winner selection
+  offset much of the resource cost.
+- **Return-divergence configuration:** local governments still internalize local
+  investment, employment, output, and tax-base gains, while effective demand
+  cannot absorb capacity, utilization falls, prices compress, profits decline,
+  and NEV MPK falls relative to the outside sector.
 
 The model should not assume that investment stops automatically when capacity is
 slack. Whether decentralized policy exits too slowly must be derived dynamically
 or shown numerically after the static wedge comparison is closed.
 
-These phase names are narrative classifications of sourced model objects. They
-are not baseline state variables. In quantitative work they should be measured
-through entry, capacity, demand absorption, utilization, prices, profit/markup,
-and MPK or MRPK gaps.
+These configurations are classifications of sourced model outcomes. They are
+not baseline state variables. The transition condition is
+$\zeta^{L,NEV}(Z_t)>0$ but $\zeta^{C,NEV}(Z_t)\leq0$, where $Z_t$ is shorthand
+for the endogenous objects listed above.
 
 ---
 

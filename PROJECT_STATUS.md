@@ -8,18 +8,31 @@
 
 ## Confirmed project direction
 
-- Topic: the dual role of decentralized local industrial policy across
-  development stages of a strategic emerging industry, using China's NEV industry
-  as the empirical setting.
-- Framing: early local-government and private-capital coordination can support
-  industry takeoff, cost decline, and firm screening when learning externalities,
-  weak market formation, and supply-chain coordination failures bind. In the
-  scale-competition stage, continued expansionary investment attraction,
-  subsidies, and capacity support can generate duplicated entry, low utilization,
-  price compression, capital-return gaps, and aggregate resource misallocation.
-- Main question: when local government competition is discovery and creative
-  destruction, and when it becomes duplicated capacity and aggregate
-  misallocation.
+- Title: `Decentralized Industrial Policy over the Industry Life Cycle:
+  Creative Destruction or Aggregate Misallocation? Evidence from China's NEV
+  Industry`.
+- 中文主线：产业生命周期中的地方分散化产业政策：创造性破坏还是总量错配——来自中国新能源汽车产业的证据。
+- Topic: the dynamic welfare effect of decentralized expansionary local
+  industrial policy over the industry life cycle of a strategic emerging
+  industry, using China's NEV industry as the empirical setting.
+- Framing: the industry life cycle is not an exogenous phase split. It is a
+  dynamic path jointly determined by local policy, firm entry, capacity
+  investment, demand absorption, price adjustment, utilization, profit, and
+  capital returns.
+- Mechanism: local policy can lower entry and capacity-expansion costs, mobilize
+  private capital, and accelerate experimentation, cost decline, learning, and
+  selection. Because capacity investment is lagged and partly irreversible,
+  simultaneous local expansion can make future capacity release concentrated.
+  If effective demand cannot absorb the new capacity, utilization falls, prices
+  compress, profits fall, and NEV-sector MPK declines relative to the outside
+  sector.
+- Main question: as capacity, demand, prices, utilization, profits, and capital
+  returns evolve, when does the local return to expansionary policy remain
+  positive while the central return falls or turns negative?
+- Transition condition:
+  $\zeta_{rt}^{L,NEV}(Z_t)>0$ but
+  $\zeta_{rt}^{C,NEV}(Z_t)\leq0$, where $Z_t$ is shorthand for already defined
+  endogenous model objects, not a new state variable.
 - Core benchmark: compare `decentralized local implementation` with
   `implementable centralized coordination`.
 - Acceptable welfare outcomes: $W^D<W^{CP}$, $W^D\approx W^{CP}$, or
@@ -89,16 +102,16 @@ modules and decision log.
 11. Firm passivity concern: resolved by adding reduced-form active firm response
     while keeping full heterogeneous-firm dynamics outside the baseline.
 12. JMP positioning risk: resolved by keeping the $D$ versus $CP$ welfare
-    comparison, MPK gaps, and creative-destruction versus misallocation trade-off
-    as the main axis.
+    comparison, MPK gaps, and the state-contingent transition from discovery to
+    misallocation as the main axis.
 13. Low-price welfare objection: resolved by treating price declines as
     potentially welfare-improving and by defining the welfare comparison as a
     net state-contingent object, not a preset loss claim.
 14. Positive-NEV-literature boundary: resolved by positioning existing work as
-    explaining how China's NEV industry rose, while this paper asks whether the
-    decentralized local implementation that supported that rise also produced
-    duplicated capacity and aggregate misallocation once the industry entered
-    the scale-competition stage.
+    explaining how China's NEV industry rose, while this paper asks how the
+    marginal welfare return to the same decentralized local implementation
+    changes with endogenous capacity, demand, price, utilization, and MPK
+    conditions.
 15. Static proof closure: Module 4 now contains the closed symmetric two-region
     static model with resource feasibility, outside-sector capital opportunity
     cost, local FOC, constrained-planner FOC, and state-contingent welfare
@@ -114,8 +127,8 @@ modules and decision log.
 2. Verify exact bibliographic metadata and citation claims for Chen-Liu-Song,
    Barwick-Kalouptsidi-Zahur, Kalouptsidi, Klepper, Hsieh-Klenow, and related
    macro misallocation papers before paper drafting.
-3. Strategic complement/substitute characterization in the early-stage policy
-   game.
+3. Strategic complement/substitute characterization in the local policy game
+   under high-return discovery states.
 4. Dynamic policy-exit mechanism after the static proof.
 5. Empirical construction and identification of the policy wedge $s_{r,t}$.
 6. Validation of demonstration-city / pilot designation before using it as
@@ -146,8 +159,8 @@ Review the fully closed, symmetric two-region static model with:
 - total-tax-base local budget constraints;
 - reduced-form private firm capacity response to the policy wedge;
 - local-government and constrained-planner first-order conditions;
-- sufficient conditions for $s^D>s^{CP}$ in the scale-competition or
-  misallocation-dominant regime;
+- sufficient conditions for $s^D>s^{CP}$ when
+  $\zeta^{L,NEV}(Z_t)>0$ but $\zeta^{C,NEV}(Z_t)\leq0$;
 - duplicated-capacity, utilization, MPK, and consumer-benefit-adjusted
   welfare-regime
   implications.

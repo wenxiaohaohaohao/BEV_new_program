@@ -6,6 +6,10 @@ This module records the local government's budget, reduced-form objective, and
 simultaneous Markov-Nash policy game. It separates early-stage strategic
 complementarity from late-stage policy inertia.
 
+The local policy block is anchored in the Chen-Liu-Song local intervention index
+logic. The local payoff represents the local perceived return per fiscal dollar,
+not a new welfare primitive.
+
 ---
 
 ## 2. Local government budget [Accepted baseline]
@@ -108,6 +112,15 @@ does not fully internalize:
 
 These omitted terms create the wedge between the decentralized local FOC and the
 constrained-planner FOC in the misallocation-dominant regime.
+
+In the provenance-controlled notation, this wedge is the local-central
+intervention gap:
+
+$$
+Gap_{rt}^{NEV}
+=
+\zeta_{rt}^{L,NEV}-\zeta_{rt}^{C,NEV}.
+$$
 
 The comparison is not one-sided. A centralized policy benchmark may not fully
 replicate local information, investment-attraction capacity, multi-region

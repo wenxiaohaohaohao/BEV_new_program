@@ -1,8 +1,8 @@
 # Project Status
 
-**As of:** 2026-06-16
+**As of:** 2026-06-17
 
-**Phase:** static proof and lifecycle framing consolidation before numerical code
+**Phase:** provenance-controlled baseline consolidation before numerical code
 
 **Implementation status:** no numerical code, data pipeline, or paper draft yet
 
@@ -25,6 +25,12 @@
 - Acceptable welfare outcomes: $W^D<W^{CP}$, $W^D\approx W^{CP}$, or
   $W^D>W^{CP}$. Each outcome has a valid interpretation; the project should not
   pre-commit to the first case before quantification.
+- Baseline discipline: no uncited primitive. The policy block follows
+  Chen-Liu-Song; entry, investment, capacity, idle capacity, and welfare
+  counterfactual discipline follow Barwick-Kalouptsidi-Zahur; capacity,
+  demand-absorption, and price-response discipline follow Kalouptsidi; industry
+  life-cycle language follows Klepper; MPK/MRPK gaps and aggregate losses follow
+  Hsieh-Klenow and related macro misallocation work.
 - Baseline policy object: one local expansionary policy wedge.
 - Firms are active private responders to policy and market states; the first
   model represents this through a reduced-form entry/capacity response, not a
@@ -39,7 +45,9 @@
   $CP$, not a first-best allocation planner.
 - Baseline labor market: fixed regional labor endowments and regional wages.
 - Baseline learning: combined frontier-gap local learning and cross-regional
-  spillovers with exogenous frontier $\bar A_{t+1}=(1+g_A)\bar A_t$.
+  spillovers with exogenous frontier $\bar A_{t+1}=(1+g_A)\bar A_t$. The exact
+  functional form is a bridge that must remain tied to learning-by-doing
+  literature before paper drafting.
 - Supply-chain finance, supplier innovation, BLP demand, business stealing,
   financing/valuation channels, and full firm heterogeneity remain extensions.
 - Planned numerical implementation: Julia, only after the static two-region
@@ -51,6 +59,8 @@
 - `model_notes/00_MASTER_model_memo.md`
 - Modules `01` through `08`
 - `model_notes/99_decision_log.md`
+- `references/模型模块审计与文献来源纪律_NEV项目.md`
+- `references/基准模型变量收紧与文献来源纪律_NEV项目.md`
 
 The review files in `legacy/model_drafts/` are inputs, not authoritative
 specifications. Their accepted content has been translated into the active
@@ -93,25 +103,31 @@ modules and decision log.
     static model with resource feasibility, outside-sector capital opportunity
     cost, local FOC, constrained-planner FOC, and state-contingent welfare
     classification.
+16. Provenance discipline: resolved by making `00_MASTER_model_memo.md` the
+    active provenance table and by banning uncited conceptual state variables
+    from the baseline.
 
 ## Unresolved items before coding
 
 1. Stress-test the closed static proof against the lifecycle framing and confirm
    that all welfare statements remain state-contingent.
-2. Strategic complement/substitute characterization in the early-stage policy
+2. Verify exact bibliographic metadata and citation claims for Chen-Liu-Song,
+   Barwick-Kalouptsidi-Zahur, Kalouptsidi, Klepper, Hsieh-Klenow, and related
+   macro misallocation papers before paper drafting.
+3. Strategic complement/substitute characterization in the early-stage policy
    game.
-3. Dynamic policy-exit mechanism after the static proof.
-4. Empirical construction and identification of the policy wedge $s_{r,t}$.
-5. Validation of demonstration-city / pilot designation before using it as
+4. Dynamic policy-exit mechanism after the static proof.
+5. Empirical construction and identification of the policy wedge $s_{r,t}$.
+6. Validation of demonstration-city / pilot designation before using it as
    policy variation.
-6. Calibration or external discipline for CES elasticity and learning parameters.
-7. Measurement of gross subsidy cost, net NEV fiscal cost, debt cost, and idle
+7. Calibration or external discipline for CES elasticity and learning parameters.
+8. Measurement of gross subsidy cost, net NEV fiscal cost, debt cost, and idle
    capacity cost.
-8. Measurement or validation of firm/project entry responses without requiring
+9. Measurement or validation of firm/project entry responses without requiring
     a full dynamic firm-entry model.
-9. Literature-gap verification against recent single-industry macro,
+10. Literature-gap verification against recent single-industry macro,
     misallocation, industrial policy, and NEV demand papers.
-10. Measurement of effective demand and the consumer or final-good benefit from
+11. Measurement of effective demand and the consumer or final-good benefit from
     lower NEV prices.
 
 These are open research decisions, not implementation tasks. Resolve them in the
@@ -121,6 +137,7 @@ relevant module and decision log before treating them as code specifications.
 
 Review the fully closed, symmetric two-region static model with:
 
+- every primitive traced to the MASTER provenance table;
 - explicit state/control definitions;
 - CES-derived product demand;
 - NEV installed capacity as sector-specific capital;

@@ -7,6 +7,10 @@ It also records empirical-design cautions from the Claude second-review response
 and the external notes on active firm response. It does not authorize numerical
 implementation yet.
 
+Quantification must respect the provenance table in `00_MASTER_model_memo.md`.
+Empirical moments should discipline sourced objects, not introduce new baseline
+states.
+
 ---
 
 ## 2. No-code gate [Accepted baseline]
@@ -50,11 +54,13 @@ identification.
 
 | Object | Use |
 |---|---|
+| local and central intervention indexes | discipline $\zeta^{L,NEV}$, $\zeta^{C,NEV}$, and $Gap^{NEV}$ where possible |
 | NEV firm or project entry | document whether policy-support regions attract more private entry |
-| NEV capacity, output, and effective demand | match scale, overcapacity, and whether capacity grows faster than demand |
+| NEV capacity, output, and effective demand | match scale, duplicated capacity, and whether capacity grows faster than demand |
 | utilization | discipline the slack-capacity regime |
 | NEV prices, margins, and consumer or final-good price benefit | discipline CES demand and separate low-price benefits from producer return compression |
 | MPK / MRPK gap | measure capital misallocation |
+| TFPR dispersion or aggregate TFP loss | optional macro-misallocation validation |
 | regional employment | discipline local labor-market effects |
 | cost decline and quality upgrading | discipline learning, discovery, and creative-destruction benefits |
 | local investment attraction and private capital mobilization | discipline decentralized implementation advantages |
@@ -65,7 +71,7 @@ identification.
 |---|---|
 | policy to NEV investment/capacity | discipline $\phi$ and capacity response |
 | policy to firm/project entry | validate the active private-response mechanism |
-| policy persistence after overcapacity | discipline $\chi_s$ |
+| policy persistence after low utilization becomes observable | discipline $\chi_s$ |
 | policy to utilization or MPK gap | check whether expansionary support is associated with slack capacity and lower returns |
 | policy to prices, sales, and effective demand | check whether consumer or final-good benefits are large enough to offset expansion costs |
 | policy to cost decline, quality, and survival/exit | check whether competition accelerates learning, selection, or creative destruction |
@@ -191,6 +197,11 @@ The model should distinguish:
 
 Do not hard-code $s^{CP}\to0$ as an assumption. It should follow from the
 constrained planner's marginal-benefit and marginal-cost comparison.
+
+Do not code phase labels as `LearningState`, `SelectionState`,
+`InvolutionState`, `CapacityPressureState`, `MisallocationState`, or
+`ScaleCompetitionState`. Use measured objects such as entry, capacity,
+utilization, prices, profits, and MPK/MRPK gaps.
 
 ---
 

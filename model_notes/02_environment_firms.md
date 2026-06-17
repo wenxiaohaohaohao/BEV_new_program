@@ -8,6 +8,11 @@ capacity as sector-specific capital, CES-derived demand, resource feasibility,
 frontier-gap learning with cross-region spillovers, and a reduced-form active
 firm response to policy and market states.
 
+The module follows the provenance table in `00_MASTER_model_memo.md`. Capacity,
+entry, investment, idle capacity, demand absorption, and price response are not
+free-standing inventions: they are NEV mappings of Barwick-Kalouptsidi-Zahur and
+Kalouptsidi-style industry objects.
+
 ---
 
 ## 2. Environment [Accepted baseline]
@@ -61,6 +66,10 @@ NEV capacity evolves as:
 
 $$H_{r,t+1}^N=(1-\delta_H)H_{r,t}^N+I_{r,t}^H.$$
 
+This is the baseline capacity law of motion. Time-to-build or richer adjustment
+frictions can be added later as Kalouptsidi-style extensions, but the first
+baseline keeps the law one-period and transparent.
+
 ---
 
 ## 5. Final good and CES-derived demand [Accepted baseline]
@@ -87,6 +96,10 @@ Thus NEV price falls when NEV quantity expands relative to final demand. This
 price decline can raise consumer or final-good welfare; it is not a welfare loss
 by itself. The baseline does not impose an additional standalone inverse demand
 curve.
+
+When a demand-absorption object is needed for the static proof or empirical
+measurement, write it as $D_t^N(P_t^N)$ or as the derived shorthand $Q(H^N)$.
+The shorthand is not a new demand primitive.
 
 ---
 
@@ -183,6 +196,10 @@ where expected demand, expected prices, financing conditions, and average or
 threshold productivity shift private entry incentives. This object is a mechanism
 and measurement guide, not a new baseline state variable.
 
+Entry and investment responses are the Barwick-Kalouptsidi-Zahur block in the
+NEV setting. The first baseline uses these responses to discipline $H_{r,t}^N$;
+it does not carry a full entry/exit state or a productivity distribution.
+
 The baseline policy channel is the capital-cost wedge
 $R_{r,t}^{N,eff}=r_t-\phi s_{r,t}$. An entry-cost wedge
 $F_{r,t}^N=F_0^N-\phi_Fs_{r,t}$, full entry/exit dynamics, and the firm
@@ -209,6 +226,11 @@ The model should not assume that investment stops automatically when capacity is
 slack. Whether decentralized policy exits too slowly must be derived dynamically
 or shown numerically after the static wedge comparison is closed.
 
+These phase names are narrative classifications of sourced model objects. They
+are not baseline state variables. In quantitative work they should be measured
+through entry, capacity, demand absorption, utilization, prices, profit/markup,
+and MPK or MRPK gaps.
+
 ---
 
 ## 9. Learning externalities [Accepted baseline]
@@ -234,6 +256,11 @@ $$\bar A_{t+1}=(1+g_A)\bar A_t.$$
 This law preserves local learning, cross-regional spillovers, diminishing
 learning as a region approaches the frontier, no knowledge depreciation, and no
 double-counting of own-region output in the spillover term.
+
+The exact learning functional form is a bridge object. It can remain in the
+baseline as long as it is disciplined by learning-by-doing or cumulative-output
+literature before paper drafting; otherwise it should be simplified or moved to
+an appendix.
 
 ---
 

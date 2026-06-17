@@ -2,11 +2,39 @@
 
 **Status:** Closure contract after the Claude second-review response.
 
-**Last updated:** 2026-06-08
+**Last updated:** 2026-06-17
 
 This file is the first source to check when revising the baseline model. It
 summarizes the model objects that must be mutually consistent before the MASTER
 memo, module notes, paper text, or numerical code are updated.
+
+---
+
+## 0. Model discipline
+
+The baseline is provenance-controlled. No uncited primitive enters the model.
+Every primitive object must come from an existing literature or be a direct NEV
+mapping of an object in that literature. The active provenance table is in
+`00_MASTER_model_memo.md`.
+
+The mother model for local-central policy misalignment is Chen-Liu-Song:
+
+$$
+\zeta_{rt}^{L,NEV}\neq \zeta_{rt}^{C,NEV}.
+$$
+
+The baseline keeps one composite expansionary policy wedge $s_{r,t}$. Dynamic
+industry objects such as entry, investment, capacity, idle capacity, demand
+absorption, and price response must be traced to Barwick-Kalouptsidi-Zahur and
+Kalouptsidi. Industry life-cycle language follows Klepper and is interpretive,
+not a source of policy or welfare primitives. MPK/MRPK gaps follow Hsieh-Klenow
+and related macro misallocation work.
+
+The baseline must not introduce conceptual state variables such as
+`LearningState`, `SelectionState`, `InvolutionState`, `CapacityPressureState`,
+`MisallocationState`, or `ScaleCompetitionState`. Use sourced objects instead:
+$A_t$, cumulative output, entry, exit, investment, capacity, utilization, price,
+markup or profit, and MPK/MRPK gaps.
 
 ---
 

@@ -7,6 +7,9 @@ critique and the external notes on macro-JMP positioning. It is a positioning
 guide, not a verified bibliography. Exact citations must be checked before paper
 drafting.
 
+The literature role is now provenance discipline, not broad name-checking. Each
+baseline primitive must be traceable to the MASTER provenance table.
+
 ---
 
 ## 2. JMP positioning [Accepted baseline]
@@ -53,9 +56,16 @@ The core object is a solvable multi-region macro model with:
 The following are candidate reference families. Do not cite them in paper text
 until exact articles, years, and claims are verified.
 
+- Chen-Liu-Song, `Decentralized Industrial Policy`, as the mother model for
+  local intervention indexes, central intervention indexes, policy platforms,
+  and fiscal-autonomy heterogeneity.
 - Buera-Moll-Shin style "well-intended policies" and misallocation mechanisms.
 - Barwick-Kalouptsidi-Zahur style industrial policy, entry, capacity, and welfare
   evaluation in Chinese strategic industries.
+- Kalouptsidi 2014/2018 style capacity accumulation, time-to-build, demand
+  uncertainty, and price response.
+- Klepper 1996 style industry life-cycle facts on entry, exit, innovation, and
+  market structure.
 - Fajgelbaum / Gaubert / Zidar style spatial policy and spatial misallocation.
 - Hsieh-Klenow and Restuccia-Rogerson style misallocation and aggregate TFP.
 - Ernest Liu style production-network industrial policy, only as an extension
@@ -92,26 +102,38 @@ against $CP$ can be negative, near zero, or positive.
 
 ## 6. Literature-use rules
 
-1. Use industrial-policy and learning papers to justify why $s^{CP}$ can be
-   positive in early states.
-2. Use misallocation papers to justify MPK/MRPK gaps and net welfare accounting.
-3. Use local fiscal and spatial-policy papers to justify why local governments
-   may have both distorted expansion incentives and real implementation
-   advantages through information, investment attraction, experimentation, and
-   mobilization.
-4. Use automobile/NEV demand papers to discipline demand elasticity, consumer
-   price benefits, and price/revenue compression, not to replace the baseline
-   CES demand before the model is closed.
-5. Use firm-entry and industrial-organization references to motivate active firm
-   response, not to force a full heterogeneous-firm dynamic model into the first
-   baseline.
+1. Use Chen-Liu-Song for local versus central intervention indexes, the
+   local-central policy gap, policy platforms, and fiscal-autonomy heterogeneity.
+   Do not use it to claim NEV life-cycle dynamics, capacity laws, or price wars.
+2. Use Barwick-Kalouptsidi-Zahur for policy effects on entry, investment,
+   capacity, idle capacity, and welfare counterfactual discipline. Do not use it
+   to derive decentralized local-government competition.
+3. Use Kalouptsidi for capacity accumulation, time-to-build or adjustment
+   friction, demand absorption, and price response. Do not import shipping
+   resale markets, scrappage, fleet-age structure, or full dynamic IO estimation
+   into the baseline.
+4. Use Klepper only for industry-life-cycle interpretation: entry, exit,
+   innovation, and market structure over maturity. Do not use it as a policy or
+   welfare model.
+5. Use Hsieh-Klenow and related macro misallocation papers for MPK/MRPK gaps,
+   TFPR dispersion, and aggregate output or TFP-loss language.
 6. Keep SOE, export, soft-budget, production-network, supply-chain finance,
    supplier innovation, BLP, and differentiated-demand papers in extension notes
    unless a later decision promotes them.
 
+## 7. Extraction discipline [Accepted baseline]
+
+| Source | I keep | I drop | I adapt |
+|---|---|---|---|
+| Chen-Liu-Song | local and central intervention indexes; local-central gap; policy platform; fiscal autonomy | full 42-industry by 31-province IO network; original SEZ/SOE-only empirical design; import-substitution or terms-of-trade channels unless needed later | local/central policy return becomes $\zeta^{L,NEV}$ and $\zeta^{C,NEV}$; policy platform becomes NEV parks, local funds, land, credit, and investment-attraction projects |
+| Barwick-Kalouptsidi-Zahur | policy to entry; policy to investment; investment to capacity; idle capacity; welfare counterfactuals | full shipbuilding market details; shipyard order-book structure; complete structural IO estimation | national shipbuilding policy becomes local NEV expansionary support; shipyard entry/investment becomes NEV firm/project entry and capacity expansion |
+| Kalouptsidi | capacity accumulation; time-to-build or adjustment friction; demand absorption; price response | secondhand ship prices; resale markets; shipping scrappage; fleet-age structure | capacity investment today affects future NEV supply; demand may not absorb capacity, so price and utilization adjust |
+| Klepper | product life-cycle facts about entry, exit, innovation, and market structure | specific innovation ability model; welfare model; local policy model | lifecycle language describes paths of entry, capacity, prices, utilization, exit, and market structure |
+| Hsieh-Klenow / macro misallocation | MPK/MRPK gaps; TFPR dispersion; aggregate TFP or output loss | direct welfare penalty terms without accounting | NEV capacity problems become aggregate capital misallocation through return gaps |
+
 ---
 
-## 7. Open questions
+## 8. Open questions
 
 1. Which exact recent single-industry macro papers are closest to this model?
 2. Which automobile-demand references are credible enough to discipline

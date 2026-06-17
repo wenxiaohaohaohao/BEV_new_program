@@ -8,7 +8,68 @@ Misallocation? Evidence from China's NEV Industry
 and the external notes on active firm response and macro-JMP positioning. The
 closure contract is `00_POST_REVISION_MODEL_SKELETON.md`.
 
-**Last updated:** 2026-06-16
+**Last updated:** 2026-06-17
+
+---
+
+## 0. Model discipline and provenance
+
+**Model discipline.** Every primitive in the baseline model must come from an
+existing literature or be a direct mapping of an object in that literature to
+the NEV setting. The paper's contribution is not to introduce new primitive
+state variables. It is to combine existing modules to study how decentralized
+local policy affects entry, capacity accumulation, prices, utilization, and
+aggregate misallocation over the industry life cycle.
+
+The mother model for local-central policy misalignment is Chen-Liu-Song:
+
+$$
+\zeta_{rt}^{L,NEV}\neq \zeta_{rt}^{C,NEV}.
+$$
+
+where $\zeta_{rt}^{L,NEV}$ is the local intervention index, or local welfare
+gain per fiscal dollar, and $\zeta_{rt}^{C,NEV}$ is the central intervention
+index, or aggregate welfare gain per fiscal dollar. The NEV local-central gap is:
+
+$$
+Gap_{rt}^{NEV}
+=
+\zeta_{rt}^{L,NEV}
+-
+\zeta_{rt}^{C,NEV}.
+$$
+
+This gap is the provenance-controlled version of the local-versus-planner wedge
+used in Modules 3 and 4.
+
+| Module object | Project symbol | Literature source | Original object | NEV mapping | Baseline status |
+|---|---|---|---|---|---|
+| Local policy return | $\zeta_{rt}^{L,NEV}$ | Chen-Liu-Song | local intervention index | local welfare gain per fiscal dollar spent on NEV support | Baseline |
+| Central policy return | $\zeta_{rt}^{C,NEV}$ | Chen-Liu-Song | central intervention index | aggregate welfare gain per fiscal dollar spent on NEV support | Baseline |
+| Local-central gap | $Gap_{rt}^{NEV}$ | Chen-Liu-Song | local-central intervention gap | source of decentralized-policy wedge relative to $CP$ | Baseline |
+| Policy platform | policy platform | Chen-Liu-Song | SEZ/SOE-style policy platform | NEV industrial parks, local funds, land, credit, local SOE platforms, and investment-attraction projects | Empirical implementation |
+| Fiscal autonomy | fiscal autonomy | Chen-Liu-Song | local fiscal discretion | heterogeneity in local capacity to finance or implement NEV support | Empirical implementation |
+| Composite expansionary policy | $s_{r,t}$ | Chen-Liu-Song; Barwick-Kalouptsidi-Zahur | policy intervention / policy wedge | subsidies, land, credit, industrial funds, park support, investment facilitation | Baseline |
+| Firm entry response | $Entry_{r,t}^N(s)$ | Barwick-Kalouptsidi-Zahur | policy-induced entry | NEV firm/project entry response to local support | Baseline mechanism / empirical moment |
+| Capacity investment | $I_{r,t}^H$ | Barwick-Kalouptsidi-Zahur; Kalouptsidi | policy-induced investment | NEV capacity investment | Baseline |
+| Installed capacity | $H_{r,t}^N$ | Barwick-Kalouptsidi-Zahur; Kalouptsidi | productive capacity | NEV installed capacity as sector-specific capital | Baseline |
+| Capacity law | $H_{r,t+1}^N=(1-\delta_H)H_{r,t}^N+I_{r,t}^H$ | Kalouptsidi; Barwick-Kalouptsidi-Zahur | dynamic capacity accumulation | NEV capacity evolves with investment and depreciation | Baseline |
+| Demand absorption | $D_t^N(P_t^N)$ | Kalouptsidi | demand realization / absorption | effective NEV demand that may not absorb capacity one-for-one | Baseline discipline |
+| Static absorption shorthand | $Q(H^N)$ | Kalouptsidi, mapped through CES pricing | capacity-demand-price response | derived shorthand for realized sales in the static proof | Derived, not primitive |
+| Price response | $P_t^N$ | Kalouptsidi; CES final-good demand | price response to supply/demand | NEV relative price from realized quantity and final-good demand | Baseline |
+| Utilization / idle capacity | $u_t^N=Q_t^N/H_t^N$ | Barwick-Kalouptsidi-Zahur; Kalouptsidi | idle capacity | low NEV utilization when demand absorption lags capacity | Baseline |
+| Misallocation gap | $MPK_t^N-MPK_t^O$ | Hsieh-Klenow and macro misallocation literature | MPK/MRPK dispersion | capital return gap between NEV and outside sector | Baseline |
+| Welfare comparison | $W^D-W^{CP}$ | Chen-Liu-Song; Barwick-Kalouptsidi-Zahur | local vs central welfare / policy counterfactuals | decentralized implementation versus implementable centralized coordination | Baseline |
+| Industry life cycle | entry-exit-innovation-market structure path | Klepper | product life-cycle regularities | interpretation of changing entry, competition, exit, innovation, and market structure over time | Narrative only |
+
+The baseline does not contain `LearningState`, `SelectionState`,
+`InvolutionState`, `CapacityPressureState`, `MisallocationState`, or
+`ScaleCompetitionState`. These labels can appear only as narrative descriptions
+outside the formal state vector. Learning must be represented through $A_t$,
+cumulative output, or learning-by-doing objects. Selection must be represented
+through entry, exit, productivity decomposition, or empirical mechanism tests.
+Misallocation must be represented through MPK/MRPK gaps, TFPR dispersion, or
+output/TFP loss.
 
 ---
 
@@ -47,34 +108,24 @@ delayed exit or innovation distortions.
 ## 2. Core mechanism
 
 $$
-\text{local Markov-Nash policy game across industry stages}
-\;+\;
-\text{private firm entry/capacity response}
+\underbrace{\zeta_{rt}^{L,NEV}-\zeta_{rt}^{C,NEV}}_{\text{Chen-Liu-Song local-central gap}}
 \Rightarrow
-\left\{
-\begin{array}{l}
-\text{early stage: learning, market formation, supply-chain coordination}\\
-\text{scale-competition stage: investment attraction, subsidies, capacity support}
-\end{array}
-\right.
+\underbrace{s_{r,t}}_{\text{composite local NEV policy wedge}}
 \Rightarrow
-\left\{
-\begin{array}{l}
-\text{industry takeoff, cost decline, firm screening, creative destruction}\\
-\text{duplicated entry, low utilization, price compression, MPK gaps}
-\end{array}
-\right.
+\underbrace{Entry_{r,t}^N,\ I_{r,t}^H,\ H_{r,t+1}^N}_{\text{Barwick-Kalouptsidi-Zahur / Kalouptsidi}}
 \Rightarrow
-\text{net welfare comparison } W^D-W^{CP}.
+\underbrace{D_t^N(P_t^N),\ P_t^N,\ u_t^N,\ \pi_t^N}_{\text{capacity-demand-price block}}
+\Rightarrow
+\underbrace{MPK_t^N-MPK_t^O}_{\text{misallocation block}}
+\Rightarrow
+\underbrace{W^D-W^{CP}}_{\text{net welfare comparison}}.
 $$
 
-Industrial policy can be welfare-improving in early states with strong learning,
-market-formation, and supply-chain coordination benefits. Decentralized local
-implementation can also have information, investment-attraction,
-experimentation, and private-capital-mobilization advantages. The potential
-distortion arises when the same decentralized expansionary tools continue after
-the industry enters scale competition and capacity expands faster than effective
-demand.
+The industry life-cycle interpretation follows Klepper, but it is not an
+independent state variable. It is the path traced by policy, entry, investment,
+capacity, demand absorption, prices, utilization, profits, and MPK gaps. The
+potential distortion arises when the same decentralized expansionary tools
+continue after capacity expands faster than effective demand.
 
 The price channel is state-contingent. Lower NEV prices can raise consumer or
 final-good welfare. The paper does not pre-commit to $W^D<W^{CP}$. The
@@ -289,10 +340,11 @@ equilibrium. It chooses policy instruments:
 
 $$\{s_{r,t}^{CP}\}_{r=1}^R,$$
 
-while households and firms continue to optimize privately. The constrained
-planner internalizes cross-region learning spillovers, the consumer or final-good
-benefit from lower NEV prices, producer price/revenue compression, excess
-capacity, fiscal costs, debt costs, and aggregate MPK losses.
+while households and firms continue to optimize privately. This benchmark maps
+to the Chen-Liu-Song central intervention index $\zeta_{rt}^{C,NEV}$. The
+constrained planner internalizes cross-region learning spillovers, the consumer
+or final-good benefit from lower NEV prices, producer price/revenue compression,
+duplicated capacity, fiscal costs, debt costs, and aggregate MPK losses.
 
 A first-best planner that directly chooses allocations is only an appendix upper
 bound:
@@ -403,6 +455,10 @@ validation, not an automatically exogenous instrument.
 3. Subsidy cap or anti-duplication rule.
 4. Faster policy exit.
 5. Expansionary versus productivity-enhancing support.
+
+These counterfactuals are allowed because they are policy-counterfactual objects
+in the industrial-policy and local-central coordination literatures. They are not
+new welfare primitives.
 
 ---
 

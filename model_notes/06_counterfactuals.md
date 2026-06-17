@@ -9,6 +9,11 @@ benchmark is the comparison between `decentralized local implementation` and
 Counterfactuals should report how effects differ between the early
 industry-building phase and the later scale-competition phase.
 
+All counterfactuals must be policy or allocation experiments over sourced model
+objects: $s_{r,t}$, entry, investment, capacity, utilization, prices, fiscal
+costs, MPK/MRPK gaps, and $W^D-W^{CP}$. They should not add new welfare
+penalties or conceptual state variables.
+
 ---
 
 ## 2. Counterfactual 1: No local industrial policy
@@ -18,6 +23,9 @@ industry-building phase and the later scale-competition phase.
 **Economic question:** What would NEV output, capacity, learning, utilization,
 consumer or final-good price benefits, and welfare look like without local policy
 support?
+
+**Provenance:** This is a policy-counterfactual exercise. It is useful for
+measurement, but it is not the main Chen-Liu-Song local-central benchmark.
 
 **Expected outputs:**
 
@@ -37,6 +45,9 @@ competition.
 **Model change:** Replace decentralized local policies $s_{r,t}^D$ with the
 constrained planner's coordinated policy instruments $s_{r,t}^{CP}$.
 Households and firms continue to optimize privately.
+
+**Provenance:** This is the direct implementation of the
+$\zeta^{L,NEV}$ versus $\zeta^{C,NEV}$ comparison.
 
 **Economic question:** Does coordinating industrial policy at the national level
 raise, leave unchanged, or lower net welfare relative to decentralized local
@@ -62,6 +73,9 @@ declaring a net welfare gain from coordination.
 **Model change:** Impose $s_{r,t}\leq\bar s$ for all regions and periods, where
 $\bar s$ is chosen relative to the constrained-planner early-phase policy.
 
+**Provenance:** This remains a rule over the single composite policy wedge
+$s_{r,t}$, not a new policy-tool vector.
+
 **Economic question:** Can a simple national rule improve the decentralized
 trade-off without eliminating useful experimentation and private-capital
 mobilization?
@@ -77,7 +91,10 @@ mobilization?
 ## 5. Counterfactual 4: Faster policy exit
 
 **Model change:** Reduce policy adjustment cost $\chi_s$ or otherwise relax sunk
-policy commitments after overcapacity becomes observable.
+policy commitments after low utilization becomes observable.
+
+**Provenance:** This changes the dynamic policy-inertia object already in the
+baseline. It does not create an `InvolutionState`.
 
 **Economic question:** Does faster policy exit raise welfare by reducing
 misallocation, or lower welfare by cutting off useful discovery, learning, and
@@ -98,6 +115,9 @@ static proof, not as a hard proposition before proof.
 
 **Model change:** Replace the expansionary capacity wedge with a policy that
 raises NEV productivity $A_{r,t}^N$ at comparable fiscal cost.
+
+**Provenance:** This counterfactual is allowed only if the productivity policy is
+linked to learning-by-doing, cumulative-output, or technology-policy literature.
 
 **Economic question:** Is the problem mainly the scale of support, or the form of
 support?

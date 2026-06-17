@@ -8,6 +8,11 @@ after the third-round critique and the external notes on active firm response.
 It uses the constrained planner / centralized policy equilibrium as the main
 benchmark.
 
+This module follows the provenance-controlled baseline in
+`00_MASTER_model_memo.md`. Lifecycle language is interpretive; the formal model
+uses sourced objects such as policy, entry, investment, capacity, demand,
+prices, utilization, profits, and MPK gaps.
+
 ---
 
 ## 2. Research question [Accepted baseline]
@@ -63,26 +68,22 @@ policy versus centralized constrained policy.
 ## 3. Core mechanism [Accepted baseline]
 
 $$
-\underbrace{\text{Local policy game}}_{\text{Markov-Nash}}
-\;+\;
-\underbrace{\text{private firm response}}_{\text{entry/capacity}}
+\underbrace{\zeta_{rt}^{L,NEV}-\zeta_{rt}^{C,NEV}}_{\text{Chen-Liu-Song local-central gap}}
 \Rightarrow
-\left\{
-\begin{array}{l}
-\underbrace{\text{learning, market formation, supply-chain coordination}}_{\text{early-stage constraints}}\\
-\underbrace{\text{investment attraction, subsidies, capacity support}}_{\text{scale-competition policy tools}}
-\end{array}
-\right.
+\underbrace{s_{r,t}}_{\text{composite local policy wedge}}
 \Rightarrow
-\left\{
-\begin{array}{l}
-\underbrace{\text{industry takeoff, cost decline, firm screening}}_{\text{discovery and creative destruction}}\\
-\underbrace{\text{duplicated entry, low utilization, price compression, MPK gaps}}_{\text{duplicated capacity and aggregate misallocation}}
-\end{array}
-\right.
+\underbrace{Entry_{r,t}^N,\ I_{r,t}^H,\ H_{r,t+1}^N}_{\text{entry, investment, capacity}}
+\Rightarrow
+\underbrace{D_t^N(P_t^N),\ P_t^N,\ u_t^N,\ \pi_t^N}_{\text{demand, price, utilization, profit}}
+\Rightarrow
+\underbrace{MPK_t^N-MPK_t^O}_{\text{capital misallocation}}
 \Rightarrow
 \underbrace{\text{Net welfare comparison}}_{W^D-W^{CP}\lessgtr0}.
 $$
+
+Klepper-style industry life-cycle language describes how these objects evolve
+over time. It does not create a separate `ScaleCompetitionState`,
+`SelectionState`, or `InvolutionState`.
 
 **Step 1: Local policy game and firm response to capacity competition**
 
@@ -95,6 +96,10 @@ decentralized FOC can imply a higher policy wedge than the constrained-planner
 FOC in the scale-competition or misallocation-dominant regime, but this is not
 imposed globally. In other states, local information, investment-attraction
 capacity, and private-capital mobilization may justify decentralized intensity.
+
+In Chen-Liu-Song notation, this is a comparison between the local intervention
+index $\zeta_{rt}^{L,NEV}$ and the central intervention index
+$\zeta_{rt}^{C,NEV}$.
 
 Firms then respond privately. A higher local policy wedge raises the private
 return to NEV entry or capacity expansion by lowering effective capital costs
@@ -162,6 +167,9 @@ $$
 
 The components are jointly determined by the policy game and private-sector
 responses. They should not be treated as independent shocks.
+
+The vector $\mathcal T_t$ is diagnostic, not a state vector. It reports sourced
+model outcomes and the welfare comparison; it does not define new primitives.
 
 This definition avoids three misreadings. The paper does not claim that local
 governments alone mechanically create aggregate misallocation, does not claim

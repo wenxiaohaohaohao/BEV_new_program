@@ -6,6 +6,11 @@ None of the content in this module enters the baseline until the post-revision
 skeleton is closed, the static two-region proof is written, and the constrained
 planner comparison is internally consistent.
 
+Every extension also needs literature provenance. A feature cannot enter the
+baseline merely because it is plausible in the NEV setting; it must map to a
+specific literature object and solve a limitation that the current baseline
+cannot address.
+
 ---
 
 ## 1. Administrative convex policy cost
@@ -47,6 +52,8 @@ from capital-cost support.
 **Reason outside baseline:** The first closed model uses a single capital-cost
 wedge to discipline installed capacity and MPK gaps. Adding a second policy
 channel before the static proof would weaken identification of the core wedge.
+If promoted later, the entry-cost wedge must be tied to an explicit entry model
+or to Barwick-Kalouptsidi-Zahur-style policy-to-entry evidence.
 
 ---
 
@@ -61,6 +68,8 @@ brand competition, and vehicle-market substitution.
 **Reason outside baseline:** It adds varieties, markups, product-level demand,
 market-share data, and instruments before the policy-wedge mechanism is closed.
 The baseline keeps CES-derived demand to preserve the macro welfare comparison.
+If promoted later, BLP or differentiated demand must replace the CES block as a
+new demand module, not sit beside it as an extra primitive.
 
 ---
 
@@ -75,6 +84,8 @@ excessive even before aggregate capital misallocation is measured.
 **Reason outside baseline:** The current CES price-compression and MPK-gap
 channels already generate the main aggregate inefficiency. A full business-
 stealing block would move the baseline toward IO.
+If promoted later, it must be tied to entry, markup, or product-market
+competition literature and shown to add information beyond the MPK-gap channel.
 
 ---
 
@@ -90,6 +101,9 @@ supply chains and amplify productivity consequences.
 **Reason outside baseline:** It changes the object from local policy and capital
 misallocation to network propagation. It is an amplification channel, not the JMP
 core.
+If promoted later, it should be treated as an Ernest Liu-style or related
+production-network extension, not as part of the first local-central policy
+misalignment block.
 
 ---
 
@@ -154,6 +168,8 @@ over-entry directly.
 **Reason outside baseline:** The first model uses region-level sufficient states
 to keep the dynamic problem feasible. Firm-entry moments can validate the
 mechanism without adding $\mu_{r,t}(z)$ to the baseline state vector.
+Selection should be measured through entry, exit, productivity decomposition, or
+firm moments. It should not be represented by a standalone `SelectionState`.
 
 ---
 
@@ -212,3 +228,4 @@ An extension can enter the baseline only if:
 2. the extension explains an empirical pattern the baseline cannot match;
 3. it does not obscure the core mechanism;
 4. the decision is recorded in `99_decision_log.md`.
+5. the extension has a documented literature source and a clear NEV mapping.

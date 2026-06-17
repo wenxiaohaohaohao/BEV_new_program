@@ -29,6 +29,13 @@ policy is state-contingent: the project tests when local competition is
 and aggregate misallocation`. The sign of $W^D-W^{CP}$ is an object for theory
 discipline and quantification, not a maintained conclusion.
 
+Model discipline is provenance-controlled: every primitive in the baseline must
+come from an existing literature or be a direct NEV mapping of an existing
+object. The decentralized policy block follows Chen-Liu-Song, the dynamic
+industrial-policy and capacity blocks follow Barwick-Kalouptsidi-Zahur and
+Kalouptsidi, the industry-life-cycle interpretation follows Klepper, and the
+misallocation block follows Hsieh-Klenow and related macro misallocation work.
+
 This directory is intentionally self-contained. It does not depend on the parent
 AI compute-subsidy project and can later be moved into a separate Git repository.
 Files under `legacy/` preserve earlier plans, source notes, and alternative
@@ -48,9 +55,12 @@ Read the project in this order:
    the current accepted baseline.
 5. The relevant module under `model_notes/` for assumptions, alternatives, and
    open questions.
-6. [`model_notes/99_decision_log.md`](model_notes/99_decision_log.md): accepted
+6. `references/模型模块审计与文献来源纪律_NEV项目.md` and
+   `references/基准模型变量收紧与文献来源纪律_NEV项目.md`: provenance and source
+   discipline inputs for the active baseline.
+7. [`model_notes/99_decision_log.md`](model_notes/99_decision_log.md): accepted
    and rejected modeling decisions.
-7. [`AGENTS.md`](AGENTS.md): operating rules for Codex and other contributors.
+8. [`AGENTS.md`](AGENTS.md): operating rules for Codex and other contributors.
 
 ## Source-of-truth hierarchy
 
@@ -58,9 +68,10 @@ Read the project in this order:
 |---|---|---|
 | 1 | `model_notes/00_POST_REVISION_MODEL_SKELETON.md` | Closure contract for the accepted baseline |
 | 2 | `model_notes/00_MASTER_model_memo.md` | Accepted baseline summary |
-| 3 | `model_notes/01_...08_*.md` | Module detail, alternatives, and open questions |
-| 4 | `model_notes/99_decision_log.md` | Reasons for accepted and rejected choices |
-| 5 | `legacy/` | Historical context only; never authoritative by itself |
+| 3 | `references/模型模块审计与文献来源纪律_NEV项目.md` and `references/基准模型变量收紧与文献来源纪律_NEV项目.md` | Provenance discipline inputs |
+| 4 | `model_notes/01_...08_*.md` | Module detail, alternatives, and open questions |
+| 5 | `model_notes/99_decision_log.md` | Reasons for accepted and rejected choices |
+| 6 | `legacy/` | Historical context only; never authoritative by itself |
 
 If two files conflict, use the higher-priority source and record any substantive
 resolution in the decision log.
@@ -114,6 +125,9 @@ begins.
 ## Model maintenance rules
 
 - `00_MASTER_model_memo.md` receives only accepted baseline content.
+- No uncited primitive enters the baseline. Every state, policy wedge, demand
+  object, price mechanism, welfare object, and counterfactual must have a source
+  in the provenance table or be recorded as an extension.
 - Module notes use these status labels:
   `[Accepted baseline]`, `[Alternative]`, `[Open question]`, `[Rejected]`,
   `[Main-text candidate]`, and `[Appendix candidate]`.
@@ -122,6 +136,11 @@ begins.
 - Do not promote supply-chain IO, BLP demand, soft budget constraints, trade,
   financial frictions, entry-cost wedges, or full heterogeneous-firm dynamics
   into the baseline without a recorded decision.
+- Do not introduce conceptual state variables such as `LearningState`,
+  `SelectionState`, `InvolutionState`, `CapacityPressureState`,
+  `MisallocationState`, or `ScaleCompetitionState` into the baseline. Use
+  sourced objects such as $A_t$, entry, investment, capacity, utilization,
+  prices, profits, and MPK/MRPK gaps instead.
 - Historical files in `legacy/` may be consulted for context but must not silently
   override active notes.
 

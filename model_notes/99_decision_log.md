@@ -72,33 +72,22 @@ Adding an independent inverse demand curve overdetermines the product market.
 
 ---
 
-## Decision 5: Learning law
+## Decision 5: Learning and cost decline
 
-**Accepted:** Use a combined frontier-gap learning law with both local learning
-and cross-regional spillovers:
+**Accepted:** Learning, cost decline, and firm screening are benefit-side
+mechanisms that can be added as robustness or extension objects if they are
+tied to cited learning-by-doing, cumulative-output, entry/exit, or productivity
+decomposition evidence.
 
-$$
-A_{r,t+1}^N
-=
-A_{r,t}^N
-+\psi_L
-\frac{\bar A_t-A_{r,t}^N}{\bar A_t}
-(Y_{r,t}^N)^\nu
-+\psi_G
-\frac{\bar A_t-A_{r,t}^N}{\bar A_t}
-\left(\sum_{r'\neq r}Y_{r',t}^N\right)^\nu.
-$$
+**Rejected for the clean baseline:** Carrying $A_{r,t}^N$ as a required state
+variable or making a frontier-gap learning law necessary for the central
+dynamic-capacity-misallocation mechanism.
 
-The frontier evolves exogenously:
-
-$$\bar A_{t+1}=(1+g_A)\bar A_t.$$
-
-**Rejected:** Knowledge depreciation, national spillovers that double-count own
-output, and a single frontier-gap learning term without cross-regional spillovers.
-
-**Reason:** The baseline must preserve local learning, cross-regional spillovers,
-diminishing learning near the frontier, and a clear difference between local and
-centralized policy internalization.
+**Reason:** The current clean axis is not a full creative-destruction model. The
+baseline must first close policy platforms, partly irreversible capacity,
+demand absorption, MPK/MRPK gaps, and the $D$ versus $CP$ welfare comparison.
+Learning can enter the welfare decomposition as an optional benefit once its
+functional form and citation discipline are verified.
 
 ---
 
@@ -272,15 +261,21 @@ statistics:
 
 $$
 X_t=
-\{H_{r,t}^N,A_{r,t}^N,B_{r,t},s_{r,t-1}\}_{r=1}^R.
+\{H_{r,t}^N,B_{r,t},s_{r,t-1}\}_{r=1}^R.
 $$
 
-**Rejected for baseline:** Carrying the full firm productivity distribution
-$\mu_{r,t}(z)$.
+If learning is promoted beyond a benefit-side robustness object, $A_{r,t}^N$
+can be added only with a cited learning law.
 
-**Reason:** The full heterogeneous-firm dynamic game is too large for the first
-closed model. Firm heterogeneity is an extension after the region-level model is
-solved.
+**Rejected for baseline:** Carrying the full firm productivity distribution
+$\mu_{r,t}(z)$ or standalone conceptual states such as `LearningState`,
+`SelectionState`, `CapacityPressureState`, `MisallocationState`,
+`ScaleCompetitionStage`, or `PostSuccess`.
+
+**Reason:** The first closed model needs sufficient state variables for dynamic
+capacity accumulation, inherited fiscal pressure, and policy inertia. Full
+heterogeneous-firm dynamics and narrative state labels would obscure the
+capacity-demand-return mechanism before it is quantified.
 
 ---
 
@@ -297,19 +292,20 @@ capacity, urban characteristics, and other local fundamentals.
 
 ---
 
-## Decision 17: Creative destruction versus aggregate misallocation diagnostic
+## Decision 17: Dynamic capacity misallocation diagnostic
 
-**Accepted:** Involution is one possible equilibrium regime, not a maintained
-conclusion. The main diagnostic compares decentralized equilibrium $D$ with the
-implementable constrained planner $CP$:
+**Accepted:** Dynamic capacity misallocation is a state-contingent outcome, not
+a maintained conclusion. The main diagnostic compares decentralized equilibrium
+$D$ with implementable centralized coordination $CP$:
 
 $$
 \mathcal T_t =
 \left(
-s_t^D-s_t^{CP},\;
-H_t^{N,D}-H_t^{N,CP},\;
-u_t^{N,CP}-u_t^{N,D},\;
-MPK_t^{O,D}-MPK_t^{N,D},\;
+s_{r,t}^D-s_{r,t}^{CP},\;
+I_{r,t}^{H,D}-I_{r,t}^{H,CP},\;
+H_{r,t+1}^{N,D}-H_{r,t+1}^{N,CP},\;
+u_t^{N,D}-u_t^{N,CP},\;
+MPK_t^{N,D}-MPK_t^{O,D},\;
 W^D-W^{CP}
 \right).
 $$
@@ -318,12 +314,11 @@ $$
 versus a first-best planner, or defining aggregate misallocation by assuming
 $W^D<W^{CP}$.
 
-**Reason:** The paper studies whether decentralized local implementation across
-the NEV industry lifecycle acts as discovery and creative destruction, an
-offsetting trade-off, or aggregate misallocation relative to a feasible
-centralized policy benchmark. The welfare component is a net object: it credits
-consumer or final-good benefits, learning, discovery, firm screening, and
-private-capital mobilization before subtracting fiscal, duplicated-capacity, and
+**Reason:** The paper studies whether decentralized local implementation
+generates excessive durable capacity investment relative to aggregate demand
+absorption and outside-sector capital returns. The welfare component is a net
+object: it credits consumer surplus, producer surplus, and any verified learning
+benefit before subtracting fiscal costs, idle-capacity costs, and aggregate
 capital-misallocation costs.
 
 ---
@@ -331,8 +326,9 @@ capital-misallocation costs.
 ## Decision 18: Proposition discipline
 
 **Accepted:** Before numerical code, the project must write a static symmetric
-two-region model and prove sufficient conditions for $s^D>s^{CP}$ in the
-misallocation-dominant regime.
+two-region model and prove sufficient conditions for $s^D>s^{CP}$ when local
+policy returns remain positive but central aggregate returns are weak or
+nonpositive.
 
 **Rejected:** Treating $s^D>s^{CP}$ and slow policy exit as asserted propositions
 without proof.
@@ -340,29 +336,31 @@ without proof.
 **Reason:** The decentralized expansionary-policy wedge is a conditional
 theoretical result, not the whole paper. It must follow from the local
 government FOC relative to the
-constrained-planner FOC when cost wedges dominate learning and decentralized
-implementation benefits. Slow exit should be a dynamic or numerical result unless
-a separate proof is supplied.
+constrained-planner FOC when fiscal, idle-capacity, price-compression, and
+capital-return wedges dominate consumer, producer, and optional learning
+benefits. Slow exit should be a dynamic or numerical result unless a separate
+proof is supplied.
 
 ---
 
 ## Decision 19: Baseline versus extensions
 
 **Accepted:** The baseline includes the single policy wedge, NEV installed
-capacity, reduced-form active firm response, CES-derived demand,
-total-tax-base local budgets, fixed regional labor, frontier-gap learning with
-spillovers, and a simultaneous local policy game.
+capacity, reduced-form active firm/project investment response, demand
+absorption, total-tax-base local budgets, fixed regional labor, outside-sector
+capital opportunity cost, MPK/MRPK gaps, and a simultaneous local policy game.
 
 **Rejected for the baseline:** SOE heterogeneity, export relief valve, soft budget
 constraints, production networks, full differentiated demand, full promotion
 tournaments, war-of-attrition exit, partial labor mobility, outside-sector
 endogenous learning, administrative $\kappa s^2/2$ costs, entry-cost wedges,
 BLP demand, supply-chain finance modules, business-stealing blocks, and full
-firm productivity distributions.
+firm productivity distributions. A full learning law is also outside the clean
+baseline unless it is promoted with explicit citation discipline.
 
 **Reason:** These features are important, but adding them before the core
-decentralized-policy-misallocation mechanism is closed would obscure the main
-theoretical comparison.
+decentralized-policy, durable-capacity, demand-absorption, and capital-return
+mechanism is closed would obscure the main theoretical comparison.
 
 ---
 
@@ -386,33 +384,32 @@ variables in the first closed model.
 **Reason:** The paper should not imply that local governments alone create
 aggregate misallocation or that firms are irrational. The outcome is a decentralized
 equilibrium trade-off: locally and privately rational choices may generate
-learning, discovery, consumer benefits, and private-capital mobilization, but may
-also fail to internalize producer price/revenue compression, idle capacity, MPK
-gaps, fiscal costs, and net welfare effects.
+consumer benefits, producer surplus, optional learning benefits, and private
+capital mobilization, but may also fail to internalize demand-absorption limits,
+idle capacity, MPK/MRPK gaps, fiscal costs, and net welfare effects.
 
 ---
 
-## Decision 21: Macro-JMP main axis
+## Decision 21: Macro-industrial policy main axis
 
-**Accepted:** The project's main positioning is macro-development / spatial macro
-/ quantitative industrial policy about the dynamic welfare effect of
-decentralized expansionary local industrial policy over the endogenous industry
-life-cycle path of a strategic emerging industry. The core transition is from
-discovery and creative destruction to duplicated capacity and aggregate
-misallocation when capacity, demand absorption, price, utilization, profit, and
-MPK conditions make local and central policy returns diverge. IO,
-demand-estimation, supply-chain, and corporate-finance mechanisms can discipline
+**Accepted:** The project's main positioning is macro-industrial policy /
+quantitative macro-development about decentralized local industrial policy,
+durable and partly irreversible NEV capacity, demand absorption, MPK/MRPK gaps,
+and the $D$ versus $CP$ welfare comparison. IO, demand-estimation,
+supply-chain, corporate-finance, and full firm-dynamics mechanisms can discipline
 or amplify the story, but they do not replace the core model.
 
 **Rejected for baseline:** Restoring standalone inverse demand, using $s^P$ or
 $W^P$ as the main planner notation, adding $\kappa s^2/2$ as a baseline policy
 cost, making BLP the main demand system, or making the supply-chain finance /
-supplier-innovation mechanism the JMP core.
+supplier-innovation mechanism the JMP core. Also rejected is making
+`creative destruction` or an exogenous industry-life-cycle split the title-level
+mechanism.
 
 **Reason:** The first model must remain solvable, quantifiable, and tied to the
 $D$ versus $CP$ welfare comparison without pre-signing that comparison. Additional
-IO or supply-chain structure is valuable only after the static two-region
-trade-off and constrained-planner comparison are closed.
+IO, supply-chain, or firm-dynamics structure is valuable only after the static
+two-region trade-off and constrained-planner comparison are closed.
 
 ---
 
@@ -507,16 +504,15 @@ the first static proof.
 ## Decision 25: Welfare sign is state-contingent and not preset
 
 **Accepted:** The project frames NEV industrial policy as state-contingent along
-an endogenous industry-life-cycle path. Local governments combined with private
-capital can support industry takeoff, cost decline, firm screening,
-experimentation, and learning when expansion has high social return. The same
-expansionary toolkit can generate duplicated entry, low utilization, price
-compression, capital-return gaps, and aggregate resource misallocation when
-capacity expands faster than effective demand and the central return to further
-expansion falls. The paper does not pre-commit to $W^D<W^{CP}$. It evaluates
-whether industry-upgrading, discovery, learning, consumer, firm-screening, and
-private-capital mobilization benefits exceed fiscal, fixed-cost,
-low-utilization, and aggregate capital-misallocation costs.
+a dynamic capacity path. Local expansionary policy can have positive returns
+when additional durable capacity is absorbed by demand and raises consumer,
+producer, or optional learning benefits. The same toolkit can generate dynamic
+capacity misallocation when partly irreversible capacity accumulates faster than
+effective demand, utilization falls, and NEV capital returns decline relative to
+outside-sector returns. The paper does not pre-commit to $W^D<W^{CP}$. It
+evaluates whether consumer surplus, producer surplus, optional learning, and
+private-capital mobilization benefits exceed fiscal, idle-capacity, and
+aggregate capital-misallocation costs.
 
 Lower NEV prices can raise consumer or final-good welfare. In the model, price
 compression affects welfare only after this benefit is credited. A sufficient
@@ -527,8 +523,8 @@ $$
 $$
 
 where $\Delta^P$ is the consumer-benefit-adjusted price/revenue wedge and
-$\Delta^D$ is the decentralized implementation/discovery benefit that the
-centralized benchmark may not fully reproduce.
+$\Delta^D$ is any decentralized implementation or private-capital mobilization
+benefit that the centralized benchmark may not fully reproduce.
 
 **Rejected for baseline:** A blanket claim that decentralized industrial policy
 is harmful; a no-policy benchmark as the main normative comparison; or a claim
@@ -548,15 +544,15 @@ implementable $CP$, not policy versus no policy.
 
 **Accepted:** The working title is:
 
-Decentralized Industrial Policy over the Industry Life Cycle: Creative
-Destruction or Aggregate Misallocation? Evidence from China's NEV Industry
+Decentralized Industrial Policy and Dynamic Capacity Misallocation: Evidence
+from China's NEV Industry
 
 The safe boundary sentence is:
 
 Existing studies explain how China's NEV industry rose. This paper asks how the
 marginal welfare return to the same decentralized local implementation changes
 with endogenous capacity, demand absorption, prices, utilization, profits, and
-MPK gaps.
+MPK/MRPK gaps.
 
 **Rejected for baseline:** Positioning the paper as a rebuttal to positive
 studies of China's NEV policy or as a proof that local industrial policy caused
@@ -565,32 +561,37 @@ read as assuming policy becomes harmful after an exogenous maturity threshold.
 
 **Reason:** The paper should build on the positive NEV literature, not fight it.
 The contribution is to evaluate whether the same decentralized local
-implementation acts as creative destruction, an offsetting trade-off, or
-aggregate misallocation as the endogenous state changes.
+implementation generates too much durable capacity relative to demand absorption
+and outside-sector capital returns.
 
 ---
 
-## Decision 27: Main axis is lifecycle dual role and state-contingent welfare
+## Decision 27: Main axis is dynamic capacity misallocation
 
-**Accepted:** The paper studies the dual role of decentralized expansionary local
-industrial policy over the endogenous industry life cycle of a strategic
-emerging industry. The life cycle is not an exogenous stage split. It is the
-dynamic path jointly determined by local policy, firm entry, capacity
-investment, demand absorption, price adjustment, utilization, profit, and
-capital returns. The main empirical setting is China's NEV industry. The main
-comparison is decentralized local implementation versus implementable
-centralized coordination.
+**Accepted:** The paper studies decentralized expansionary local industrial
+policy through the dynamic path
+
+$$
+s_{r,t}\rightarrow I^H_{r,t}\rightarrow H^N_{r,t+1}
+\rightarrow D_t^N(P_t^N),u_t^N,P_t^N,\pi_t^N,MPK_t^N-MPK_t^O
+\rightarrow \zeta_{r,t}^{L,NEV}-\zeta_{r,t}^{C,NEV}
+\rightarrow W^D-W^{CP}.
+$$
+
+The main empirical setting is China's NEV industry. The main comparison is
+decentralized local implementation versus implementable centralized
+coordination.
 
 **Rejected:** Framing the project as a one-sided claim that local industrial
 policy caused welfare losses; treating price declines as welfare losses by
 themselves; or making $W^D<W^{CP}$ a maintained assumption before theory and
 quantification.
 
-**Reason:** The contribution is to evaluate when local competition is discovery
-and creative destruction and when it becomes duplicated capacity and aggregate
-misallocation. This framing preserves the positive role of NEV industrial policy
-and local government-private capital coordination while still allowing the model
-and data to identify misallocation-dominant states.
+**Reason:** The contribution is to evaluate how decentralized policy platforms,
+partly irreversible durable capacity, demand absorption, and MPK/MRPK gaps
+jointly determine local-central return divergence and welfare differences. This
+framing preserves possible benefits from NEV industrial policy while keeping the
+baseline centered on macro resource allocation.
 
 ---
 
@@ -599,13 +600,15 @@ and data to identify misallocation-dominant states.
 **Accepted:** Every baseline primitive must be listed in the MASTER provenance
 table or be a direct NEV mapping of a listed literature object. The baseline
 uses sourced objects: $s_{r,t}$, $\zeta^{L,NEV}$, $\zeta^{C,NEV}$,
-$Entry^N_{r,t}$, $I^H_{r,t}$, $H^N_{r,t}$, $D_t^N(P_t^N)$, $P_t^N$, $u_t^N$,
-MPK/MRPK gaps, and $W^D-W^{CP}$.
+$PolicyPlatform_{r,t}^{main}$, $Entry^N_{r,t}$, $I^H_{r,t}$,
+$H^N_{r,t}$, $D_t^N(P_t^N)$, $P_t^N$, $u_t^N$, MPK/MRPK gaps, and
+$W^D-W^{CP}$.
 
 **Rejected for baseline:** Conceptual state variables such as `LearningState`,
 `SelectionState`, `InvolutionState`, `CapacityPressureState`,
-`MisallocationState`, and `ScaleCompetitionState`; also rejected are welfare
-penalty terms such as unsupported $\Omega_A$, $\Omega_H$, or $\Omega_M$.
+`MisallocationState`, `ScaleCompetitionState`, `ScaleCompetitionStage`, and
+`PostSuccess`; also rejected are welfare penalty terms such as unsupported
+$\Omega_A$, $\Omega_H$, or $\Omega_M$.
 
 **Reason:** The project is now a provenance-controlled modular extraction. Its
 modeling contribution is to combine existing modules in the NEV setting, not to
@@ -671,9 +674,9 @@ and does not define exogenous phases.
 
 ## Decision 32: Learning functional form is a bridge requiring citation discipline
 
-**Accepted:** The current frontier-gap learning law can remain as a baseline
-bridge object while the project is in model-note form. Before paper drafting, it
-must be tied to learning-by-doing, cumulative-output, or clean-technology
+**Accepted:** Learning can remain an optional benefit-side bridge object while
+the project is in model-note form. Before paper drafting, any explicit learning
+law must be tied to learning-by-doing, cumulative-output, or clean-technology
 learning literature, or simplified into a more directly cited object.
 
 **Rejected for baseline:** Treating `LearningState` as a primitive or adding
@@ -685,11 +688,13 @@ formal object must remain source-disciplined.
 
 ---
 
-## Decision 33: Industry life cycle is endogenous in the baseline framing
+## Decision 33: Lifecycle language is narrative, not a baseline primitive
 
-**Accepted:** The baseline treats the industry life cycle as the dynamic path
-jointly determined by local policy, firm entry, capacity investment, demand
-absorption, price adjustment, utilization, profits, and capital returns.
+**Accepted:** Lifecycle language can describe the dynamic path jointly
+determined by local policy platforms, firm/project investment, durable capacity,
+demand absorption, price adjustment, utilization, profits, and capital returns.
+It is not a baseline state variable and does not define the paper's title-level
+mechanism.
 
 **Rejected for baseline:** Treating the life cycle as a set of exogenous phases
 or assuming that expansionary industrial policy becomes socially costly after a
@@ -698,8 +703,9 @@ fixed maturity threshold.
 **Reason:** The paper's mechanism is dynamic lag plus state-dependent returns.
 Capacity investment is lagged and partly irreversible. Simultaneous local
 expansion can make future capacity release concentrated. Whether that expansion
-is discovery or misallocation depends on demand absorption, utilization, prices,
-profits, fiscal costs, and MPK gaps, not on an externally assigned phase label.
+creates welfare gains or capacity misallocation depends on demand absorption,
+utilization, prices, profits, fiscal costs, and MPK/MRPK gaps, not on an
+externally assigned phase label.
 
 ---
 
@@ -717,13 +723,95 @@ Here $Z_t$ denotes already defined endogenous objects such as capacity, demand
 absorption, prices, utilization, profits, fiscal costs, and MPK gaps. It is a
 compact notation for the state of the model, not a new primitive.
 
-**Rejected for baseline:** Explaining duplicated capacity and aggregate
-misallocation by assuming that policy simply turns bad in a later period.
+**Rejected for baseline:** Explaining dynamic capacity misallocation by assuming
+that policy simply turns bad in a later period.
 
 **Reason:** When local returns remain positive, local governments can rationally
 continue expansionary support because they internalize local investment,
 employment, output, and tax-base gains. When central returns are nonpositive,
 coordinated policy would reduce the expansionary wedge because it internalizes
 duplicated capacity, fiscal costs, and aggregate capital misallocation. The
-gap between these two returns is the formal discovery-to-misallocation
-transition.
+gap between these two returns is the formal local-central return-divergence
+condition.
+
+---
+
+## Decision 35: Clean-axis sources
+
+**Accepted:** The current source-of-truth for project framing is
+`NEV_干净主轴_项目介绍与工作区更新指令.md`. The macro-positioning source is
+`NEV项目_宏观定位说明.pdf`.
+
+**Rejected for current framing:** Treating `NEV 项目当前主轴 Notes.pdf` as the
+active title or mechanism source.
+
+**Reason:** The new clean axis narrows the paper from a broad lifecycle /
+creative-destruction framing to decentralized local industrial policy, durable
+and partly irreversible NEV capacity, demand absorption, MPK/MRPK gaps, and the
+$D$ versus $CP$ welfare comparison.
+
+---
+
+## Decision 36: Aggregate Demand and Irreversible Investment source module
+
+**Accepted:** `Aggregate Demand and Irreversible Investment` is a provenance
+module for partly irreversible durable capacity, demand absorption, investment
+lags, and MRPK-dispersion logic.
+
+**Rejected for baseline:** Importing working-capital financial frictions,
+endogenous default risk, bank pricing, hand-to-mouth households, or a full
+heterogeneous-firm recursive equilibrium from that source family.
+
+**Reason:** The baseline needs the capacity-demand-return logic, not a full
+financial-friction or heterogeneous-household model.
+
+---
+
+## Decision 37: Local policy platform index
+
+**Accepted:** The main empirical policy object is a local expansionary policy
+platform index:
+
+$$
+PolicyPlatform_{r,t}^{main}
+=
+IndustrialPark_{r,t}
++LocalStateCapital_{r,t}
++LocalFund_{r,t}
++LandSupport_{r,t}
++PlannedCapacity_{r,t}.
+$$
+
+Financial support can be recorded as:
+
+$$
+FinancialSupport_{r,t}=LocalFund_{r,t}+CreditSupport_{r,t}.
+$$
+
+Demand-side support, including purchase subsidies, charging infrastructure,
+license policy, and consumer vouchers, is used as control, heterogeneity, or
+robustness evidence unless promoted by a later decision.
+
+**Rejected for baseline:** Treating every NEV policy text as the same
+expansionary-capacity instrument.
+
+**Reason:** The clean model studies policy platforms that shift investment and
+installed capacity. Demand-side and ecosystem policies affect demand absorption
+or usage conditions and should not be mechanically mixed into the capacity
+investment wedge.
+
+---
+
+## Decision 38: Counterfactual set under the clean axis
+
+**Accepted:** The main benchmark remains decentralized implementation $D$ versus
+implementable centralized coordination $CP$. Policy counterfactuals should focus
+on subsidy caps, capacity approval rules, faster capacity retirement, and
+policy-mix shifts away from entry/capacity support.
+
+**Rejected for main benchmark:** A policy-versus-no-policy comparison as the
+primary welfare object.
+
+**Reason:** The paper asks whether decentralized local implementation creates
+dynamic capacity misallocation relative to feasible central coordination, not
+whether China's NEV industrial policy should have existed.

@@ -108,8 +108,8 @@ does not fully internalize:
 - national consumer or final-good benefits from lower NEV prices;
 - producer price/revenue compression caused by national NEV expansion;
 - other-region effects of capacity expansion;
-- cross-region learning spillovers;
-- duplicated capacity and aggregate MPK losses.
+- optional learning spillovers if included;
+- durable-capacity overaccumulation and aggregate MPK/MRPK losses.
 
 These omitted terms create the wedge between the decentralized local FOC and the
 constrained-planner FOC when capacity, demand, price, utilization, profit, and
@@ -125,9 +125,9 @@ Gap_{rt}^{NEV}
 $$
 
 Here $Z_t$ is shorthand for already defined endogenous model objects, including
-capacity, demand absorption, prices, utilization, profits, and MPK gaps. It is
-not a new state variable. The transition from discovery to duplicated capacity
-is characterized by:
+durable capacity, demand absorption, prices, utilization, profits, fiscal costs,
+and MPK/MRPK gaps. It is not a new state variable. The transition to dynamic
+capacity misallocation is characterized by:
 
 $$
 \zeta_{rt}^{L,NEV}(Z_t)>0
@@ -158,7 +158,10 @@ $$
 
 Baseline local state:
 
-$$Z_{r,t}=(H_{r,t}^N,A_{r,t}^N,B_{r,t},s_{r,t-1}).$$
+$$Z_{r,t}=(H_{r,t}^N,B_{r,t},s_{r,t-1}).$$
+
+Optional learning extensions can add $A_{r,t}^N$ with separate citation
+discipline.
 
 The first proof target is a symmetric two-region static game. The proof should
 compare the local FOC with the constrained-planner FOC and state sufficient

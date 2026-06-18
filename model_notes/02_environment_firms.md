@@ -1,17 +1,17 @@
-# Module 2: Environment, Household, Final Good, Firms, LBD
+# Module 2: Capacity, Demand Absorption, Outside Sector, and Firms
 
 ## 1. Purpose
 
-This module defines the baseline economic environment after the Claude second
-review response: fixed regional labor, outside-sector capital, NEV installed
-capacity as sector-specific capital, CES-derived demand, resource feasibility,
-frontier-gap learning with cross-region spillovers, and a reduced-form active
+This module defines the clean baseline economic environment: fixed regional
+labor, outside-sector capital, durable and partly irreversible NEV installed
+capacity, demand absorption, resource feasibility, and a reduced-form active
 firm response to policy and market states.
 
 The module follows the provenance table in `00_MASTER_model_memo.md`. Capacity,
 entry, investment, idle capacity, demand absorption, and price response are not
-free-standing inventions: they are NEV mappings of Barwick-Kalouptsidi-Zahur and
-Kalouptsidi-style industry objects.
+free-standing inventions. Entry, investment, capacity, and idle capacity map to
+Barwick-Kalouptsidi-Zahur. Durable capacity, demand absorption, and MRPK
+dispersion map to Aggregate Demand and Irreversible Investment.
 
 ---
 
@@ -22,20 +22,23 @@ Kalouptsidi-style industry objects.
   regions.
 - **Sectors:** $j\in\{N,O\}$, where $N$ is the NEV sector and $O$ is the outside
   sector.
-- **Agents:** representative household, firms, local governments, and a
-  centralized constrained planner.
+- **Agents:** firms, local governments, and a centralized constrained
+  coordinator. A full representative-household Euler block is not part of the
+  clean baseline.
 
-SOE heterogeneity, exports, production networks, soft budget constraints,
-migration, differentiated demand, financing/valuation channels, entry-cost
-wedges, and full firm productivity distributions are extensions.
+SOE heterogeneity, exports, production networks, supplier innovation, official
+promotion incentives, resident saving, full tax systems, soft budget
+constraints, migration, differentiated demand, financing/valuation channels,
+entry-cost wedges, full dynamic IO estimation, and full firm productivity
+distributions are extensions.
 
 ---
 
-## 3. Household and regional labor [Accepted baseline]
+## 3. Demand accounting and regional labor [Accepted baseline]
 
-The representative household consumes the final good, owns firms and financial
-claims, and supplies savings. The household problem delivers the usual Euler
-condition for intertemporal saving.
+The clean baseline uses demand absorption and aggregate welfare accounting. It
+does not require a complete household consumption-savings problem or Euler
+equation.
 
 Labor is regionally segmented:
 
@@ -48,11 +51,12 @@ not include migration or partial labor mobility.
 
 ## 4. Capital and capacity [Accepted baseline]
 
-NEV installed capacity is the NEV sector-specific capital stock:
+NEV installed capacity is durable, partly irreversible sector-specific capital:
 
 $$H_{r,t}^N.$$
 
-There is no separate $K_{r,t}^N$ in the baseline.
+There is no separate $K_{r,t}^N$ in the baseline. If macro notation is useful,
+define $K_t^N\equiv\sum_rH_{r,t}^N$.
 
 Aggregate capital market clearing is:
 
@@ -66,13 +70,13 @@ NEV capacity evolves as:
 
 $$H_{r,t+1}^N=(1-\delta_H)H_{r,t}^N+I_{r,t}^H.$$
 
-This is the baseline capacity law of motion. Time-to-build or richer adjustment
-frictions can be added later as Kalouptsidi-style extensions, but the first
-baseline keeps the law one-period and transparent.
+This is the baseline capacity law of motion. Partial irreversibility can be
+represented by small $\delta_H$, nonnegative net capacity investment,
+construction lags, or low recovery value for retired capacity.
 
 ---
 
-## 5. Final good and CES-derived demand [Accepted baseline]
+## 5. Demand absorption and product-market pricing [Accepted baseline]
 
 Aggregate sectoral outputs are:
 
@@ -97,9 +101,12 @@ price decline can raise consumer or final-good welfare; it is not a welfare loss
 by itself. The baseline does not impose an additional standalone inverse demand
 curve.
 
-When a demand-absorption object is needed for the static proof or empirical
-measurement, write it as $D_t^N(P_t^N)$ or as the derived shorthand $Q(H^N)$.
-The shorthand is not a new demand primitive.
+The baseline demand-absorption object is:
+
+$$Q_t^N=D_t^N(P_t^N).$$
+
+When a shorthand is needed for the static proof or empirical measurement, write
+it as $Q(H^N)$. The shorthand is not a new demand primitive.
 
 ---
 
@@ -207,23 +214,22 @@ productivity distribution $\mu_{r,t}(z)$ are extensions.
 
 ---
 
-## 8. Endogenous capacity and return configurations [Accepted baseline]
+## 8. Dynamic capacity and return configurations [Accepted baseline]
 
 The model should not assign the industry to exogenous life-cycle phases. It
 should track the endogenous objects that determine local and central returns to
-expansionary policy: entry, investment, installed capacity, demand absorption,
+expansionary policy: investment, installed durable capacity, demand absorption,
 utilization, prices, profit/markup, fiscal costs, and MPK or MRPK gaps.
 
-- **Discovery-dominant configuration:** learning externalities, weak market
-  formation, supply-chain coordination failures, local information,
-  experimentation, and private-capital mobilization make expansion valuable.
-- **Offsetting trade-off configuration:** duplicated capacity or fiscal costs
-  appear, but consumer price gains, cost decline, learning, and winner selection
-  offset much of the resource cost.
+- **Positive-return configuration:** both local and aggregate returns to capacity
+  support are positive.
 - **Return-divergence configuration:** local governments still internalize local
   investment, employment, output, and tax-base gains, while effective demand
   cannot absorb capacity, utilization falls, prices compress, profits decline,
   and NEV MPK falls relative to the outside sector.
+- **Offsetting trade-off configuration:** dynamic capacity misallocation is
+  present, but consumer surplus, producer surplus, or optional learning benefits
+  offset much of the resource cost.
 
 The model should not assume that investment stops automatically when capacity is
 slack. Whether decentralized policy exits too slowly must be derived dynamically
@@ -236,9 +242,10 @@ for the endogenous objects listed above.
 
 ---
 
-## 9. Learning externalities [Accepted baseline]
+## 9. Optional learning benefit [Appendix candidate]
 
-The baseline uses a combined frontier-gap spillover law:
+Learning is not the clean baseline mechanism. If included later, use a sourced
+learning-by-doing or productivity law such as:
 
 $$
 A_{r,t+1}^N
@@ -256,14 +263,9 @@ The frontier evolves exogenously:
 
 $$\bar A_{t+1}=(1+g_A)\bar A_t.$$
 
-This law preserves local learning, cross-regional spillovers, diminishing
-learning as a region approaches the frontier, no knowledge depreciation, and no
-double-counting of own-region output in the spillover term.
-
-The exact learning functional form is a bridge object. It can remain in the
-baseline as long as it is disciplined by learning-by-doing or cumulative-output
-literature before paper drafting; otherwise it should be simplified or moved to
-an appendix.
+This law is a bridge object for an appendix or later quantitative extension. The
+dynamic capacity misallocation mechanism must be stated without relying on
+learning, selection, or innovation as core primitives.
 
 ---
 

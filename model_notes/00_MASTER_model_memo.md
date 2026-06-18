@@ -1,11 +1,11 @@
 # MASTER Model Memo
 
 **Project title:**
-Decentralized Industrial Policy over the Industry Life Cycle: Creative
-Destruction or Aggregate Misallocation? Evidence from China's NEV Industry
+Decentralized Industrial Policy and Dynamic Capacity Misallocation: Evidence
+from China's NEV Industry
 
 **中文主线:**
-产业生命周期中的地方分散化产业政策：创造性破坏还是总量错配——来自中国新能源汽车产业的证据
+地方分散化产业政策如何通过部分不可逆的耐用品产能积累，在需求吸收不足时造成动态产能错配和地方—中央福利回报偏离。
 
 **Status:** Accepted baseline model memo after the Claude second-review response
 and the external notes on active firm response and macro-JMP positioning. The
@@ -21,8 +21,9 @@ closure contract is `00_POST_REVISION_MODEL_SKELETON.md`.
 existing literature or be a direct mapping of an object in that literature to
 the NEV setting. The paper's contribution is not to introduce new primitive
 state variables. It is to combine existing modules to study how decentralized
-local policy affects entry, capacity accumulation, prices, utilization, and
-aggregate misallocation over the industry life cycle.
+local policy affects durable capacity investment, demand absorption,
+utilization, sectoral capital returns, and aggregate welfare relative to
+centralized coordination.
 
 The mother model for local-central policy misalignment is Chen-Liu-Song:
 
@@ -50,17 +51,17 @@ used in Modules 3 and 4.
 | Local policy return | $\zeta_{rt}^{L,NEV}$ | Chen-Liu-Song | local intervention index | local welfare gain per fiscal dollar spent on NEV support | Baseline |
 | Central policy return | $\zeta_{rt}^{C,NEV}$ | Chen-Liu-Song | central intervention index | aggregate welfare gain per fiscal dollar spent on NEV support | Baseline |
 | Local-central gap | $Gap_{rt}^{NEV}$ | Chen-Liu-Song | local-central intervention gap | source of decentralized-policy wedge relative to $CP$ | Baseline |
-| Policy platform | policy platform | Chen-Liu-Song | SEZ/SOE-style policy platform | NEV industrial parks, local funds, land, credit, local SOE platforms, and investment-attraction projects | Empirical implementation |
+| Policy platform | $PolicyPlatform_{rt}^{main}$ | Chen-Liu-Song | policy platform approach | NEV industrial parks, local state capital, local funds, land support, and planned capacity projects | Empirical implementation |
 | Fiscal autonomy | fiscal autonomy | Chen-Liu-Song | local fiscal discretion | heterogeneity in local capacity to finance or implement NEV support | Empirical implementation |
 | Composite expansionary policy | $s_{r,t}$ | Chen-Liu-Song; Barwick-Kalouptsidi-Zahur | policy intervention / policy wedge | subsidies, land, credit, industrial funds, park support, investment facilitation | Baseline |
 | Firm entry response | $Entry_{r,t}^N(s)$ | Barwick-Kalouptsidi-Zahur | policy-induced entry | NEV firm/project entry response to local support | Baseline mechanism / empirical moment |
-| Capacity investment | $I_{r,t}^H$ | Barwick-Kalouptsidi-Zahur; Kalouptsidi | policy-induced investment | NEV capacity investment | Baseline |
-| Installed capacity | $H_{r,t}^N$ | Barwick-Kalouptsidi-Zahur; Kalouptsidi | productive capacity | NEV installed capacity as sector-specific capital | Baseline |
-| Capacity law | $H_{r,t+1}^N=(1-\delta_H)H_{r,t}^N+I_{r,t}^H$ | Kalouptsidi; Barwick-Kalouptsidi-Zahur | dynamic capacity accumulation | NEV capacity evolves with investment and depreciation | Baseline |
-| Demand absorption | $D_t^N(P_t^N)$ | Kalouptsidi | demand realization / absorption | effective NEV demand that may not absorb capacity one-for-one | Baseline discipline |
-| Static absorption shorthand | $Q(H^N)$ | Kalouptsidi, mapped through CES pricing | capacity-demand-price response | derived shorthand for realized sales in the static proof | Derived, not primitive |
-| Price response | $P_t^N$ | Kalouptsidi; CES final-good demand | price response to supply/demand | NEV relative price from realized quantity and final-good demand | Baseline |
-| Utilization / idle capacity | $u_t^N=Q_t^N/H_t^N$ | Barwick-Kalouptsidi-Zahur; Kalouptsidi | idle capacity | low NEV utilization when demand absorption lags capacity | Baseline |
+| Capacity investment | $I_{r,t}^H$ | Barwick-Kalouptsidi-Zahur; Aggregate Demand and Irreversible Investment | policy-induced investment / fixed-capital investment | NEV durable capacity investment | Baseline |
+| Installed durable capacity | $H_{r,t}^N$ | Aggregate Demand and Irreversible Investment; Barwick-Kalouptsidi-Zahur | partly irreversible fixed capital / productive capacity | NEV installed capacity as durable sector-specific capital | Baseline |
+| Capacity law | $H_{r,t+1}^N=(1-\delta_H)H_{r,t}^N+I_{r,t}^H$ | Aggregate Demand and Irreversible Investment; Barwick-Kalouptsidi-Zahur | fixed-capital accumulation | capacity evolves with investment, depreciation, construction lags, and slow exit | Baseline |
+| Demand absorption | $D_t^N(P_t^N)$ | Aggregate Demand and Irreversible Investment | aggregate demand absorption | effective NEV demand may not absorb durable capacity one-for-one | Baseline discipline |
+| Static absorption shorthand | $Q(H^N)$ | Aggregate Demand and Irreversible Investment, mapped through product-market pricing | capacity-demand-price response | derived shorthand for realized sales in the static proof | Derived, not primitive |
+| Price response | $P_t^N$ | demand absorption / product-market clearing | price response to supply/demand | NEV relative price from realized quantity and effective demand | Baseline |
+| Utilization / idle capacity | $u_t^N=Q_t^N/H_t^N$ | Barwick-Kalouptsidi-Zahur; Aggregate Demand and Irreversible Investment | idle capacity / demand shortfall relative to fixed capital | low NEV utilization when demand absorption lags durable capacity | Baseline |
 | Misallocation gap | $MPK_t^N-MPK_t^O$ | Hsieh-Klenow and macro misallocation literature | MPK/MRPK dispersion | capital return gap between NEV and outside sector | Baseline |
 | Welfare comparison | $W^D-W^{CP}$ | Chen-Liu-Song; Barwick-Kalouptsidi-Zahur | local vs central welfare / policy counterfactuals | decentralized implementation versus implementable centralized coordination | Baseline |
 | Industry life cycle | entry-exit-innovation-market structure path | Klepper | product life-cycle regularities | interpretation of changing entry, competition, exit, innovation, and market structure over time | Narrative only |
@@ -84,27 +85,17 @@ output/TFP loss.
 
 ## 1. Research question
 
-This paper studies the dynamic welfare effect of decentralized expansionary
-local industrial policy over the industry life cycle of a strategic emerging
-industry. The paper does not treat the life cycle as an exogenous sequence of
-stages or assume that industrial policy suddenly becomes ineffective after a
-particular time. The life cycle is the dynamic path jointly determined by local
-policy, firm entry, capacity investment, demand absorption, price adjustment,
-utilization, profit, and capital returns.
-
-Local expansionary policy can raise dynamic efficiency when it lowers entry and
-capacity-expansion costs, mobilizes private capital, and accelerates firm
-experimentation, cost decline, technological learning, and selection. Because
-capacity investment is lagged and partly irreversible, simultaneous expansion by
-many local governments can make future capacity release concentrated. When
-effective demand cannot absorb the new capacity at the same speed, utilization
-falls, prices compress, profits fall, and the NEV-sector MPK declines relative
-to the outside sector.
+This paper studies a macro-industrial allocation problem. Local governments
+support NEV expansion according to local returns. Firms respond by investing in
+durable and partly irreversible capacity. Because capacity investment has
+construction lags and cannot be costlessly reversed, simultaneous expansion by
+many local governments can make future installed capacity exceed effective
+demand absorption. When that happens, utilization falls, NEV prices compress,
+producer returns fall, and the NEV-sector MPK declines relative to the outside
+sector.
 
 The paper compares decentralized local implementation with implementable
-centralized coordination and asks when local competition works as discovery and
-creative destruction, and when it becomes duplicated capacity and aggregate
-misallocation. The key transition condition is:
+centralized coordination. The key transition condition is:
 
 $$
 \zeta_{rt}^{L,NEV}(Z_t)>0
@@ -116,20 +107,15 @@ When this condition holds, local governments can rationally maintain high
 expansionary policy because they internalize local investment, employment,
 output, and tax-base gains, while the central return to the same expansionary
 policy has fallen or turned negative because of idle capacity, fiscal costs, and
-capital misallocation. The welfare effect of local industrial policy is
-state-contingent.
+capital misallocation.
 
 The paper is not a no-policy critique of industrial policy or a claim that low
 prices are mechanically harmful. Existing studies explain how China's NEV
-industry rose. This paper asks how the marginal welfare return to the same
-decentralized local implementation changes with endogenous capacity, demand,
-price, utilization, profit, and MPK conditions.
-It is also not a "government versus firms" story. Firms actively respond to
-policy, expected demand, expected prices, financing conditions, and productivity;
-the sign of the welfare effect depends on whether decentralized discovery,
-learning, cost reduction, consumer gains, and private-capital mobilization exceed
-producer price/revenue compression, idle capacity, MPK gaps, fiscal costs, and
-delayed exit or innovation distortions.
+industry rose. This paper asks whether decentralized implementation pushes too
+much durable capacity into NEV relative to effective demand and outside-sector
+capital returns. The sign of the welfare effect depends on whether consumer
+surplus, producer surplus, and optional learning benefits exceed fiscal costs,
+idle-capacity costs, and capital-misallocation costs.
 
 ---
 
@@ -138,32 +124,30 @@ delayed exit or innovation distortions.
 $$
 \underbrace{\zeta_{rt}^{L,NEV}-\zeta_{rt}^{C,NEV}}_{\text{Chen-Liu-Song local-central gap}}
 \Rightarrow
-\underbrace{s_{r,t}}_{\text{composite local NEV policy wedge}}
+\underbrace{s_{r,t}}_{\text{local NEV expansionary policy wedge}}
 \Rightarrow
-\underbrace{Entry_{r,t}^N,\ I_{r,t}^H,\ H_{r,t+1}^N}_{\text{Barwick-Kalouptsidi-Zahur / Kalouptsidi}}
+\underbrace{I_{r,t}^H,\ H_{r,t+1}^N}_{\text{partly irreversible durable capacity}}
 \Rightarrow
-\underbrace{D_t^N(P_t^N),\ P_t^N,\ u_t^N,\ \pi_t^N}_{\text{capacity-demand-price block}}
+\underbrace{D_t^N(P_t^N),\ u_t^N,\ P_t^N,\ \pi_t^N}_{\text{demand absorption and returns}}
 \Rightarrow
-\underbrace{MPK_t^N-MPK_t^O}_{\text{misallocation block}}
+\underbrace{MPK_t^N-MPK_t^O}_{\text{capital misallocation}}
 \Rightarrow
 \underbrace{\zeta_{rt}^{L,NEV}(Z_t)-\zeta_{rt}^{C,NEV}(Z_t)}_{\text{local-central return gap}}
 \Rightarrow
 \underbrace{W^D-W^{CP}}_{\text{net welfare comparison}}.
 $$
 
-The industry life-cycle interpretation follows Klepper, but it is not an
-independent state variable. It is the path traced by policy, entry, investment,
-capacity, demand absorption, prices, utilization, profits, and MPK gaps. The
-potential distortion arises when capacity expands faster than effective demand
-and the local return to expansionary policy remains positive while the central
-return falls or turns negative.
+Entry remains an empirical mechanism and validation object, but the clean
+baseline mechanism runs through investment, durable capacity accumulation,
+demand absorption, and capital returns. Life-cycle language follows Klepper only
+as background narrative.
 
 The price channel is state-contingent. Lower NEV prices can raise consumer or
 final-good welfare. The paper does not pre-commit to $W^D<W^{CP}$. The
-quantitative object is the net trade-off: in some states consumer, learning,
-discovery, and mobilization benefits may offset misallocation costs; in other
-states fiscal costs, low utilization, wasted fixed or capital costs, delayed
-exit, and innovation distortions may dominate.
+quantitative object is the net trade-off: in some states consumer surplus,
+producer surplus, and optional learning benefits may offset misallocation costs;
+in other states fiscal costs, low utilization, wasted fixed or capital costs,
+and slow capacity exit may dominate.
 
 The three admissible outcomes are:
 
@@ -173,9 +157,8 @@ The three admissible outcomes are:
 2. $W^D\approx W^{CP}$: local competition creates duplicated capacity, but local
    information, investment-attraction capacity, and private-capital mobilization
    offset much of the misallocation cost.
-3. $W^D>W^{CP}$: decentralized competition functions as a discovery mechanism;
-   multi-region experimentation and firm competition waste some resources but
-   accelerate learning, cost decline, and winner selection.
+3. $W^D>W^{CP}$: local implementation advantages, consumer gains, producer
+   surplus, or learning benefits exceed dynamic capacity misallocation costs.
 
 ---
 
@@ -185,8 +168,9 @@ The three admissible outcomes are:
 - **Regions:** $r=1,\ldots,R$; the first analytic model uses two symmetric
   regions.
 - **Sectors:** $N$ for NEV and $O$ for outside manufacturing.
-- **Agents:** representative household, firms, local governments, and a
-  constrained centralized planner.
+- **Agents:** firms, local governments, and a constrained centralized
+  coordinator. A full representative-household Euler block is not part of the
+  clean baseline.
 
 ---
 
@@ -225,11 +209,13 @@ If $I_t^K$ is used, it means $I_t^{K,O}$.
 
 ---
 
-## 5. Household, labor, and final good
+## 5. Demand absorption, labor accounting, and final good
 
-The representative household consumes the final good, owns firms and financial
-claims, and supplies savings. The household problem pins down the intertemporal
-Euler condition.
+The clean baseline does not require a complete household consumption-savings
+problem. It uses demand absorption and aggregate welfare accounting rather than
+a representative-household Euler equation. NEV realized demand is:
+
+$$Q_t^N=D_t^N(P_t^N).$$
 
 Regional labor is fixed:
 
@@ -251,7 +237,8 @@ Y_t=
 \right]^{\frac{\epsilon}{\epsilon-1}}.
 $$
 
-With the final-good price normalized to one:
+With the final-good price normalized to one, a CES implementation can discipline
+relative prices:
 
 $$P_t^N=\eta_N\left(\frac{Y_t}{Y_t^N}\right)^{1/\epsilon}.$$
 
@@ -291,7 +278,7 @@ $$SubsidyCost_{r,t}=\phi s_{r,t}H_{r,t}^N.$$
 
 ---
 
-## 7. Learning externalities
+## 7. Optional learning benefit
 
 NEV productivity evolves according to:
 
@@ -311,8 +298,10 @@ The frontier evolves exogenously:
 
 $$\bar A_{t+1}=(1+g_A)\bar A_t.$$
 
-This preserves local learning, cross-region spillovers, diminishing learning,
-no knowledge depreciation, and no own-output double-counting in spillovers.
+This is an optional benefit-side bridge for later quantification. It is not the
+core clean-axis mechanism. If data or citation discipline is insufficient, set
+the learning benefit aside and estimate welfare using consumer surplus,
+producer surplus, fiscal cost, idle-capacity cost, and misallocation cost.
 
 ---
 
@@ -371,11 +360,12 @@ equilibrium. It chooses policy instruments:
 
 $$\{s_{r,t}^{CP}\}_{r=1}^R,$$
 
-while households and firms continue to optimize privately. This benchmark maps
+while firms continue to optimize privately. This benchmark maps
 to the Chen-Liu-Song central intervention index $\zeta_{rt}^{C,NEV}$. The
-constrained planner internalizes cross-region learning spillovers, the consumer
-or final-good benefit from lower NEV prices, producer price/revenue compression,
-duplicated capacity, fiscal costs, debt costs, and aggregate MPK losses.
+constrained planner internalizes consumer surplus, producer surplus, demand
+absorption, durable-capacity overaccumulation, fiscal costs, debt costs,
+idle-capacity costs, and aggregate MPK/MRPK losses. Optional learning benefits
+can be added only when separately disciplined.
 
 A first-best planner that directly chooses allocations is only an appendix upper
 bound:
@@ -400,20 +390,22 @@ $$s_{r,t}^D=BR_r(s_{-r,t}^D;Z_{r,t},Z_t).$$
 The baseline dynamic state vector is:
 
 $$
-X_t=\{H_{r,t}^N,A_{r,t}^N,B_{r,t},s_{r,t-1}\}_{r=1}^R.
+X_t=\{H_{r,t}^N,B_{r,t},s_{r,t-1}\}_{r=1}^R.
 $$
 
-The full equilibrium requires household saving optimality, regional labor
-clearing, firm optimality, capital/capacity laws, CES-derived demand, local
-budget constraints, local government optimality, Markov-Nash best responses,
-learning, and resource feasibility.
+The clean baseline equilibrium requires regional labor accounting, firm
+responses, durable-capacity laws, demand absorption, local budget constraints,
+local government optimality, Markov-Nash best responses, and resource
+feasibility. A full household saving Euler equation is not part of the baseline.
+An optional learning extension adds $A_{r,t}^N$ to the state vector.
 
 ---
 
-## 11. Definition of creative destruction versus aggregate misallocation
+## 11. Definition of dynamic capacity misallocation
 
-The same decentralized local policy system can generate creative destruction or
-aggregate misallocation. Define the diagnostic vector:
+Dynamic capacity misallocation arises when decentralized policy pushes durable
+NEV capacity above effective demand absorption and lowers the NEV-sector return
+relative to the outside sector. Define the diagnostic vector:
 
 $$
 \mathcal T_t=
@@ -426,33 +418,33 @@ W^D-W^{CP}
 \right).
 $$
 
-The welfare component is not signed by definition. It credits consumer or
-final-good benefits from lower NEV prices, learning, discovery, and mobilization
-benefits before subtracting fiscal, duplicated-capacity,
-capital-misallocation, delayed-exit, and innovation-distortion costs. The
-economy is in a misallocation-dominant regime only when duplicated capacity, low
-utilization, MPK gaps, and the net welfare gap jointly indicate that
-decentralized competition has become socially costly relative to $CP$.
+The welfare component is not signed by definition. It credits consumer surplus,
+producer surplus, and optional learning benefits before subtracting fiscal
+costs, idle-capacity costs, and capital-misallocation costs. The economy is in a
+dynamic capacity misallocation outcome only when low utilization, price
+compression, MPK/MRPK gaps, and the net welfare gap jointly indicate that
+decentralized implementation is socially costly relative to $CP$.
 
 ---
 
 ## 12. Main theoretical sequence
 
-1. **Lemma 1:** A higher local policy wedge raises NEV installed capacity.
-2. **Lemma 2:** CES-derived demand implies price compression when NEV quantity
-   expands relative to effective demand; the welfare sign of lower prices is
-   ambiguous before fiscal and resource costs are included.
-3. **Proposition 1:** Early-stage decentralized or coordinated policy can raise
-   welfare when marginal learning, market-formation, and supply-chain
-   coordination benefits exceed fiscal and misallocation costs.
+1. **Lemma 1:** A higher local policy wedge raises NEV capacity investment and
+   future installed durable capacity.
+2. **Lemma 2:** Demand absorption implies falling utilization and price
+   compression when installed NEV capacity grows faster than effective demand;
+   the welfare sign of lower prices is ambiguous before consumer surplus,
+   producer surplus, fiscal costs, and resource costs are included.
+3. **Proposition 1:** Expansionary policy can raise welfare when the marginal
+   local and aggregate returns to capacity support are positive.
 4. **Proposition 2:** When
    $\zeta^{L,NEV}(Z_t)>0$ but $\zeta^{C,NEV}(Z_t)\leq0$, stated sufficient
    conditions imply decentralized Markov-Nash policy exceeds implementable
    centralized coordination: $s^D>s^{CP}$.
 5. **Proposition 3:** Given Proposition 2 and the net-cost-dominance condition,
-   decentralized equilibrium generates duplicated NEV capacity, lower
-   utilization, an MPK gap, and lower welfare relative to $CP$. Without that
-   condition, $W^D-W^{CP}$ remains a quantitative trade-off rather than a
+   decentralized equilibrium generates excessive durable NEV capacity, lower
+   utilization, an MPK/MRPK gap, and lower welfare relative to $CP$. Without
+   that condition, $W^D-W^{CP}$ remains a quantitative trade-off rather than a
    theorem.
 
 Policy exit that is too slow is a dynamic or numerical result unless separately
@@ -464,12 +456,13 @@ proven.
 
 Moments are separated into:
 
-- descriptive moments: entry, capacity, utilization, effective demand, prices,
-  margins, learning/cost decline, consumer or final-good price benefits, MPK
-  gaps;
-- causal moments: policy effects on capacity, entry, and persistence;
-- calibration/external moments: fiscal outlays, CES elasticity, learning
-  parameters, financing conditions, local information/mobilization advantages,
+- descriptive moments: policy platforms, investment, installed capacity,
+  utilization, effective demand, prices, margins, consumer surplus, producer
+  surplus, and MPK/MRPK gaps;
+- causal moments: policy effects on capacity investment, future installed
+  capacity, utilization, prices, and MPK/MRPK gaps;
+- calibration/external moments: fiscal outlays, demand elasticity, capacity
+  depreciation or retirement, construction lags, capital shares, recovery value,
   and local-government weights.
 
 Firm-entry moments validate the private-response mechanism. They do not require
@@ -482,11 +475,12 @@ validation, not an automatically exogenous instrument.
 
 ## 14. Counterfactuals
 
-1. No local industrial policy.
+1. No local industrial policy as an auxiliary counterfactual.
 2. Centralized constrained policy equilibrium.
-3. Subsidy cap or anti-duplication rule.
-4. Faster policy exit.
-5. Expansionary versus productivity-enhancing support.
+3. Subsidy cap.
+4. Capacity approval rule.
+5. Faster capacity retirement.
+6. Policy-mix shift away from entry/capacity support.
 
 These counterfactuals are allowed because they are policy-counterfactual objects
 in the industrial-policy and local-central coordination literatures. They are not
@@ -502,6 +496,6 @@ new welfare primitives.
 4. Derive the constrained-planner FOC.
 5. Prove sufficient conditions for $s^D>s^{CP}$ when local policy returns remain
    positive but central policy returns have fallen or turned negative.
-6. Derive duplicated-capacity, utilization, MPK, and welfare-regime
-   implications.
+6. Derive dynamic capacity misallocation, utilization, price-compression,
+   MPK/MRPK, and welfare-decomposition implications.
 7. Only then plan numerical implementation.

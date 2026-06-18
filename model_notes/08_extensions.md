@@ -11,6 +11,13 @@ baseline merely because it is plausible in the NEV setting; it must map to a
 specific literature object and solve a limitation that the current baseline
 cannot address.
 
+The current clean baseline is dynamic capacity misallocation: decentralized
+local policy, durable and partly irreversible NEV capacity, demand absorption,
+MPK/MRPK gaps, and the $D$ versus $CP$ welfare comparison. Extensions should not
+move `creative destruction`, supply-chain finance, official promotion,
+household saving, exports, BLP, or full heterogeneous-firm dynamics back into
+the title-level mechanism.
+
 ---
 
 ## 1. Administrative convex policy cost
@@ -157,7 +164,24 @@ as empirical shifters before they become model states.
 
 ---
 
-## 11. Firm heterogeneity, entry, and productivity distribution
+## 11. Aggregate Demand and Irreversible Investment financial block
+
+Import working-capital constraints, endogenous default risk, bank pricing,
+hand-to-mouth household demand, or the full heterogeneous-firm recursive
+equilibrium from the Aggregate Demand and Irreversible Investment source family.
+
+**Purpose:** Study whether financial frictions or household demand composition
+amplify the capacity-demand-return mechanism.
+
+**Reason outside baseline:** The baseline uses that source family only for
+partly irreversible durable capacity, demand absorption, investment lags, and
+MRPK-dispersion logic. Importing its full financial and heterogeneous-agent
+structure would turn the project into a different macro-finance model before the
+NEV local-central policy comparison is closed.
+
+---
+
+## 12. Firm heterogeneity, entry, and productivity distribution
 
 Carry the full firm productivity distribution $\mu_{r,t}(z)$ in the state vector
 and model entry, exit, productivity selection, or threshold entry explicitly.
@@ -173,7 +197,7 @@ firm moments. It should not be represented by a standalone `SelectionState`.
 
 ---
 
-## 12. Outside-sector endogenous learning
+## 13. Outside-sector endogenous learning
 
 Allow $A_{r,t}^O$ to evolve endogenously.
 
@@ -184,7 +208,7 @@ capital opportunity cost and MPK gaps.
 
 ---
 
-## 13. Full promotion tournament
+## 14. Full promotion tournament
 
 Model officials' career concerns or promotion tournaments explicitly.
 
@@ -195,7 +219,7 @@ to keep the policy game analytically tractable.
 
 ---
 
-## 14. Labor mobility and hukou frictions
+## 15. Labor mobility and hukou frictions
 
 Replace fixed regional labor with partial migration, hukou frictions, or mobility
 costs.
@@ -207,7 +231,7 @@ employment block for the first version.
 
 ---
 
-## 15. Sequential central-local game
+## 16. Sequential central-local game
 
 Replace simultaneous Markov-Nash local policy choice with a sequential or
 Stackelberg central-local policy game.
@@ -219,7 +243,7 @@ with a clear $D$ versus $CP$ comparison.
 
 ---
 
-## 16. Promotion rule for extensions
+## 17. Promotion rule for extensions
 
 An extension can enter the baseline only if:
 
